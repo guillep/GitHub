@@ -16,7 +16,8 @@ initializeLoginFields
 			self authenticatedAPI: (GitHub
 				initializeWithUsername: usernameInput text
 				password: passwordInput text)
-		]
+		].
+		self class rememberAuthentication: self authenticatedAPI.
 	].
 	usernameInput bindKeyCombination: Character cr toAction: acceptBlock.
 	passwordInput bindKeyCombination: Character cr toAction: acceptBlock.

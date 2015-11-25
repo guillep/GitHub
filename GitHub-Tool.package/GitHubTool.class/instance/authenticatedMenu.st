@@ -8,6 +8,6 @@ authenticatedMenu
 			item
 				name: user login;
 				description: 'Currently logged in.';
-				icon: (user avatar scaledToSize: 16 @ 16).
+				icon: (user avatar scaledToSize: 16 @ 16)
 		]
 	]
