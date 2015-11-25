@@ -1,0 +1,18 @@
+{
+	"category" : "GitHub-FileTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"api",
+		"username",
+		"repositoryname",
+		"repo",
+		"branch" ],
+	"name" : "GitHubFileTreeRepository",
+	"pools" : [
+		 ],
+	"super" : "MCFileTreeRepository",
+	"type" : "normal" }

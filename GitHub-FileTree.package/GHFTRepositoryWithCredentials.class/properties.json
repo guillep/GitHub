@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-FileTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GHFTRepositoryWithCredentials",
+	"pools" : [
+		 ],
+	"super" : "GitHubFileTreeRepository",
+	"type" : "normal" }
