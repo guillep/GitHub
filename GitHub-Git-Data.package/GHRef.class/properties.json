@@ -9,7 +9,8 @@
 	"instvars" : [
 		"ref",
 		"object",
-		"url" ],
+		"url",
+		"force" ],
 	"name" : "GHRef",
 	"pools" : [
 		 ],
