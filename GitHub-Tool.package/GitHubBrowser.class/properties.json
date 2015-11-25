@@ -1,0 +1,16 @@
+{
+	"category" : "GitHub-Tool",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 11/16/2015 11:07",
+	"instvars" : [
+		"log",
+		"diff",
+		"info" ],
+	"name" : "GitHubBrowser",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }
