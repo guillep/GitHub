@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-Users",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "GHLoggedInUser",
+	"pools" : [
+		 ],
+	"super" : "GHUser",
+	"type" : "normal" }
