@@ -1,4 +1,4 @@
-accessing-api
+accessing
 path: aPath
 
 	path := aPath

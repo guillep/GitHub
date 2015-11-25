@@ -2,15 +2,18 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTToJSONParameter classTrait + (GHTMappedToJSON classTrait @ {#basicNeoJsonMapping:->#neoJsonMapping:}) + GHTMappedToURL classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
 		"sha",
 		"tree",
-		"truncated" ],
+		"truncated",
+		"url" ],
 	"name" : "GHTree",
 	"pools" : [
 		 ],
-	"super" : "GHObject",
+	"super" : "Object",
+	"traitcomposition" : "GHTMappedToJSON + GHTToJSONParameter + GHTMappedToURL",
 	"type" : "normal" }

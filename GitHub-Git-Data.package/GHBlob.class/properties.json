@@ -2,6 +2,7 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait + GHTContentBearer classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
@@ -9,9 +10,11 @@
 		"content",
 		"size",
 		"sha",
-		"encoding" ],
+		"encoding",
+		"url" ],
 	"name" : "GHBlob",
 	"pools" : [
 		 ],
-	"super" : "GHObject",
+	"super" : "Object",
+	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL + GHTContentBearer",
 	"type" : "normal" }

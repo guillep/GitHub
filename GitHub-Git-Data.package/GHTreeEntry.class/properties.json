@@ -2,6 +2,7 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "SkipLentz 10/28/2015 14:02",
@@ -9,9 +10,11 @@
 		"mode",
 		"path",
 		"size",
-		"type" ],
+		"type",
+		"url" ],
 	"name" : "GHTreeEntry",
 	"pools" : [
 		 ],
-	"super" : "GHObject",
+	"super" : "Object",
+	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL",
 	"type" : "normal" }

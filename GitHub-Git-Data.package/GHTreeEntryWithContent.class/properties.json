@@ -2,6 +2,7 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTToJSONParameter classTrait + GHTContentBearer classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "SkipLentz 10/28/2015 14:18",
@@ -11,4 +12,5 @@
 	"pools" : [
 		 ],
 	"super" : "GHTreeEntry",
+	"traitcomposition" : "GHTToJSONParameter + GHTContentBearer",
 	"type" : "normal" }

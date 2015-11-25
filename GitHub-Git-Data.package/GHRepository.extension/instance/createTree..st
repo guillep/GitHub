@@ -1,2 +1,4 @@
 *GitHub-Git-Data-operations
-createTree: anArrayOfTreeEntries
+createTree: aTree
+
+	^ self post: self treesBaseUrl jsonContent: aTree

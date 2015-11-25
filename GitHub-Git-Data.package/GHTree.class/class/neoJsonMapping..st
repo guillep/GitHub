@@ -1,10 +1,7 @@
 accessing
 neoJsonMapping: mapper
-	super neoJsonMapping: mapper.
-
+	self basicNeoJsonMapping: mapper.
 	mapper for: self do: [ :mapping |
-		(mapping mapInstVar: #tree) valueSchema: #ArrayOfTreeEntries.
+		(mapping mapInstVar: #tree) valueSchema: #ArrayOfTreeEntries
 	].
-	mapper for: #ArrayOfTreeEntries customDo: [ :mapping |
-		mapping listOfElementSchema: GHTreeEntryWithSHA.
-	]
+	self treeEntriesMapping: mapper
