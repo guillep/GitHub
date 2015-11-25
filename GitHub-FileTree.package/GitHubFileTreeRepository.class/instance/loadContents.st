@@ -2,13 +2,17 @@ loading
 loadContents
 
 	" Create the package directories, which fills 'treeShaToDirectory'. "
+	| archive archiveName |
 	self createPackageDirectories.
-	" Get all the contents. "
-	treeShaToDirectory keysAndValuesDo: [ :sha :dir | | tree |
-		tree := repo getTreeRecursively: sha.
-		tree tree do: [ :entry |
-			self
-				createFileOrDirectoryForTreeEntry: entry
-				in: dir
-		]
+	self directory deleteAllChildren.
+	archive := repo zipArchiveAt: branch.
+	archive extractAllTo: self directory.
+	archiveName := archive members first fileName allButLast.
+	" Move the contents to the correct filenames. "
+	(self directory / archiveName) children do: [ :each |
+		originalDirectoryToDirectory
+			at: each basename
+			ifPresent: [ :dir | each moveTo: dir ]
+			ifAbsent: [ each moveTo: (self directory / each basename) ]
 	].
+	(self directory / archiveName) delete.

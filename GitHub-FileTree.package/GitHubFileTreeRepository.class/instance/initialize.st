@@ -1,5 +1,5 @@
 initialization
 initialize
 
-	treeShaToDirectory := Dictionary new.
+	originalDirectoryToDirectory := Dictionary new.
 	self directory: FileSystem memory workingDirectory.
