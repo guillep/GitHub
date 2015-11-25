@@ -2,11 +2,9 @@ initialization
 initializeLoginFields
 
 	| usernameInput passwordInput acceptBlock |
-	usernameInput := self newTextInput
-		wantsVisualFeedback: false;
+	usernameInput := self newTextInputWithDefaults
 		ghostText: 'Username or Token'.
-	passwordInput := self newTextInput
-		wantsVisualFeedback: false;
+	passwordInput := self newTextInputWithDefaults
 		ghostText: 'Password or Empty';
 		beEncrypted.
 	acceptBlock := [ passwordInput text isEmpty
@@ -20,6 +18,6 @@ initializeLoginFields
 				password: passwordInput text)
 		]
 	].
-	usernameInput acceptBlock: acceptBlock.
-	passwordInput acceptBlock: acceptBlock.
+	usernameInput bindKeyCombination: Character cr toAction: acceptBlock.
+	passwordInput bindKeyCombination: Character cr toAction: acceptBlock.
 	^ { usernameInput. passwordInput }
