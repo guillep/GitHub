@@ -10,7 +10,8 @@
 		"username",
 		"repositoryname",
 		"repo",
-		"branch" ],
+		"branch",
+		"treeShaToDirectory" ],
 	"name" : "GitHubFileTreeRepository",
 	"pools" : [
 		 ],

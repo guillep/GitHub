@@ -3,8 +3,8 @@ initializeWithAPI: aGitHubAPI owner: aUsername repository: aRepositoryname branc
 
 	api := aGitHubAPI.
 	repo := (api user: aUsername) repository: aRepositoryname.
-	branch := aBranchNameOrEmptyOrNil isEmptyOrNil ifTrue: [ repo defaultBranch ].
+	branch := aBranchNameOrEmptyOrNil isEmptyOrNil
+		ifTrue: [ repo defaultBranch ]
+		ifFalse: [ aBranchNameOrEmptyOrNil ].
 	username := aUsername.
 	repositoryname := aRepositoryname.
-	" Everything is stored in here until we write out. "
-	self directory: FileSystem memory workingDirectory.
