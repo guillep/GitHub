@@ -1,0 +1,1 @@
+I represent a file, directory, symbolic link, or submodule in a GitHub repository (GHRepository).
