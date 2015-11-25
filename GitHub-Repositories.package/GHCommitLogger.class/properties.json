@@ -1,0 +1,15 @@
+{
+	"category" : "GitHub-Repositories",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 11/5/2015 16:41",
+	"instvars" : [
+		"repo",
+		"parameters" ],
+	"name" : "GHCommitLogger",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
