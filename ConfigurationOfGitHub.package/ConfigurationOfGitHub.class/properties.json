@@ -1,0 +1,14 @@
+{
+	"category" : "ConfigurationOfGitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"LastVersionLoad" ],
+	"commentStamp" : "SkipLentz 10/7/2015 10:57",
+	"instvars" : [
+		"project" ],
+	"name" : "ConfigurationOfGitHub",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }
