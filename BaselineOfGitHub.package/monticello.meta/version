@@ -1,0 +1,3 @@
+(name 'BaselineOfGitHub-Balletie.2' message 'Add small class comment for BaselineOfGitHub
+' id '1480cb32-d9a3-5b5a-b021-fe8120061a3e' date '25 November 2015' time '5:07:36 pm' author 'Balletie' ancestors ((name 'BaselineOfGitHub-Balletie.1' message 'Switch to using BaselineOf instead of ConfigurationOf
+' id 'b6c32173-0507-548d-b151-7495bb98d434' date '25 November 2015' time '5:00:23 pm' author 'Balletie' ancestors () stepChildren ())) stepChildren ())

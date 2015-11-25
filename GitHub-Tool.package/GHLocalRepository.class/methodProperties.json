@@ -1,0 +1,28 @@
+{
+	"class" : {
+		"allRepositories" : "Balletie 11/25/2015 13:53:52",
+		"allRepositoryNames" : "Balletie 11/25/2015 13:53:52",
+		"getOrCreateRepositoryForRemote:" : "Balletie 11/25/2015 13:53:52",
+		"isRepositoryLoaded:" : "Balletie 11/25/2015 13:53:52",
+		"isRepositoryLoadedAndNotDetached:" : "Balletie 11/25/2015 13:53:52",
+		"onRemoteRepository:" : "Balletie 11/25/2015 13:53:52",
+		"repositoryAt:" : "Balletie 11/25/2015 13:53:52",
+		"repositoryAt:ifAbsent:" : "Balletie 11/25/2015 13:53:52",
+		"repositoryNamesToRepositories" : "Balletie 11/25/2015 13:53:52" },
+	"instance" : {
+		"beDetachedHead" : "Balletie 11/25/2015 13:53:52",
+		"branch" : "Balletie 11/25/2015 13:53:52",
+		"checkoutBranch:" : "Balletie 11/25/2015 13:53:52",
+		"checkoutCommit:" : "Balletie 11/25/2015 13:53:52",
+		"commitVersions:withMessage:" : "Balletie 11/25/2015 13:53:52",
+		"commitWithMessage:" : "Balletie 11/25/2015 13:53:52",
+		"commitWithMessage:andDescription:" : "Balletie 11/25/2015 13:53:52",
+		"createBranch:" : "Balletie 11/25/2015 13:53:52",
+		"fileTreeRepository" : "Balletie 11/25/2015 13:53:52",
+		"gitHubRepository" : "Balletie 11/25/2015 13:53:52",
+		"gitHubRepository:" : "Balletie 11/25/2015 13:53:52",
+		"head" : "Balletie 11/25/2015 13:53:52",
+		"head:" : "Balletie 11/25/2015 13:53:52",
+		"isDetached" : "Balletie 11/25/2015 13:53:52",
+		"load" : "Balletie 11/25/2015 13:53:52",
+		"loadBranchOrVersionAtSha:" : "Balletie 11/25/2015 13:53:52" } }

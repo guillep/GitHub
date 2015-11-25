@@ -1,0 +1,21 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"blobsBaseUrl" : "Balletie 11/25/2015 13:53:45",
+		"commitBuilder" : "Balletie 11/25/2015 13:53:45",
+		"createBlob:" : "Balletie 11/25/2015 13:53:45",
+		"createCommit:" : "Balletie 11/25/2015 13:53:45",
+		"createRef:" : "Balletie 11/25/2015 13:53:45",
+		"createTree:" : "Balletie 11/25/2015 13:53:45",
+		"deleteRef:" : "Balletie 11/25/2015 13:53:45",
+		"getBlob:" : "Balletie 11/25/2015 13:53:45",
+		"getCommit:" : "Balletie 11/25/2015 13:53:45",
+		"getRef:" : "Balletie 11/25/2015 13:53:45",
+		"getTree:" : "Balletie 11/25/2015 13:53:45",
+		"getTree:recursively:" : "Balletie 11/25/2015 13:53:45",
+		"getTreeRecursively:" : "Balletie 11/25/2015 13:53:45",
+		"gitCommitsBaseUrl" : "Balletie 11/25/2015 13:53:45",
+		"refsBaseUrl" : "Balletie 11/25/2015 13:53:45",
+		"treesBaseUrl" : "Balletie 11/25/2015 13:53:45",
+		"updateRef:" : "Balletie 11/25/2015 13:53:45" } }
