@@ -1,0 +1,4 @@
+initialization
+initializeWithClient: aZnClient
+
+	self explicitRequirement

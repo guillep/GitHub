@@ -1,0 +1,1 @@
+I am a bearer of content, encoded using a certain encoding (usually base64).

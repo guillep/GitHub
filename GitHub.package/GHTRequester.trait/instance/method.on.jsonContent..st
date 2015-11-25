@@ -2,7 +2,7 @@ operations
 method: aMethodSymbol on: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self rememberUrlDo: [
-		client
+		self client
 			url: urlPathSegments;
 			entity: (ZnEntity
 				with: neoJSONObjectOrString asString

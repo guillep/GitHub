@@ -2,6 +2,7 @@
 	"category" : "GitHub",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTMappedToURL classTrait + GHTTimeStamped classTrait + GHTMappedToJSON classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "SkipLentz 10/6/2015 11:04",
@@ -14,4 +15,5 @@
 	"pools" : [
 		 ],
 	"super" : "GitHubAPIObject",
+	"traitcomposition" : "GHTMappedToURL + GHTTimeStamped + GHTMappedToJSON",
 	"type" : "normal" }

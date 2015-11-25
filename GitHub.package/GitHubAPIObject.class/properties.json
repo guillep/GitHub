@@ -2,6 +2,7 @@
 	"category" : "GitHub",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTRequester classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "SkipLentz 10/16/2015 12:04",
@@ -12,4 +13,5 @@
 	"pools" : [
 		 ],
 	"super" : "Object",
+	"traitcomposition" : "GHTRequester",
 	"type" : "normal" }

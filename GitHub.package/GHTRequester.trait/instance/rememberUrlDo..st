@@ -2,7 +2,7 @@ operations
 rememberUrlDo: aBlock
 	| urlMemento |
 
-	urlMemento := client request url.
+	urlMemento := self client request url.
 	^ aBlock ensure: [
-		client url: urlMemento
+		self client url: urlMemento
 	]
