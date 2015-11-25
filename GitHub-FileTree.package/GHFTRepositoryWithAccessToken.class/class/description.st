@@ -1,3 +1,3 @@
 instance creation
 description
-	^ self basicDescription , '(access token)'
+	^ super description , '(access token)'

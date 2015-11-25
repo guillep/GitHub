@@ -1,3 +1,3 @@
 accessing
 description
-	^ self basicDescription , '(username and password)'
+	^ super description , '(username and password)'

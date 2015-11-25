@@ -1,3 +1,3 @@
 accessing
-basicDescription
+description
 	^ 'GitHub FileTree repository '
