@@ -4,9 +4,20 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "SkipLentz 10/9/2015 17:37",
 	"instvars" : [
-		 ],
+		"site_admin",
+		"received_events_url",
+		"hireable",
+		"bio",
+		"organizations_url",
+		"subscriptions_url",
+		"starred_url",
+		"gists_url",
+		"followers_url",
+		"gravatar_id",
+		"following_url",
+		"type" ],
 	"name" : "GHUser",
 	"pools" : [
 		 ],
