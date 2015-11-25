@@ -1,4 +1,4 @@
-remember
+accessing
 rememberAuthentication: aGitHub
 
 	RememberedAuthenticated := aGitHub.

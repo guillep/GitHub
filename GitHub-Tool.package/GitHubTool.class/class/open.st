@@ -3,6 +3,6 @@ open
 	| inst |
 
 	inst := self new open.
-	RememberedAuthenticated ifNotNil: [
+	self rememberedAuthenticated ifNotNil: [
 		inst authenticatedAPI: RememberedAuthenticated
 	]

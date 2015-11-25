@@ -6,15 +6,23 @@ initializePresenter
 			logBrowser repository: newRepo.
 			checkoutButton enable.
 			commitButton enable.
+			branchesDropDown items: newRepo branches
 		]
 	].
+	branchesDropDown whenSelectedItemChanged: [ :newBranch |
+		newBranch ifNotNil: [
+			logBrowser branch: newBranch
+		]
+	].
+
+	checkoutButton action: [ self checkoutSelectedVersion ].
+	commitButton action: [ self storeVersion ].
+
 	logBrowser log whenSelectedItemsChanged: [ :items | | filetreeRepo |
 		items isEmptyOrNil ifFalse: [
-			filetreeRepo := GitHubFileTreeRepository
-				initializeWithAPI: self authenticatedAPI
-				owner: (repositoryDropDown selectedItem owner at: 'login')
-				repository: repositoryDropDown selectedItem name
+			filetreeRepo := GitHubFileTreeRepository new
+				initializeWithRepository: repositoryDropDown selectedItem
 				branch: (items first sha first: 7).
 			logBrowser packageList items: filetreeRepo allFileNames
-		].
+		]
 	]

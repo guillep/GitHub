@@ -7,6 +7,7 @@ specLayout
 			newRow: [ :row |
 				row
 					add: #repositoryDropDown;
+					add: #branchesDropDown;
 					add: #checkoutButton;
 					add: #commitButton
 			] height: self toolbarHeight - 4;

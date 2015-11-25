@@ -3,6 +3,8 @@ initialize
 
 	super initialize.
 	repository := nil asValueHolder.
-	repository whenChangedDo: [ :newRepo |
-		log roots: (self sortedItemsForRepo: newRepo)
+	branch := nil asValueHolder.
+	{ repository. branch } do: [ :each |
+		each whenChangedDo: [ :dummy |
+			log roots: self sortedLogItems ]
 	].

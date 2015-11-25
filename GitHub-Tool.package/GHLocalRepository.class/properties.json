@@ -1,0 +1,16 @@
+{
+	"category" : "GitHub-Tool",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"RepoNamesToRepo" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"head",
+		"ghRepo",
+		"fileTreeRepo" ],
+	"name" : "GHLocalRepository",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

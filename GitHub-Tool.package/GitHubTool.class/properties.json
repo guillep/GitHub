@@ -8,6 +8,7 @@
 	"instvars" : [
 		"logBrowser",
 		"repositoryDropDown",
+		"branchesDropDown",
 		"checkoutButton",
 		"commitButton",
 		"authenticatedAPI",

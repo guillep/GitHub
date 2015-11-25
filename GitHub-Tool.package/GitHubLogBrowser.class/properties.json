@@ -10,7 +10,8 @@
 		"packageList",
 		"info",
 		"rulerController",
-		"repository" ],
+		"repository",
+		"branch" ],
 	"name" : "GitHubLogBrowser",
 	"pools" : [
 		 ],

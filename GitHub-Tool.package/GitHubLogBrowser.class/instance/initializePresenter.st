@@ -10,6 +10,7 @@ initializePresenter
 				info text: items last message.
 			]
 		];
+		iconBlock: [ :item | self iconForItem: item ];
 		columns: {
 			TreeColumnModel new
 				headerLabel: 'Graph';
