@@ -1,4 +1,4 @@
-as yet unclassified
+instance creation
 sha: aSHA type: aTypeString
 
 	^ self new
