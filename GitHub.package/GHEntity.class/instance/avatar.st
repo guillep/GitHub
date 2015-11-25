@@ -1,5 +1,6 @@
 accessing
 avatar
+	" Use a oneshot connection for this. "
 	^ ZnEasy client
 		url: self avatarUrl;
 		accept: (ZnMimeType main: 'image' sub: '*');

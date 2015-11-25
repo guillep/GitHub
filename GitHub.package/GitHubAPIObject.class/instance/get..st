@@ -1,4 +1,4 @@
-initialization
+operations
 get: urlPathSegments
 	| urlMemento result |
 

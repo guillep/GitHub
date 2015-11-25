@@ -1,4 +1,5 @@
 initialization
 initializeWithClient: aZnClient
 
-	client := aZnClient
+	super initializeWithClient: aZnClient.
+	self jsonReader: NeoJSONReader new.

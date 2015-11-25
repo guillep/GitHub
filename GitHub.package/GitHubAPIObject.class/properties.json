@@ -4,9 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "SkipLentz 10/16/2015 12:04",
 	"instvars" : [
-		 ],
+		"client",
+		"jsonReader" ],
 	"name" : "GitHubAPIObject",
 	"pools" : [
 		 ],
