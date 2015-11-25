@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 10/6/2015 12:13",
+	"instvars" : [
+		"avatar_url" ],
+	"name" : "GHEntity",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 10/6/2015 11:06",
+	"instvars" : [
+		"client" ],
+	"name" : "GitHub",
+	"pools" : [
+		 ],
+	"super" : "GitHubAPIObject",
+	"type" : "normal" }

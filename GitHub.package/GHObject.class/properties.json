@@ -1,0 +1,17 @@
+{
+	"category" : "GitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 10/6/2015 11:04",
+	"instvars" : [
+		"created_at",
+		"updated_at",
+		"id",
+		"url" ],
+	"name" : "GHObject",
+	"pools" : [
+		 ],
+	"super" : "GitHubAPIObject",
+	"type" : "normal" }
