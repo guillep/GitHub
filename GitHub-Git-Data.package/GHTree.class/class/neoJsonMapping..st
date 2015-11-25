@@ -1,6 +1,6 @@
 accessing
 neoJsonMapping: mapper
-	self basicNeoJsonMapping: mapper.
+	super neoJsonMapping: mapper.
 	mapper for: self do: [ :mapping |
 		(mapping mapInstVar: #tree) valueSchema: #ArrayOfTreeEntries
 	].

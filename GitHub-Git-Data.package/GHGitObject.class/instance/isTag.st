@@ -1,0 +1,4 @@
+testing
+isTag
+
+	^ type = 'tag'

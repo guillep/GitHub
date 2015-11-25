@@ -1,0 +1,4 @@
+testing
+isCommit
+
+	^ type = 'commit'

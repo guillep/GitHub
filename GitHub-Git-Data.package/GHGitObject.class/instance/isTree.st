@@ -1,0 +1,4 @@
+testing
+isTree
+
+	^ type = 'tree'

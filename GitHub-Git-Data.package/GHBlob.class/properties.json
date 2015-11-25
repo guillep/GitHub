@@ -2,19 +2,17 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
-	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait + GHTContentBearer classTrait + GHTToJSONParameter classTrait",
+	"classtraitcomposition" : "GHTContentBearer classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
 		"content",
 		"size",
-		"sha",
-		"encoding",
-		"url" ],
+		"encoding" ],
 	"name" : "GHBlob",
 	"pools" : [
 		 ],
-	"super" : "Object",
-	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL + GHTContentBearer + GHTToJSONParameter",
+	"super" : "GHGitObject",
+	"traitcomposition" : "GHTContentBearer",
 	"type" : "normal" }

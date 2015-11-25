@@ -1,0 +1,18 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait + GHTToJSONParameter classTrait",
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sha",
+		"type",
+		"url" ],
+	"name" : "GHGitObject",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL + GHTToJSONParameter",
+	"type" : "normal" }
