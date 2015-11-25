@@ -5,7 +5,8 @@ initializePresenter
 		newRepo ifNotNil: [
 			logBrowser repository: newRepo.
 			checkoutButton enable.
-			commitButton enable.
+			commitButton enabled: (GHLocalRepository
+				isRepositoryLoadedAndNotDetached: newRepo name).
 			branchesDropDown items: newRepo branches
 		]
 	].
