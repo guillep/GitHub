@@ -11,7 +11,7 @@
 		"info",
 		"rulerController",
 		"repository" ],
-	"name" : "GitHubBrowser",
+	"name" : "GitHubLogBrowser",
 	"pools" : [
 		 ],
 	"super" : "ComposableModel",
