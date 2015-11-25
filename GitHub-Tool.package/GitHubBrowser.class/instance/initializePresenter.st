@@ -20,6 +20,6 @@ initializePresenter
 				yourself.
 			TreeColumnModel new
 				headerLabel: 'Committed';
-				displayBlock: [ :item | item content commitTime ];
+				displayBlock: [ :item | self stringForTime: item content commitTime ];
 				yourself.
 		}.
