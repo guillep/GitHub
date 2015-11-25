@@ -24,6 +24,11 @@ baseline03: spec
 			package: 'GitHub-Repositories' with: [
 				spec requires: #(#GitHub ). ];
 			package: #'GitHub-Contents' with: [
-				spec requires: #('GitHub-Repositories' #GitHub ). ];
+				spec requires: #('GitHub-Repositories' ). ];
 			package: #'GitHub-Git-Data' with: [
-				spec requires: #('GitHub-Repositories' ). ]. ].
+				spec requires: #('GitHub-Repositories' ). ];
+			package: #'GitHub-FileTree' with: [
+				spec requires: #(#'GitHub-Git-Data' #'GitHub-Users' ). ].
+		spec 
+			group: 'filetree' with: #(#'GitHub-FileTree' );
+			group: 'default' with: #(#'GitHub-Git-Data' #'GitHub-Contents' #'GitHub-Users' ). ].
