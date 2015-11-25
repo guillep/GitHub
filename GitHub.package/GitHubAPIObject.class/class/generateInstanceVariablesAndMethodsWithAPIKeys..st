@@ -2,7 +2,7 @@ generation
 generateInstanceVariablesAndMethodsWithAPIKeys: anArray
 	| apiKeys dateAndTimeVars urlVars|
 
-	apiKeys := anArray copy.
+	apiKeys := anArray deepCopy.
 	apiKeys do: [ :each | | eachtwo selector |
 		eachtwo := each copy.
 		selector := (each replaceAll: $_ with: Character space) asCamelCase asLegalSelector.
@@ -16,16 +16,16 @@ generateInstanceVariablesAndMethodsWithAPIKeys: anArray
 			]
 	].
 	dateAndTimeVars := self instanceVariables
-		select: [ :each | (each asString last: 3) = '_at' ]
+		select: [ :each | (each size > 2) and: [(each asString last: 3) = '_at'] ]
 		thenCollect: [ :each | each asSymbol ].
 	urlVars := self instanceVariables
-		select: [ :each | (each asString last: 4) = '_url' ]
+		select: [ :each | (each size > 3) and: [(each asString last: 4) = '_url'] ]
 		thenCollect: [ :each | each asSymbol ].
-	self
+	urlVars isEmpty ifFalse: [ self classSide
 		compile: 'urlInstVars' , '
 	^ (super urlInstVars) , ' , (urlVars asString)
-		classified: 'accessing'.
-	self
+		classified: 'accessing' ].
+	dateAndTimeVars isEmpty ifFalse: [ self classSide
 		compile: 'dateAndTimeInstVars' , '
 	^ (super dateAndTimeInstVars) , ' , (dateAndTimeVars asString)
-		classified: 'accessing'.
+		classified: 'accessing' ].
