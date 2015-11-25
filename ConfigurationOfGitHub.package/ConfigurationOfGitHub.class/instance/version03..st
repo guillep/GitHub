@@ -7,7 +7,8 @@ version03: spec
 		spec description: 'version 0.3
 - Added Git-Data API for manipulating git objects (trees, commits, blobs) and refs.
 - - Contains a commit builder which eases committing, with several options such as force update, replacing the entire tree, setting the commit message, etc.
-- Added writing in FileTree by subclassing from FileTreeRepository.'.
+- Added writing in FileTree by subclassing from FileTreeRepository.
+- Switched to a new architecture which uses traits to split functionality.'.
 		spec author: 'SkipLentz'.
 		spec timestamp: '11/3/2015 17:19'.
 		spec 
