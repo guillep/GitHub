@@ -1,25 +1,20 @@
-baselines
-baseline04: spec
-	<version: '0.4-baseline'>
+baseline
+baseline: spec
+	<baseline>
 
 	spec for: #'common' do: [
-		spec blessing: #'baseline'.
-		spec repository: 'http://smalltalkhub.com/mc/Balletie/GitHub/main/'.
 		spec 
-			project: 'ZincHTTPComponents' with: [
+			configuration: 'ZincHTTPComponents' with: [
 				spec
-					className: #ConfigurationOfZincHTTPComponents;
-					versionString: #'stable';
+					version: '2.6.7';
 					repository: 'http://mc.stfx.eu/ZincHTTPComponents' ];
-			project: 'NeoJSON' with: [
+			configuration: 'NeoJSON' with: [
 				spec
-					className: #ConfigurationOfNeoJSON;
-					versionString: #'stable';
+					version: '11';
 					repository: 'http://mc.stfx.eu/Neo' ];
-			project: 'Hiedra' with: [
+			configuration: 'Hiedra' with: [
 				spec
-					className: #ConfigurationOfHiedra;
-					versionString: #'development';
+					version: #'development';
 					repository: 'http://smalltalkhub.com/mc/MartinDias/Epicea/main/' ].
 		spec 
 			package: #GitHub with: [

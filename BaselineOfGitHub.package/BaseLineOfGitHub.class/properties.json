@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfGitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaseLineOfGitHub",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
