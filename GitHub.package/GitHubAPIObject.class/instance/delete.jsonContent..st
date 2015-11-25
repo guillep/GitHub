@@ -1,7 +1,7 @@
 operations
-put: urlPathSegments jsonContent: neoJSONObjectOrString
+delete: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self
-		method: #put
+		method: #delete
 		on: urlPathSegments
 		jsonContent: neoJSONObjectOrString
