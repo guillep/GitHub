@@ -1,4 +1,4 @@
-accessing
+file creation
 createFileOrDirectoryForTreeEntry: anEntry in: aDirectoryReference
 
 	anEntry type = 'tree'

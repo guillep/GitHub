@@ -1,4 +1,4 @@
-accessing
+loading
 loadContents
 
 	" Create the package directories, which fills 'treeShaToDirectory'. "

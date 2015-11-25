@@ -1,4 +1,4 @@
-accessing
+file creation
 createDirectoryForPackageTree: aTreeEntry
 	| packageName |
 	packageName := aTreeEntry path copyUpToLast: $..

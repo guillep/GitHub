@@ -1,4 +1,4 @@
-accessing
+file creation
 createPackageDirectories
 
 	self directory hasDirectories
