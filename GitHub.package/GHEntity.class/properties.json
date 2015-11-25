@@ -6,7 +6,9 @@
 		 ],
 	"commentStamp" : "SkipLentz 10/6/2015 12:13",
 	"instvars" : [
-		"avatar_url" ],
+		"avatar_url",
+		"name",
+		"login" ],
 	"name" : "GHEntity",
 	"pools" : [
 		 ],
