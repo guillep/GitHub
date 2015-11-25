@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-FileTree",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "ManifestGitHubFileTree",
+	"pools" : [
+		 ],
+	"super" : "PackageManifest",
+	"type" : "normal" }
