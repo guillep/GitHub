@@ -1,3 +1,3 @@
 *GitHub-Git-Data-accessing
-commitsBaseUrl
+gitCommitsBaseUrl
 	^ self url / #git / #commits

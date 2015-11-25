@@ -1,4 +1,4 @@
 *GitHub-Git-Data-accessing
 getCommit: aSHA
 
-	^ self get: self commitsBaseUrl / aSHA decodedAs: GHGitCommit
+	^ self get: self gitCommitsBaseUrl / aSHA decodedAs: GHGitCommit
