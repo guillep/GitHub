@@ -1,0 +1,18 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"author",
+		"committer",
+		"message",
+		"tree",
+		"parents" ],
+	"name" : "GHGitCommit",
+	"pools" : [
+		 ],
+	"super" : "GHGitObject",
+	"type" : "normal" }

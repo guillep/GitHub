@@ -1,0 +1,18 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTToJSONParameter classTrait",
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 10/30/2015 13:50",
+	"instvars" : [
+		"date",
+		"name",
+		"email" ],
+	"name" : "GHGitUserStamp",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"traitcomposition" : "GHTMappedToJSON + GHTToJSONParameter",
+	"type" : "normal" }
