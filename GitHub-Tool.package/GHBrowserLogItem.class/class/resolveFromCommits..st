@@ -7,8 +7,11 @@ resolveFromCommits: aCollection
 		shaToLogItem at: commit sha put: (self fromGHCommit: commit)
 	].
 	shaToLogItem valuesDo: [ :logItem |
-		logItem parents: (logItem commit parents collect: [ :parent |
-			shaToLogItem at: (parent at: 'sha')
+		logItem parents: (logItem commit parents flatCollect: [ :parent |
+			shaToLogItem
+				at: (parent at: 'sha')
+				ifPresent: [ :val | { val } ]
+				ifAbsent: [ #() ]
 		])
 	].
 	^ shaToLogItem values
