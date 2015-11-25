@@ -1,0 +1,16 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sha",
+		"tree",
+		"truncated" ],
+	"name" : "GHTree",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }

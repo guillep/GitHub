@@ -1,0 +1,17 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"content",
+		"size",
+		"sha",
+		"encoding" ],
+	"name" : "GHBlob",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }

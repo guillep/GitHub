@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 10/28/2015 14:18",
+	"instvars" : [
+		"content" ],
+	"name" : "GHTreeEntryWithContent",
+	"pools" : [
+		 ],
+	"super" : "GHTreeEntry",
+	"type" : "normal" }
