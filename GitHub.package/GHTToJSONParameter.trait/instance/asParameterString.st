@@ -1,0 +1,4 @@
+converting
+asParameterString
+
+	^ self fullPrintString

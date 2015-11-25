@@ -5,7 +5,7 @@ method: aMethodSymbol on: urlPathSegments jsonContent: neoJSONObjectOrString
 		self client
 			url: urlPathSegments;
 			entity: (ZnEntity
-				with: neoJSONObjectOrString asString
+				with: neoJSONObjectOrString asParameterString
 				type: ZnMimeType applicationJson);
 			perform: aMethodSymbol
 	]
