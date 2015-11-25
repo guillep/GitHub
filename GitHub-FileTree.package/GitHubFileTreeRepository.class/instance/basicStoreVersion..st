@@ -1,7 +1,6 @@
 storing
 basicStoreVersion: aVersion
 
-	[
 	super basicStoreVersion: aVersion.
 	repo commitBuilder
 		replaceTree;
@@ -9,4 +8,3 @@ basicStoreVersion: aVersion
 		withMessage: aVersion info message;
 		onBranch: branch;
 		push.
-	] timeToRun inspect
