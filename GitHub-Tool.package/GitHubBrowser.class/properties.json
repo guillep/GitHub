@@ -8,7 +8,9 @@
 	"instvars" : [
 		"log",
 		"diff",
-		"info" ],
+		"info",
+		"rulerController",
+		"repository" ],
 	"name" : "GitHubBrowser",
 	"pools" : [
 		 ],
