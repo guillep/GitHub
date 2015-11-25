@@ -1,3 +1,3 @@
 accessing-api
 content
-	^ content
+	^ ZnUtils decodeBase64: self contentEncoded
