@@ -8,7 +8,7 @@ specLayout
 			addSplitter;
 			newColumn: [ :col |
 				col
-					add: #diff;
+					add: #packageList;
 					addSplitter;
 					add: #info.
 			]

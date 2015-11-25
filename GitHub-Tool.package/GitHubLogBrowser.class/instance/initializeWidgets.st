@@ -2,7 +2,5 @@ initialization
 initializeWidgets
 
 	log := self newTree.
-	diff := (self instantiate: DiffModel)
-		showOptions: false;
-		yourself.
+	packageList := self newList.
 	info := self newText.
