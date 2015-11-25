@@ -6,7 +6,6 @@ push
 	curHead := repo getCommit: curHeadRef object sha.
 	curTree := treeBlock value: curHead tree sha.
 	treeEntries := self createTreeEntries.
-	self halt.
 	" Replace the old tree entries. "
 	curTree tree: treeEntries.
 	treeResponse := repo createTree: curTree.
@@ -18,4 +17,5 @@ push
 	commitResponse := repo createCommit: newHead.
 	newHead sha: (commitResponse sha).
 	curHeadRef object: newHead.
+	curHeadRef force: force.
 	updateRefResponse := repo updateRef: curHeadRef.

@@ -16,5 +16,5 @@
 	"name" : "GHCommitBuilder",
 	"pools" : [
 		 ],
-	"super" : "GitHubAPIObject",
+	"super" : "Object",
 	"type" : "normal" }
