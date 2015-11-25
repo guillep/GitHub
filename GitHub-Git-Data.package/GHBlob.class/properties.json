@@ -2,7 +2,7 @@
 	"category" : "GitHub-Git-Data",
 	"classinstvars" : [
 		 ],
-	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait + GHTContentBearer classTrait",
+	"classtraitcomposition" : "GHTMappedToJSON classTrait + GHTMappedToURL classTrait + GHTContentBearer classTrait + GHTToJSONParameter classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
@@ -16,5 +16,5 @@
 	"pools" : [
 		 ],
 	"super" : "Object",
-	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL + GHTContentBearer",
+	"traitcomposition" : "GHTMappedToJSON + GHTMappedToURL + GHTContentBearer + GHTToJSONParameter",
 	"type" : "normal" }
