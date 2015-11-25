@@ -6,9 +6,6 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"api",
-		"username",
-		"repositoryname",
 		"repo",
 		"branch",
 		"treeShaToDirectory" ],
