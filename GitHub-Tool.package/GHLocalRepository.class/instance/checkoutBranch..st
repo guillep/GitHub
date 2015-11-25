@@ -1,8 +1,6 @@
 checkout
-checkoutBranch: aBranchString
+checkoutBranch: aGHBranch
 
-	self head: aBranchString.
-	fileTreeRepo := GitHubFileTreeRepository new
-		initializeWithRepository: self gitHubRepository
-		branch: self head.
-	self load
+	branch := aGHBranch.
+	self head: branch commit.
+	self loadBranchOrVersionAtSha: branch name.

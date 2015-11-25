@@ -12,7 +12,8 @@
 		"checkoutButton",
 		"commitButton",
 		"authenticatedAPI",
-		"authenticatedUser" ],
+		"authenticatedUser",
+		"createBranchButton" ],
 	"name" : "GitHubTool",
 	"pools" : [
 		 ],

@@ -8,7 +8,8 @@
 	"instvars" : [
 		"head",
 		"ghRepo",
-		"fileTreeRepo" ],
+		"fileTreeRepo",
+		"branch" ],
 	"name" : "GHLocalRepository",
 	"pools" : [
 		 ],

@@ -1,0 +1,4 @@
+branching
+beDetachedHead
+
+	branch := nil

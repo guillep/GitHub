@@ -6,6 +6,10 @@ initializeWidgets
 		displayBlock: [ :repo | repo name ].
 	branchesDropDown := self newDropList
 		displayBlock: [ :branch | branch name ].
+	createBranchButton := self newButton
+		icon: Smalltalk ui icons add;
+		disable;
+		yourself.
 	checkoutButton := self newButton
 		label: 'Checkout (Load)';
 		disable;

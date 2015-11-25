@@ -15,6 +15,7 @@ initializePresenter
 		]
 	].
 
+	createBranchButton action: [ self createBranch ].
 	checkoutButton action: [ self checkoutSelectedVersion ].
 	commitButton action: [ self commit ].
 
