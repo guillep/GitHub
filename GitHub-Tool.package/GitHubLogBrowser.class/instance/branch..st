@@ -1,4 +1,4 @@
 accessing
-branch: aBranchOrShaString
+branch: aGHBranch
 
-	branch value: aBranchOrShaString
+	branch value: aGHBranch
