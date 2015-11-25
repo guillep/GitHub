@@ -16,7 +16,7 @@ initializePresenter
 	].
 
 	checkoutButton action: [ self checkoutSelectedVersion ].
-	commitButton action: [ self storeVersion ].
+	commitButton action: [ self commit ].
 
 	logBrowser log whenSelectedItemsChanged: [ :items | | filetreeRepo |
 		items isEmptyOrNil ifFalse: [
