@@ -12,5 +12,5 @@ commitVersions: aMonticelloVersionCollection withMessage: aString
 		replaceTree;
 		directory: fileTreeRepo directory;
 		withMessage: aString;
-		onBranch: branch;
+		onBranch: branch name;
 		push
