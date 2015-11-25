@@ -1,0 +1,20 @@
+{
+	"category" : "GitHub-Git-Data",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 11/2/2015 18:07",
+	"instvars" : [
+		"repo",
+		"ref",
+		"force",
+		"message",
+		"replace",
+		"files",
+		"baseDirectory" ],
+	"name" : "GHCommitBuilder",
+	"pools" : [
+		 ],
+	"super" : "GitHubAPIObject",
+	"type" : "normal" }

@@ -1,5 +1,4 @@
 accessing
-content: aByteArrayOrString
+content: aString
 
-	content := ZnBase64Encoder new
-		encode: aByteArrayOrString asByteArray
+	content := aString
