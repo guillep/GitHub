@@ -1,5 +1,5 @@
 accessing
-loadWorkingTree
+loadContents
 
 	" Load all the filenames. "
 	self allFileNames.
