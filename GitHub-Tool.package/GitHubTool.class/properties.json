@@ -9,7 +9,9 @@
 		"logBrowser",
 		"repositoryDropDown",
 		"checkoutButton",
-		"commitButton" ],
+		"commitButton",
+		"authenticatedAPI",
+		"authenticatedUser" ],
 	"name" : "GitHubTool",
 	"pools" : [
 		 ],

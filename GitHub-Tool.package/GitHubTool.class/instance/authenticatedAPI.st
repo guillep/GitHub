@@ -1,0 +1,4 @@
+accessing
+authenticatedAPI
+
+	^ authenticatedAPI value
