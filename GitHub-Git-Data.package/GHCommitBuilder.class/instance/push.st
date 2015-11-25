@@ -4,8 +4,9 @@ push
 	| curHeadRef curHead curTree treeEntries treeResponse newHead commitResponse updateRefResponse |
 	curHeadRef := repo getRef: ref.
 	curHead := repo getCommit: curHeadRef object sha.
-	curTree := repo getTree: curHead tree sha recursively: replace.
+	curTree := treeBlock value: curHead tree sha.
 	treeEntries := self createTreeEntries.
+	self halt.
 	" Replace the old tree entries. "
 	curTree tree: treeEntries.
 	treeResponse := repo createTree: curTree.

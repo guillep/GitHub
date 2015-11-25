@@ -4,15 +4,15 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "SkipLentz 11/2/2015 18:07",
+	"commentStamp" : "SkipLentz 11/3/2015 10:39",
 	"instvars" : [
 		"repo",
 		"ref",
 		"force",
 		"message",
-		"replace",
 		"files",
-		"baseDirectory" ],
+		"baseDirectory",
+		"treeBlock" ],
 	"name" : "GHCommitBuilder",
 	"pools" : [
 		 ],

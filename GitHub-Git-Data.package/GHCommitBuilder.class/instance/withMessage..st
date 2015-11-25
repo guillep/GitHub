@@ -1,4 +1,4 @@
-accessing-files
+accessing-commit
 withMessage: aString
 
 	message := aString

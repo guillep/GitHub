@@ -3,4 +3,4 @@ setDefaults
 
 	ref := 'heads/' , repo defaultBranch.
 	message := self defaultMessage.
-	replace := false.
+	self modifyTree. " Base the tree on an existing tree. "

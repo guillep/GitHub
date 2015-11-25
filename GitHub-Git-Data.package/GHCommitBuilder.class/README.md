@@ -30,7 +30,7 @@ Internal Representation and Key Implementation Points.
 	message:			The commit message.
 	newHead:			
 	ref:					The refspec which references the parent commit. Could be refs/heads/master, or refs/notes/commits.
-	replace: 				Whether or not the entire tree should be replaced. This is the only way to delete files in the repository.
+	treeBlock: 			The way to get a tree from a SHA. This is set by modifyTree and replaceTree.
 	repo:				The repository.
 
 Nota Bene: Currently, we ignore only the .git directory. This means no .gitignore. This is because there are multiple places of defining .gitignore (global config, for example), and we don't aim to reimplement git porcelain from scratch.
