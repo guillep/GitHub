@@ -1,0 +1,24 @@
+{
+	"category" : "GitHub-Contents",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"_links",
+		"content",
+		"download_url",
+		"encoding",
+		"git_url",
+		"html_url",
+		"name",
+		"path",
+		"sha",
+		"size",
+		"type" ],
+	"name" : "GHContent",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }
