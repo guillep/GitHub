@@ -1,0 +1,17 @@
+{
+	"category" : "GitHub-Tool",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"logBrowser",
+		"repositoryDropDown",
+		"checkoutButton",
+		"commitButton" ],
+	"name" : "GitHubTool",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

@@ -1,4 +1,4 @@
-spec
+specs
 specLayout
 	<spec: #default>
 
