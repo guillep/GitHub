@@ -1,3 +1,3 @@
 accessing-api
-size
+contentSize
 	^ size
