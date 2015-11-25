@@ -2,6 +2,7 @@
 	"category" : "GitHub-Contents",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTContentBearer classTrait + GHTMappedToURL classTrait + GHTMappedToJSON classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "SkipLentz 10/28/2015 12:32",
@@ -16,9 +17,11 @@
 		"path",
 		"sha",
 		"size",
-		"type" ],
+		"type",
+		"url" ],
 	"name" : "GHContent",
 	"pools" : [
 		 ],
-	"super" : "GHObject",
+	"super" : "GitHubAPIObject",
+	"traitcomposition" : "GHTContentBearer + GHTMappedToURL + GHTMappedToJSON",
 	"type" : "normal" }
