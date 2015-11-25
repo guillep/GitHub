@@ -5,9 +5,9 @@ initializePresenter
 	log
 		multiSelection: false;
 		rowInset: 0;
-		whenSelectedNodesChanged: [ :collection |
-			collection isEmptyOrNil ifFalse: [
-				info text: collection last content message.
+		whenSelectedItemsChanged: [ :items |
+			items isEmptyOrNil ifFalse: [
+				info text: items last message.
 			]
 		];
 		columns: {
