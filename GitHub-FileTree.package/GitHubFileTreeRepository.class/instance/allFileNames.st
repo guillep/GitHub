@@ -1,5 +1,4 @@
 accessing
 allFileNames
 
-	self createPackageDirectories.
-	^ super allFileNames
+	^ self packageTreeEntries collect: #path

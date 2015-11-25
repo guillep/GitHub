@@ -1,5 +1,5 @@
 accessing
 allPackageNames
 
-	^ originalDirectoryToDirectory keys
+	^ self allFileNames
 		collect: [ :pkgDirName | pkgDirName copyUpToLast: $. ]
