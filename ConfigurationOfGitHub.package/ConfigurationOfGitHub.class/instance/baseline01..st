@@ -4,17 +4,18 @@ baseline01: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
+		spec repository: 'http://smalltalkhub.com/mc/Balletie/GitHub/main/'.
 		spec 
-			project: 'NeoJSON' with: [
-				spec
-					className: #ConfigurationOfNeoJSON;
-					versionString: #'stable';
-					repository: 'http://mc.stfx.eu/Neo' ];
 			project: 'ZincHTTPComponents' with: [
 				spec
 					className: #ConfigurationOfZincHTTPComponents;
 					versionString: #'stable';
-					repository: 'http://mc.stfx.eu/ZincHTTPComponents' ].
+					repository: 'http://mc.stfx.eu/ZincHTTPComponents' ];
+			project: 'NeoJSON' with: [
+				spec
+					className: #ConfigurationOfNeoJSON;
+					versionString: #'stable';
+					repository: 'http://mc.stfx.eu/Neo' ].
 		spec 
 			package: #GitHub with: [
 				spec requires: #('ZincHTTPComponents' 'NeoJSON' ). ];
