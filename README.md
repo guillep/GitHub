@@ -3,6 +3,16 @@ GitHub
 
 This project provides bindings to the GitHub API for Pharo. In particular, the aim is to provide bindings using Object-Oriented design principles.
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+**Table of Contents**
+
+- [GitHub](#github)
+    - [Installation](#installation)
+    - [Documentation](#documentation)
+    - [License](#license)
+
+<!-- markdown-toc end -->
+
 ## Installation
 
 To install into Pharo, evaluate the following Metacello script in your Pharo 5 image:
