@@ -6,6 +6,7 @@ Getting started
 
 - [Getting started](#getting-started)
     - [Initializing the main API entry point](#initializing-the-main-api-entry-point)
+    - [Next steps](#next-steps)
 
 <!-- markdown-toc end -->
 
@@ -34,3 +35,12 @@ user := github user.
 " Get a user by their username. "
 user := github user: 'MaryJane'.
 ```
+
+## Next steps
+
+The next step is to request a user's repository. One can do this by sending `repository:` with a repository's name as argument, or sending `repositories` to get all of the repositories of the user. These methods return instances of `GHRepository` (or an `Array` of them), and can be asked several questions such as `defaultBranch`.
+
+For more operations, such as committing, on repositories, see the following API documentation:
+
+- [Git Data API](./git-data.md): Low-level operations on git concepts (objects and references).
+- [Contents API](./contents-api.md): High-level operations on files.
