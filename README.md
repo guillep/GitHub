@@ -16,6 +16,10 @@ Metacello new
 
 Replace the `master` part with any version tag to load that specific version.
 
+## Documentation
+
+Documentation can be found in the [`docs` directory](./docs/). To get started with the API, read ["Getting started"](./docs/getting-started.md).
+
 ## License
 
 This project is released under the MIT License. See [`LICENSE`](./LICENSE) for details.
