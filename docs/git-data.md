@@ -6,7 +6,7 @@ Git Data API
 
 - [Git Data API](#git-data-api)
     - [Operations on low-level Git concepts](#operations-on-low-level-git-concepts)
-    - [Committing](#committing)
+    - [Creating a commit.](#creating-a-commit)
 
 <!-- markdown-toc end -->
 
@@ -47,7 +47,7 @@ tree tree: { newEntry }.
 repo createTree: tree.
 ```
 
-## Committing
+## Creating a commit.
 
 The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the [`GHCommitBuilder`](../GitHub-Git-Data.package/GHCommitBuilder.class/README.md) class. The builder provides several methods which simplify the process of performing a commit:
 
