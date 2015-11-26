@@ -51,6 +51,12 @@ repo createTree: tree.
 
 The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the [`GHCommitBuilder`](../GitHub-Git-Data.package/GHCommitBuilder.class/README.md) class. The builder provides several methods which simplify the process of performing a commit:
 
+- **`push`**: This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:
+  1. Take the current `HEAD` commit of the given branch (or the default branch of the repository),
+  2. Get the tree it points to,
+  3. Update the contents of this tree using the given files and create the new one,
+  4. Create a new commit object pointing to the new tree,
+  5. Update the `HEAD` reference to point to the new commit.
 - **`directory:`**: This method takes a `FileReference` containing files, and stages them for the commit as if they were in the root directory of the repository.
 
 	The location of where they should be committed can be overridden by sending `baseDirectory:` afterwards with a `FileReference`. Note that this `FileReference`'s path should be contained within the reference passed to `directory:`.
