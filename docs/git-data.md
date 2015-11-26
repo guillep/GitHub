@@ -49,9 +49,7 @@ repo createTree: tree.
 
 ## Committing
 
-The operations described in the previous section have been combined to allow for creating a commit on a repository. This process is implemented in the [`GHCommitBuilder`](../GitHub-Git-Data.package/GHCommitBuilder.class/README.md) class.
-
-The builder provides several methods which simplify the process of performing a commit:
+The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the [`GHCommitBuilder`](../GitHub-Git-Data.package/GHCommitBuilder.class/README.md) class. The builder provides several methods which simplify the process of performing a commit:
 
 - **`directory:`**: This method takes a `FileReference` containing files, and stages them for the commit as if they were in the root directory of the repository.
 
