@@ -1,17 +1,17 @@
 {
 	"class" : {
-		"instVarNamesToParameterNames" : "Balletie 11/25/2015 13:53:45",
-		"neoJsonMapping:" : "Balletie 11/25/2015 13:53:45",
-		"neoJsonParameterMapping:" : "Balletie 11/25/2015 13:53:45",
-		"ref:object:" : "Balletie 11/25/2015 13:53:45",
-		"urlInstVars" : "Balletie 11/25/2015 13:53:45" },
+		"instVarNamesToParameterNames" : "SkipLentz 10/29/2015 17:54",
+		"neoJsonMapping:" : "SkipLentz 10/29/2015 17:46",
+		"neoJsonParameterMapping:" : "SkipLentz 10/29/2015 17:58",
+		"ref:object:" : "SkipLentz 11/20/2015 13:35",
+		"urlInstVars" : "SkipLentz 10/29/2015 17:04" },
 	"instance" : {
-		"asStringForUpdate" : "Balletie 11/25/2015 13:53:45",
-		"force:" : "Balletie 11/25/2015 13:53:45",
-		"forceUpdate" : "Balletie 11/25/2015 13:53:45",
-		"object" : "Balletie 11/25/2015 13:53:45",
-		"object:" : "Balletie 11/25/2015 13:53:45",
-		"ref" : "Balletie 11/25/2015 13:53:45",
-		"ref:" : "Balletie 11/25/2015 13:53:45",
-		"refWithoutPrefix" : "Balletie 11/25/2015 13:53:45",
-		"url" : "Balletie 11/25/2015 13:53:45" } }
+		"asStringForUpdate" : "SkipLentz 10/30/2015 11:24",
+		"force:" : "SkipLentz 10/30/2015 11:12",
+		"forceUpdate" : "SkipLentz 10/30/2015 11:13",
+		"object" : "SkipLentz 10/29/2015 17:49",
+		"object:" : "SkipLentz 10/30/2015 11:30",
+		"ref" : "SkipLentz 11/2/2015 16:53",
+		"ref:" : "SkipLentz 11/25/2015 18:00",
+		"refWithoutPrefix" : "SkipLentz 11/2/2015 16:52",
+		"url" : "SkipLentz 10/29/2015 16:55" } }

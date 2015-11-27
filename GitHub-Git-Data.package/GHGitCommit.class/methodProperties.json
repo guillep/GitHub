@@ -1,17 +1,17 @@
 {
 	"class" : {
-		"basicNeoJsonParameterMapping:" : "Balletie 11/25/2015 13:53:45",
-		"mapType:forSchema:mapper:" : "Balletie 11/25/2015 13:53:45",
-		"message:parents:tree:" : "Balletie 11/25/2015 13:53:45",
-		"neoJsonMapping:" : "Balletie 11/25/2015 13:53:45" },
+		"basicNeoJsonParameterMapping:" : "SkipLentz 10/30/2015 14:40",
+		"mapType:forSchema:mapper:" : "SkipLentz 10/30/2015 13:51",
+		"message:parents:tree:" : "SkipLentz 10/30/2015 15:06",
+		"neoJsonMapping:" : "SkipLentz 10/30/2015 13:50" },
 	"instance" : {
-		"author" : "Balletie 11/25/2015 13:53:45",
-		"author:" : "Balletie 11/25/2015 13:53:45",
-		"committer" : "Balletie 11/25/2015 13:53:45",
-		"committer:" : "Balletie 11/25/2015 13:53:45",
-		"message" : "Balletie 11/25/2015 13:53:45",
-		"message:" : "Balletie 11/25/2015 13:53:45",
-		"parents" : "Balletie 11/25/2015 13:53:45",
-		"parents:" : "Balletie 11/25/2015 13:53:45",
-		"tree" : "Balletie 11/25/2015 13:53:45",
-		"tree:" : "Balletie 11/25/2015 13:53:45" } }
+		"author" : "SkipLentz 10/30/2015 14:48",
+		"author:" : "SkipLentz 10/30/2015 14:49",
+		"committer" : "SkipLentz 10/30/2015 14:49",
+		"committer:" : "SkipLentz 10/30/2015 14:49",
+		"message" : "SkipLentz 10/30/2015 14:49",
+		"message:" : "SkipLentz 10/30/2015 14:49",
+		"parents" : "SkipLentz 10/30/2015 14:49",
+		"parents:" : "SkipLentz 10/30/2015 14:49",
+		"tree" : "SkipLentz 10/30/2015 14:49",
+		"tree:" : "SkipLentz 10/30/2015 14:49" } }
