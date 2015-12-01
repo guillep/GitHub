@@ -1,10 +1,10 @@
 accessing
-head: aShaOrBranch
+head: aGHCommit
 
-	head := aShaOrBranch.
+	head := aGHCommit.
 	fileTreeRepo := GitHubFileTreeRepository new
 		initializeWithRepository: self gitHubRepository
-		branch: aShaOrBranch.
+		branch: aGHCommit sha.
 	fileTreeRepo allPackageNames do: [ :packageName | | wc |
 		wc := MCWorkingCopy forPackage: (MCPackage named: packageName).
 		wc repositoryGroup addRepository: fileTreeRepo ].
