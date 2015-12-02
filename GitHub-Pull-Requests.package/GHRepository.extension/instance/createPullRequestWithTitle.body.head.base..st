@@ -10,4 +10,5 @@ createPullRequestWithTitle: aTitleString body: aString head: toMergeBranchString
 						title: aTitleString;
 						body: aString;
 						head: toMergeBranchString;
-						base: aBranchString))
+						base: aBranchString;
+						yourself))
