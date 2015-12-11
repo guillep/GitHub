@@ -1,0 +1,15 @@
+{
+	"category" : "GitHub-Tool",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"RememberedAuthenticated" ],
+	"commentStamp" : "",
+	"instvars" : [
+		"authenticatedAPI",
+		"authenticatedUser" ],
+	"name" : "GitHubAbstractTool",
+	"pools" : [
+		 ],
+	"super" : "ComposableModel",
+	"type" : "normal" }

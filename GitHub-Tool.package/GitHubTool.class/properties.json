@@ -3,19 +3,17 @@
 	"classinstvars" : [
 		 ],
 	"classvars" : [
-		"RememberedAuthenticated" ],
+		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"logBrowser",
-		"repositoryDropDown",
 		"branchesDropDown",
 		"checkoutButton",
 		"commitButton",
-		"authenticatedAPI",
-		"authenticatedUser",
-		"createBranchButton" ],
+		"logBrowser",
+		"createBranchButton",
+		"repositoryDropDown" ],
 	"name" : "GitHubTool",
 	"pools" : [
 		 ],
-	"super" : "ComposableModel",
+	"super" : "GitHubAbstractTool",
 	"type" : "normal" }
