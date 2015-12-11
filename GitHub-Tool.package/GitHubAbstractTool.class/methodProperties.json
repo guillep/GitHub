@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"open" : "SkipLentz 11/25/2015 11:00",
+		"rememberAuthentication:" : "SkipLentz 11/17/2015 17:09",
+		"rememberedAuthenticated" : "SkipLentz 11/19/2015 10:42",
+		"resetRememberedAuthenticated" : "SkipLentz 11/19/2015 10:42" },
+	"instance" : {
+		"authenticatedAPI" : "SkipLentz 11/17/2015 14:53",
+		"authenticatedAPI:" : "SkipLentz 11/17/2015 17:09",
+		"authenticatedMenu" : "SkipLentz 11/17/2015 17:02",
+		"authenticatedUser" : "SkipLentz 11/17/2015 14:55",
+		"defaultWindowModelClass" : "SkipLentz 11/16/2015 18:17",
+		"initialize" : "SkipLentz 12/11/2015 14:11",
+		"initializeLoginFields" : "SkipLentz 11/17/2015 17:09",
+		"loginMenu" : "SkipLentz 12/11/2015 14:13",
+		"newTextInputWithDefaults" : "SkipLentz 11/17/2015 16:15",
+		"open" : "SkipLentz 11/17/2015 14:58",
+		"showAuthenticatedMenu" : "SkipLentz 11/17/2015 14:50",
+		"showLoginMenu" : "SkipLentz 11/17/2015 14:58" } }
