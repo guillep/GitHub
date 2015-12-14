@@ -1,5 +1,5 @@
 displaying
 showAuthenticatedMenu
 
-	window toolbar: self authenticatedMenu.
+	super showAuthenticatedMenu.
 	window toolbarFillSpace: false.
