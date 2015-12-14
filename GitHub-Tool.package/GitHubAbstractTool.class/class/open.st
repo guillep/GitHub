@@ -2,7 +2,7 @@ displaying
 open
 	| inst |
 
-	inst := self new open.
+	inst := super open.
 	self rememberedAuthenticated ifNotNil: [
 		inst authenticatedAPI: RememberedAuthenticated
 	]

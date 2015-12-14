@@ -11,5 +11,5 @@
 	"name" : "GitHubAbstractTool",
 	"pools" : [
 		 ],
-	"super" : "ComposableModel",
+	"super" : "AbstractLoginModel",
 	"type" : "normal" }

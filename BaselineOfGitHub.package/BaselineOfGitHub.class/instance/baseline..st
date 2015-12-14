@@ -30,7 +30,7 @@ baseline: spec
 			package: #'GitHub-FileTree' with: [
 				spec requires: #(#'GitHub-Git-Data' #'GitHub-Users' ). ];
 			package: #'Widget-Extensions-Balletie' with: [
-				spec file: 'Widget-Extensions-Balletie-SkipLentz.3'.
+				spec file: 'Widget-Extensions-Balletie-SkipLentz.6'.
   				spec repository: 'http://smalltalkhub.com/mc/Balletie/Widget-Extensions/main/'. ];
 			package: 'GitHub-Tool' with: [
 				spec requires: #(#'GitHub-FileTree' 'Hiedra' 'Widget-Extensions-Balletie' ). ].

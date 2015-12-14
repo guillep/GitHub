@@ -1,5 +1,5 @@
 displaying
 showLoginMenu
 
-	window toolbar: self loginMenu.
+	super showLoginMenu.
 	window toolbarFillSpace: true.
