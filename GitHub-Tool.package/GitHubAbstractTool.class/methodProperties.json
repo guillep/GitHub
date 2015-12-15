@@ -1,0 +1,17 @@
+{
+	"class" : {
+		"open" : "SkipLentz 12/14/2015 16:21",
+		"rememberAuthentication:" : "SkipLentz 11/17/2015 17:09",
+		"rememberedAuthenticated" : "SkipLentz 11/19/2015 10:42",
+		"resetRememberedAuthenticated" : "SkipLentz 11/19/2015 10:42" },
+	"instance" : {
+		"authenticatedAPI" : "SkipLentz 11/17/2015 14:53",
+		"authenticatedAPI:" : "SkipLentz 11/17/2015 17:09",
+		"authenticatedMenu" : "SkipLentz 11/17/2015 17:02",
+		"authenticatedUser" : "SkipLentz 11/17/2015 14:55",
+		"initialize" : "SkipLentz 12/11/2015 14:11",
+		"onAcceptUsername:password:" : "SkipLentz 12/14/2015 16:06",
+		"passwordGhostText" : "SkipLentz 12/14/2015 15:59",
+		"showAuthenticatedMenu" : "SkipLentz 12/14/2015 16:09",
+		"showLoginMenu" : "SkipLentz 12/14/2015 16:09",
+		"usernameGhostText" : "SkipLentz 12/14/2015 15:59" } }
