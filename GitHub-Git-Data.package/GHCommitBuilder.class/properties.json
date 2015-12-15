@@ -12,7 +12,8 @@
 		"message",
 		"files",
 		"baseDirectory",
-		"treeBlock" ],
+		"treeBlock",
+		"workBlock" ],
 	"name" : "GHCommitBuilder",
 	"pools" : [
 		 ],

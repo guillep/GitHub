@@ -10,6 +10,7 @@ commitVersions: aMonticelloVersionCollection withMessage: aString
 	].
 	self gitHubRepository commitBuilder
 		replaceTree;
+		displayProgress;
 		directory: fileTreeRepo directory;
 		withMessage: aString;
 		onBranch: branch name;
