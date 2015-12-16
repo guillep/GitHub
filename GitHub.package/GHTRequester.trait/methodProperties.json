@@ -7,14 +7,14 @@
 		"delete:" : "Balletie 11/25/2015 13:53:52",
 		"delete:jsonContent:" : "Balletie 11/25/2015 13:53:52",
 		"get:" : "Balletie 11/25/2015 13:53:52",
-		"get:as:" : "Balletie 11/25/2015 13:53:52",
-		"get:decodedAs:" : "Balletie 11/25/2015 13:53:52",
 		"initializeWithClient:" : "Balletie 11/25/2015 13:53:52",
 		"jsonReader" : "Balletie 11/25/2015 13:53:52",
 		"jsonReader:" : "Balletie 11/25/2015 13:53:52",
 		"method:on:jsonContent:" : "Balletie 11/25/2015 13:53:52",
 		"patch:jsonContent:" : "Balletie 11/25/2015 13:53:52",
 		"post:jsonContent:" : "Balletie 11/25/2015 13:53:52",
+		"propagateClientAndReaderTo:" : "SkipLentz 12/16/2015 14:02",
 		"put:jsonContent:" : "Balletie 11/25/2015 13:53:52",
 		"readerCopy" : "Balletie 11/25/2015 13:53:52",
-		"rememberUrlDo:" : "Balletie 11/25/2015 13:53:52" } }
+		"rememberUrlDo:" : "Balletie 11/25/2015 13:53:52",
+		"responseAs:" : "SkipLentz 12/16/2015 17:41" } }

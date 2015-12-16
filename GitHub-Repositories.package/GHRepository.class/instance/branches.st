@@ -1,4 +1,6 @@
 accessing - branches
 branches
 
-	^ self get: self branchesBaseUrl decodedAs: self arrayOfBranches
+	^ self
+		get: self branchesBaseUrl;
+		responseAs: self arrayOfBranches

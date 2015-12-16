@@ -1,8 +1,5 @@
 accessing - branches
 arrayOfBranches
-
 	^ self
-		at: #ArrayOfBranches
-		putIfAbsent: [ :mapping |
-			mapping listOfElementSchema: GHBranch
-		]
+		putMapping: [ :mapping | mapping listOfElementSchema: GHBranch ]
+		ifAbsentAt: #ArrayOfBranches

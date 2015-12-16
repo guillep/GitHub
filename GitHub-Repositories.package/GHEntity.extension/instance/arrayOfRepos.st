@@ -1,8 +1,5 @@
 *GitHub-Repositories-accessing
 arrayOfRepos
-
 	^ self
-		at: #ArrayOfRepos
-		putIfAbsent: [ :mapping |
-			mapping listOfElementSchema: GHRepository
-		]
+		putMapping: [ :mapping | mapping listOfElementSchema: GHRepository ]
+		ifAbsentAt: #ArrayOfRepos
