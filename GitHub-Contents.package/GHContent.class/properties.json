@@ -1,7 +1,8 @@
 {
 	"category" : "GitHub-Contents",
 	"classinstvars" : [
-		 ],
+		"contentCommitKeyToSchema",
+		"nullCommitKeyToSchema" ],
 	"classtraitcomposition" : "GHTContentBearer classTrait + GHTMappedToURL classTrait + GHTMappedToJSON classTrait",
 	"classvars" : [
 		 ],
