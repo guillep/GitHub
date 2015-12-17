@@ -8,7 +8,8 @@
 	"commentStamp" : "SkipLentz 10/16/2015 12:04",
 	"instvars" : [
 		"client",
-		"jsonReader" ],
+		"jsonReader",
+		"errorHandlers" ],
 	"name" : "GitHubAPIObject",
 	"pools" : [
 		 ],

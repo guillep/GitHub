@@ -1,0 +1,1 @@
+I am thrown when an invalid request is sent, e.g. when submitting a Pull Request for a branch that already has an active Pull Request.

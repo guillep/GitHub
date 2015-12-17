@@ -4,6 +4,7 @@ responseAs: aClassOrSchema
 	to its own data structure. "
 
 	| result |
+	self handleErrorResponse.
 	" Close the current stream. "
 	self jsonReader ifNotNil: [ self jsonReader close ].
 	self jsonReader on: self client contents readStream.
