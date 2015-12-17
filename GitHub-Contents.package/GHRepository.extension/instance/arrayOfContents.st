@@ -1,8 +1,5 @@
 *GitHub-Contents-accessing
 arrayOfContents
-
 	^ self
-		at: #ArrayOfContents
-		putIfAbsent: [ :mapping |
-			mapping listOfElementSchema: GHContent
-		]
+		putMapping: [ :mapping | mapping listOfElementSchema: GHContent ]
+		ifAbsentAt: #ArrayOfContents

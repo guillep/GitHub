@@ -1,4 +1,6 @@
 *GitHub-Users-accessing
 user
 
-	^ self get: 'user' as: GHLoggedInUser
+	^ self
+		get: 'user';
+		responseAs: GHLoggedInUser

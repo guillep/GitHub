@@ -1,0 +1,15 @@
+{
+	"category" : "GitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 12/17/2015 10:48",
+	"instvars" : [
+		"limit",
+		"resetDateAndTime" ],
+	"name" : "GHRateLimitExceededError",
+	"pools" : [
+		 ],
+	"super" : "GHAPIError",
+	"type" : "normal" }

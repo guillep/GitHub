@@ -2,5 +2,6 @@
 updateRef: aRef
 
 	^ self
-		patch: self refsBaseUrl / aRef refWithoutPrefix
-		jsonContent: aRef asStringForUpdate
+		patch: self refsBaseUrl / aRef refWithoutPrefix 
+			jsonContent: aRef asStringForUpdate;
+		responseAs: GHRef

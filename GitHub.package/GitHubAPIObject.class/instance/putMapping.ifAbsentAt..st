@@ -1,5 +1,5 @@
 convenience
-at: mappingName putIfAbsent: aMappingBlock
+putMapping: aMappingBlock ifAbsentAt: mappingName
 	" Get the mappingName and put the mapping if absent "
 	self jsonReader mappings
 		at: mappingName

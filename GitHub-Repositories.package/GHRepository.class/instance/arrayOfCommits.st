@@ -1,8 +1,5 @@
 accessing - commits
 arrayOfCommits
-
 	^ self
-		at: #ArrayOfCommits
-		putIfAbsent: [ :mapping |
-			mapping listOfElementSchema: GHCommit
-		]
+		putMapping: [ :mapping | mapping listOfElementSchema: GHCommit ]
+		ifAbsentAt: #ArrayOfCommits

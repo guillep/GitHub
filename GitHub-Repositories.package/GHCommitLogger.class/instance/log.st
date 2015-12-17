@@ -4,4 +4,6 @@ log
 	| url |
 	url := repo commitsBaseUrl copy.
 	url queryAddAll: parameters.
-	^ repo get: url decodedAs: repo arrayOfCommits.
+	^ repo
+		get: url;
+		responseAs: repo arrayOfCommits.

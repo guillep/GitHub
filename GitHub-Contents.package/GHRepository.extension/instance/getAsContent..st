@@ -1,4 +1,6 @@
 *GitHub-Contents-accessing
 getAsContent: pathSegments
 
-	^ self get: pathSegments as: GHContent
+	^ self
+		get: pathSegments;
+		responseAs: GHContent
