@@ -1,4 +1,4 @@
 accessing
-jsonReader: aJSONReader
+github
 
 	self explicitRequirement

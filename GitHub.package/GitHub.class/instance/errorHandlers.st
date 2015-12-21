@@ -1,4 +1,4 @@
-error handling
+accessing
 errorHandlers
 
 	^ errorHandlers ifNil: [ errorHandlers := self defaultErrorHandlers ]

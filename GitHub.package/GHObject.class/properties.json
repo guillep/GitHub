@@ -14,6 +14,6 @@
 	"name" : "GHObject",
 	"pools" : [
 		 ],
-	"super" : "GitHubAPIObject",
+	"super" : "GHRelObject",
 	"traitcomposition" : "GHTMappedToURL + GHTTimeStamped + GHTMappedToJSON",
 	"type" : "normal" }

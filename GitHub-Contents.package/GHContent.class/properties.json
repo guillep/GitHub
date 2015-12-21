@@ -23,6 +23,6 @@
 	"name" : "GHContent",
 	"pools" : [
 		 ],
-	"super" : "GitHubAPIObject",
+	"super" : "GHRelObject",
 	"traitcomposition" : "GHTContentBearer + GHTMappedToURL + GHTMappedToJSON",
 	"type" : "normal" }

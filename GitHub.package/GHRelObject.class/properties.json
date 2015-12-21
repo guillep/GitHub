@@ -5,12 +5,10 @@
 	"classtraitcomposition" : "GHTRequester classTrait",
 	"classvars" : [
 		 ],
-	"commentStamp" : "SkipLentz 10/16/2015 12:04",
+	"commentStamp" : "SkipLentz 12/21/2015 13:20",
 	"instvars" : [
-		"client",
-		"jsonReader",
-		"errorHandlers" ],
-	"name" : "GitHubAPIObject",
+		"github" ],
+	"name" : "GHRelObject",
 	"pools" : [
 		 ],
 	"super" : "Object",
