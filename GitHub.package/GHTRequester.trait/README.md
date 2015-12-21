@@ -4,6 +4,6 @@ My responsibilities are: allow performing of requests through a simple API (see 
 
 Public API and Key Messages
 
-- All the operations in the operations protocol   
+- All the operations in the operations protocol.
 - responseAs: and responseAs:onInvalidFields:: For retrieving the response as a representation.
 - onErrorCode:do: and other error handlers in the error handling protocol.

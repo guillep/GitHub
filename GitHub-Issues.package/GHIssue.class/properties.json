@@ -1,0 +1,29 @@
+{
+	"category" : "GitHub-Issues",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"closed_at",
+		"labels_url",
+		"user",
+		"assignee",
+		"labels",
+		"number",
+		"title",
+		"body",
+		"comments_url",
+		"locked",
+		"state",
+		"milestone",
+		"html_url",
+		"events_url",
+		"closed_by",
+		"comments" ],
+	"name" : "GHIssue",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }
