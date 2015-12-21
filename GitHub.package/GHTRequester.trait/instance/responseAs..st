@@ -9,5 +9,5 @@ responseAs: aClassOrSchema
 	self jsonReader ifNotNil: [ self jsonReader close ].
 	self jsonReader on: self client contents readStream.
 	result := self jsonReader nextAs: aClassOrSchema.
-	self propagateClientAndReaderTo: result.
+	self propagateTo: result.
 	^ result

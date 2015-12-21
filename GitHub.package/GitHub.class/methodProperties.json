@@ -6,4 +6,8 @@
 		"initializeWithAuthorizationField:" : "Balletie 11/25/2015 13:53:52",
 		"initializeWithUsername:password:" : "Balletie 11/25/2015 13:53:52" },
 	"instance" : {
-		"initializeWithClient:" : "Balletie 11/25/2015 13:53:52" } }
+		"client" : "SkipLentz 12/17/2015 18:19",
+		"errorHandlers" : "SkipLentz 12/17/2015 18:27",
+		"github" : "SkipLentz 12/21/2015 11:58",
+		"initializeWithClient:" : "SkipLentz 12/21/2015 11:40",
+		"jsonReader" : "SkipLentz 12/17/2015 18:20" } }

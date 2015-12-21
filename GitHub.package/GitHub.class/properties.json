@@ -2,13 +2,17 @@
 	"category" : "GitHub",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "GHTRequester classTrait",
 	"classvars" : [
 		 ],
-	"commentStamp" : "SkipLentz 10/6/2015 11:06",
+	"commentStamp" : "SkipLentz 12/21/2015 13:13",
 	"instvars" : [
-		 ],
+		"client",
+		"jsonReader",
+		"errorHandlers" ],
 	"name" : "GitHub",
 	"pools" : [
 		 ],
-	"super" : "GitHubAPIObject",
+	"super" : "Object",
+	"traitcomposition" : "GHTRequester",
 	"type" : "normal" }

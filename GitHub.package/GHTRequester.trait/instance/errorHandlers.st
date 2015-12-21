@@ -1,4 +1,4 @@
-error handling
+accessing
 errorHandlers
 
 	self explicitRequirement

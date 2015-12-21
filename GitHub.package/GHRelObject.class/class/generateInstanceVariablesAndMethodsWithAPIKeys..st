@@ -6,7 +6,7 @@ generateInstanceVariablesAndMethodsWithAPIKeys: anArray
 	apiKeys do: [ :each | | eachtwo selector |
 		eachtwo := each copy.
 		selector := (each replaceAll: $_ with: Character space) asCamelCase asValidSelector.
-		((self allSelectorsAboveUntil: GitHubAPIObject) includes: selector)
+		((self allSelectorsAboveUntil: GHRelObject) includes: selector)
 			ifFalse: [
 				self addInstVarNamed: eachtwo.
 				self
