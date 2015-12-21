@@ -27,8 +27,10 @@ Use `GHRepository>>createContent:onPath:withMessage:`, with the parameters being
 
 ## Update a file
 
-Use `GHContent>>updateContent:withMessage:`, with similar parameters as with the method to create files. This method does not update the object instance itself.
+Use `GHContent>>updateContent:withMessage:`, with similar parameters as with the method to create files. This method updates the same instance with the new content information, thus it is possible to send `updateContent:withMessage:` multiple times.
+
+Moreover, it returns the `GHGitCommit` object representing the commit of the change. Thus from here it is possible to switch to using the [Git Data API](./git-data.md) and create commits with the returned `GHGitCommit` object as parent.
 
 ## Delete a file
 
-Use `GHContent>>deleteContentWithMessage:`.
+Use `GHContent>>deleteContentWithMessage:`. Like `updateContent:withMessage:`, this method returns a `GHGitCommit` instance.
