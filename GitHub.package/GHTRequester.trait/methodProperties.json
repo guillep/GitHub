@@ -13,8 +13,10 @@
 		"handleErrorResponse" : "SkipLentz 12/17/2015 13:15",
 		"jsonReader" : "Balletie 11/25/2015 13:53:52",
 		"method:on:jsonContent:" : "Balletie 11/25/2015 13:53:52",
+		"onErrorCode:" : "SkipLentz 12/21/2015 11:25",
 		"onErrorCode:do:" : "SkipLentz 12/21/2015 11:29",
 		"onForbidden:" : "SkipLentz 12/17/2015 14:02",
+		"onInvalidFields" : "SkipLentz 12/21/2015 11:25",
 		"onInvalidFields:" : "SkipLentz 12/17/2015 14:02",
 		"onInvalidJSON:" : "SkipLentz 12/21/2015 11:31",
 		"onNotFound:" : "SkipLentz 12/17/2015 14:02",
@@ -26,3 +28,4 @@
 		"putMapping:ifAbsentAt:" : "SkipLentz 12/21/2015 12:11",
 		"rememberUrlDo:" : "Balletie 11/25/2015 13:53:52",
 		"responseAs:" : "SkipLentz 12/17/2015 18:25",
+		"responseAs:onInvalidFields:" : "SkipLentz 12/21/2015 11:29" } }
