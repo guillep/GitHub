@@ -4,12 +4,11 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "SkipLentz 11/5/2015 16:41",
+	"commentStamp" : "SkipLentz 12/22/2015 14:13",
 	"instvars" : [
-		"repo",
-		"parameters" ],
+		 ],
 	"name" : "GHCommitLogger",
 	"pools" : [
 		 ],
-	"super" : "Object",
+	"super" : "GHAbstractBuilder",
 	"type" : "normal" }

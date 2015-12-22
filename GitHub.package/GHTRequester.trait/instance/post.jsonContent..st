@@ -2,6 +2,6 @@ operations
 post: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self
-		method: #post
+		method: #POST
 		on: urlPathSegments
 		jsonContent: neoJSONObjectOrString
