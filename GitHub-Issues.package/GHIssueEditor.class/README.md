@@ -4,7 +4,7 @@ I operate on a GHIssue instance.
 
 Public API and Key Messages
 
-- See the API documentation at https://developer.github.com/v3/issues/#edit-an-issue
+- See the API documentation at https://developer.github.com/v3/issues/#edit-an-issue   
 - closeIssue or openIssue: close or open the issue.
 - Use GHIssue>>editor or use self class>>on: with a GHIssue as parameter to instantiate me.
 
@@ -14,4 +14,4 @@ issue editor
 	withLabels: #('not-fixed');
 	body: issue body,
 'Edit: nevermind.';
-	milestone: nil
+	removeMilestone
