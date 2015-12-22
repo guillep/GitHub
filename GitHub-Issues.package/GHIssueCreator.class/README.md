@@ -1,4 +1,4 @@
-I am a creator of issues on a repository. I follow the builder pattern, by taking several parameters (labels, assignee, body, title, milestone) to create an issue (#create).
+I am a creator of issues on a repository. I follow the builder pattern, by taking several parameters (labels, assignee, body, title, milestone) to create an issue (self>>execute).
 
 My collaborator is GHRepository
 
