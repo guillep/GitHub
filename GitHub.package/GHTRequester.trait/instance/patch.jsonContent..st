@@ -2,6 +2,6 @@ operations
 patch: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self
-		method: #patch
+		method: #PATCH
 		on: urlPathSegments
 		jsonContent: neoJSONObjectOrString

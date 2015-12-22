@@ -2,6 +2,6 @@ operations
 put: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self
-		method: #put
+		method: #PUT
 		on: urlPathSegments
 		jsonContent: neoJSONObjectOrString

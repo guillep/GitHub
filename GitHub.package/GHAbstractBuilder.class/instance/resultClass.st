@@ -1,0 +1,4 @@
+accessing
+resultClass
+
+	self subclassResponsibility

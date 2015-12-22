@@ -1,0 +1,4 @@
+accessing
+requiredParameters
+
+	self subclassResponsibility

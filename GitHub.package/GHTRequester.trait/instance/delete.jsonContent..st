@@ -2,6 +2,6 @@ operations
 delete: urlPathSegments jsonContent: neoJSONObjectOrString
 
 	^ self
-		method: #delete
+		method: #DELETE
 		on: urlPathSegments
 		jsonContent: neoJSONObjectOrString
