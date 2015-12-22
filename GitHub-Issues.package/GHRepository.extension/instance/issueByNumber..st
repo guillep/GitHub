@@ -2,5 +2,5 @@
 issueByNumber: anIntegerOrString
 
 	^ self
-		get: self issuesBaseUrl;
+		get: self issuesBaseUrl / anIntegerOrString asString;
 		responseAs: GHIssue
