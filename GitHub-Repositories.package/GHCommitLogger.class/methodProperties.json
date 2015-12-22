@@ -1,11 +1,14 @@
 {
 	"class" : {
-		"on:" : "Balletie 11/25/2015 13:53:46" },
+		 },
 	"instance" : {
 		"author:" : "Balletie 11/25/2015 13:53:46",
 		"fromShaOrBranch:" : "Balletie 11/25/2015 13:53:46",
 		"inPath:" : "Balletie 11/25/2015 13:53:46",
-		"initializeWithRepository:" : "Balletie 11/25/2015 13:53:46",
-		"log" : "SkipLentz 12/16/2015 12:13",
+		"log" : "SkipLentz 12/22/2015 14:05",
+		"operation" : "SkipLentz 12/22/2015 14:05",
+		"requiredParameters" : "SkipLentz 12/22/2015 14:03",
+		"resultValueSchema" : "SkipLentz 12/22/2015 14:04",
 		"since:" : "Balletie 11/25/2015 13:53:46",
-		"until:" : "Balletie 11/25/2015 13:53:46" } }
+		"until:" : "Balletie 11/25/2015 13:53:46",
+		"url" : "SkipLentz 12/22/2015 14:03" } }
