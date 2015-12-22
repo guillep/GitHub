@@ -5,4 +5,4 @@ execute
 	url := self prepareRequest.
 	^ operandRequester
 		method: self operation on: url;
-		responseAs: self resultClass
+		responseAs: self resultValueSchema

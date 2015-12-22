@@ -1,4 +1,4 @@
 accessing
-resultClass
+resultValueSchema
 
 	self subclassResponsibility
