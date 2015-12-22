@@ -2,4 +2,5 @@ accessing
 neoJsonMapping: mapper
 	self basicNeoJsonMapping: mapper.
 	mapper for: self do: [ :mapping |
-		(mapping mapInstVar: #user) valueSchema: GHUser ]
+		#(user assignee closed_by) do: [ :each |
+			(mapping mapInstVar: each) valueSchema: GHUser ] ]
