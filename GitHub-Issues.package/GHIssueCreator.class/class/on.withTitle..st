@@ -1,7 +1,6 @@
 instance creation
 on: aRepository withTitle: aString
 
-	^ self
-		on: aRepository;
+	^ (self on: aRepository)
 		title: aString;
 		yourself
