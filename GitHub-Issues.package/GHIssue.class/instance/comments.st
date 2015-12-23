@@ -2,5 +2,5 @@ accessing
 comments
 
 	^ self
-		get: self commentsBaseUrl;
+		get: self commentsUrl;
 		responseAs: self arrayOfIssueComments
