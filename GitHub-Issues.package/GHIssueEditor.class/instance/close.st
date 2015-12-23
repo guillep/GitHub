@@ -1,4 +1,4 @@
 accessing
-closeIssue
+close
 
 	self setState: false

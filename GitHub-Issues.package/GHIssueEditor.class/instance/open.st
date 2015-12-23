@@ -1,4 +1,4 @@
 accessing
-openIssue
+open
 
 	self setState: true
