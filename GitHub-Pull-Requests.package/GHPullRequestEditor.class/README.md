@@ -1,0 +1,1 @@
+I am an editor of pull requests. I work the same way as my superclass, so refer to the class comment there :).

@@ -1,0 +1,1 @@
+Signalled when a merge attempt of a GHPullRequest fails due to a merge conflict.
