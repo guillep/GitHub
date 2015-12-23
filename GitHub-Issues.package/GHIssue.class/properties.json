@@ -21,7 +21,8 @@
 		"html_url",
 		"events_url",
 		"closed_by",
-		"comments" ],
+		"comments",
+		"pull_request" ],
 	"name" : "GHIssue",
 	"pools" : [
 		 ],
