@@ -1,0 +1,1 @@
+This error is signalled when mergeMatchingHeadSha: or mergeWithMessage:matchingHeadSha: was sent to a GHPullRequest, and the head SHA did not match.

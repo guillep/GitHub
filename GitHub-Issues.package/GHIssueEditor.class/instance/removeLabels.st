@@ -1,0 +1,4 @@
+accessing
+removeLabels
+
+	self withLabels: #()

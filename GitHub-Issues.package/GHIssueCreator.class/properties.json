@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-Issues",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 12/22/2015 14:25",
+	"instvars" : [
+		 ],
+	"name" : "GHIssueCreator",
+	"pools" : [
+		 ],
+	"super" : "GHAbstractBuilder",
+	"type" : "normal" }

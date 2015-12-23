@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"createPullRequestFromIssue:fromHead:toBase:" : "SkipLentz 12/23/2015 14:52",
+		"createPullRequestFromIssueNumber:fromHead:toBase:" : "SkipLentz 12/23/2015 14:52",
+		"pullRequestByNumber:" : "SkipLentz 12/23/2015 16:23",
+		"pullRequestCreatorWithTitle:head:base:" : "SkipLentz 12/23/2015 14:26",
+		"pullsBaseUrl" : "SkipLentz 12/23/2015 14:50" } }

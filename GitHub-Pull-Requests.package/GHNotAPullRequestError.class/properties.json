@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-Pull-Requests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 12/23/2015 15:37",
+	"instvars" : [
+		 ],
+	"name" : "GHNotAPullRequestError",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }

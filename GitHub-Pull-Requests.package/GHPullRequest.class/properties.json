@@ -1,0 +1,34 @@
+{
+	"category" : "GitHub-Pull-Requests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 12/23/2015 16:22",
+	"instvars" : [
+		"_links",
+		"additions",
+		"base",
+		"changed_files",
+		"commits",
+		"commits_url",
+		"deletions",
+		"diff_url",
+		"head",
+		"issue_url",
+		"merge_commit_sha",
+		"mergeable",
+		"mergeable_state",
+		"merged",
+		"merged_at",
+		"merged_by",
+		"patch_url",
+		"review_comment_url",
+		"review_comments",
+		"review_comments_url",
+		"statuses_url" ],
+	"name" : "GHPullRequest",
+	"pools" : [
+		 ],
+	"super" : "GHIssue",
+	"type" : "normal" }

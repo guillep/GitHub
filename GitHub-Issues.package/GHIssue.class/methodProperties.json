@@ -1,0 +1,27 @@
+{
+	"class" : {
+		"dateAndTimeInstVars" : "SkipLentz 12/21/2015 16:29",
+		"neoJsonMapping:" : "SkipLentz 12/22/2015 15:45",
+		"urlInstVars" : "SkipLentz 12/21/2015 16:29" },
+	"instance" : {
+		"addCommentWithBody:" : "SkipLentz 12/23/2015 13:41",
+		"arrayOfIssueComments" : "SkipLentz 12/22/2015 15:52",
+		"assignee" : "SkipLentz 12/21/2015 16:29",
+		"body" : "SkipLentz 12/21/2015 16:29",
+		"closedAt" : "SkipLentz 12/21/2015 16:29",
+		"closedBy" : "SkipLentz 12/21/2015 16:29",
+		"comments" : "SkipLentz 12/23/2015 13:41",
+		"commentsUrl" : "SkipLentz 12/21/2015 16:29",
+		"editor" : "SkipLentz 12/22/2015 15:13",
+		"eventsUrl" : "SkipLentz 12/21/2015 16:29",
+		"htmlUrl" : "SkipLentz 12/21/2015 16:29",
+		"isLocked" : "SkipLentz 12/21/2015 17:28",
+		"isPullRequest" : "SkipLentz 12/23/2015 14:08",
+		"labels" : "SkipLentz 12/21/2015 16:29",
+		"labelsUrl" : "SkipLentz 12/21/2015 16:29",
+		"milestone" : "SkipLentz 12/21/2015 16:29",
+		"number" : "SkipLentz 12/21/2015 16:29",
+		"numberOfComments" : "SkipLentz 12/21/2015 17:28",
+		"state" : "SkipLentz 12/21/2015 16:29",
+		"title" : "SkipLentz 12/21/2015 16:29",
+		"user" : "SkipLentz 12/21/2015 16:29" } }

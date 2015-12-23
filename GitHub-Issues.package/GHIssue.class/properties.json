@@ -1,0 +1,30 @@
+{
+	"category" : "GitHub-Issues",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 12/22/2015 16:19",
+	"instvars" : [
+		"closed_at",
+		"labels_url",
+		"user",
+		"assignee",
+		"labels",
+		"number",
+		"title",
+		"body",
+		"comments_url",
+		"locked",
+		"state",
+		"milestone",
+		"html_url",
+		"events_url",
+		"closed_by",
+		"comments",
+		"pull_request" ],
+	"name" : "GHIssue",
+	"pools" : [
+		 ],
+	"super" : "GHObject",
+	"type" : "normal" }
