@@ -1,11 +1,12 @@
 {
 	"class" : {
-		"basicNeoJsonMapping:" : "Balletie 11/25/2015 13:53:52",
+		"basicNeoJsonMapping:" : "SkipLentz 1/4/2016 12:26",
 		"dateAndTimeInstVars" : "Balletie 11/25/2015 13:53:52",
 		"mapAsDateAndTime:mapping:" : "Balletie 11/25/2015 13:53:52",
 		"mapAsSchema:array:mapping:" : "Balletie 11/25/2015 13:53:52",
 		"mapAsZnUrl:mapping:" : "Balletie 11/25/2015 13:53:52",
 		"neoJsonMapping:" : "Balletie 11/25/2015 13:53:52",
+		"setAllowNil:" : "SkipLentz 1/4/2016 12:26",
 		"setDateAndTimeMapping:" : "Balletie 11/25/2015 13:53:52",
 		"setZnUrlMapping:" : "Balletie 11/25/2015 13:53:52",
 		"urlInstVars" : "Balletie 11/25/2015 13:53:52" },
