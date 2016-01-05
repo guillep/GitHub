@@ -31,6 +31,10 @@ baseline: spec
 				spec requires: #('GitHub-Repositories'). ];
 			package: #'GitHub-Pull-Requests' with: [
 				spec requires: #('GitHub-Issues'). ];
+
+			package: #'GitHub-Tests' with: [
+				spec requires: #('default') ];
+
 			package: #'GitHub-FileTree' with: [
 				spec requires: #(#'GitHub-Git-Data'). ];
 			package: #'Widget-Extensions-Balletie' with: [
@@ -40,4 +44,5 @@ baseline: spec
 				spec requires: #(#'GitHub-FileTree' 'Hiedra' 'Widget-Extensions-Balletie' ). ].
 		spec
 			group: 'default' with: #(#'GitHub-Contents' #'GitHub-Git-Data' #'GitHub-Pull-Requests' );
+			group: 'tests' with: #(#'GitHub-Tests' 'default');
 			group: 'tool' with: #('GitHub-Tool' ). ].
