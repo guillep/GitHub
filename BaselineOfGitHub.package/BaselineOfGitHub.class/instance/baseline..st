@@ -10,7 +10,7 @@ baseline: spec
 					repository: 'http://mc.stfx.eu/ZincHTTPComponents' ];
 			configuration: 'NeoJSON' with: [
 				spec
-					version: #'development';
+					version: #'bleedingEdge';
 					repository: 'http://mc.stfx.eu/Neo' ];
 			configuration: 'Hiedra' with: [
 				spec
