@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 1/4/2016 15:39",
+	"instvars" : [
+		 ],
+	"name" : "GitHubTestEntrypoint",
+	"pools" : [
+		 ],
+	"super" : "GitHub",
+	"type" : "normal" }

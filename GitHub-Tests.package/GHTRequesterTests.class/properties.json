@@ -1,0 +1,15 @@
+{
+	"category" : "GitHub-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"github",
+		"server" ],
+	"name" : "GHTRequesterTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

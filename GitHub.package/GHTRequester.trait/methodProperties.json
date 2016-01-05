@@ -4,13 +4,13 @@
 	"instance" : {
 		"client" : "Balletie 11/25/2015 13:53:52",
 		"defaultErrorHandlers" : "SkipLentz 12/17/2015 14:01",
-		"defaultForbiddenHandle:" : "SkipLentz 12/17/2015 14:23",
+		"defaultForbiddenHandle:" : "SkipLentz 1/5/2016 11:39",
 		"delete:" : "Balletie 11/25/2015 13:53:52",
 		"delete:jsonContent:" : "SkipLentz 12/22/2015 13:11",
 		"errorHandlers" : "SkipLentz 12/16/2015 11:44",
 		"get:" : "Balletie 11/25/2015 13:53:52",
 		"github" : "SkipLentz 12/21/2015 11:58",
-		"handleErrorResponse" : "SkipLentz 12/17/2015 13:15",
+		"handleErrorResponse" : "SkipLentz 1/5/2016 11:41",
 		"jsonContent:" : "SkipLentz 12/22/2015 11:52",
 		"jsonReader" : "Balletie 11/25/2015 13:53:52",
 		"method:on:" : "SkipLentz 12/22/2015 13:10",
@@ -28,6 +28,6 @@
 		"propagateTo:" : "SkipLentz 12/21/2015 11:58",
 		"put:jsonContent:" : "SkipLentz 12/22/2015 13:11",
 		"putMapping:ifAbsentAt:" : "SkipLentz 12/21/2015 12:11",
-		"rememberUrlDo:" : "Balletie 11/25/2015 13:53:52",
+		"rememberUrlDo:" : "SkipLentz 1/5/2016 10:47",
 		"responseAs:" : "SkipLentz 12/17/2015 18:25",
 		"responseAs:onInvalidFields:" : "SkipLentz 12/21/2015 11:29" } }
