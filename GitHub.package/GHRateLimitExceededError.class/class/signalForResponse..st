@@ -4,7 +4,7 @@ signalForResponse: aResponse
 	headers := aResponse headers.
 	json := NeoJSONObject fromString: aResponse contents.
 	^ self new
-		limit: (headers at: self rateLimitLimitFieldName);
-		windowResetDateAndTime: (headers at: self rateLimitResetFieldName);
+		limit: (headers at: self rateLimitLimitFieldName) asInteger;
+		windowResetDateAndTime: (headers at: self rateLimitResetFieldName) asInteger;
 		signal: json message;
 		yourself
