@@ -20,15 +20,19 @@ baseline: spec
 			package: #GitHub with: [
 				spec requires: #('ZincHTTPComponents' 'NeoJSON' ). ];
 			package: #'GitHub-Users' with: [
-				spec requires: #(#GitHub ). ];
+				spec requires: #(#GitHub). ];
 			package: 'GitHub-Repositories' with: [
-				spec requires: #(#GitHub ). ];
+				spec requires: #(#GitHub 'GitHub-Git-Data' 'GitHub-Users'). ];
 			package: #'GitHub-Contents' with: [
-				spec requires: #('GitHub-Repositories' ). ];
+				spec requires: #('GitHub-Repositories'). ];
 			package: #'GitHub-Git-Data' with: [
-				spec requires: #('GitHub-Repositories' ). ];
+				spec requires: #('GitHub-Repositories'). ];
+			package: #'GitHub-Issues' with: [
+				spec requires: #('GitHub-Repositories'). ];
+			package: #'GitHub-Pull-Requests' with: [
+				spec requires: #('GitHub-Issues'). ];
 			package: #'GitHub-FileTree' with: [
-				spec requires: #(#'GitHub-Git-Data' #'GitHub-Users' ). ];
+				spec requires: #(#'GitHub-Git-Data'). ];
 			package: #'Widget-Extensions-Balletie' with: [
 				spec file: 'Widget-Extensions-Balletie-SkipLentz.6'.
   				spec repository: 'http://smalltalkhub.com/mc/Balletie/Widget-Extensions/main/'. ];
