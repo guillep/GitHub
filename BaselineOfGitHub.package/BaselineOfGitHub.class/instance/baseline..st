@@ -39,5 +39,5 @@ baseline: spec
 			package: 'GitHub-Tool' with: [
 				spec requires: #(#'GitHub-FileTree' 'Hiedra' 'Widget-Extensions-Balletie' ). ].
 		spec
-			group: 'default' with: #(#'GitHub-Contents' #'GitHub-Pull-Requests' );
+			group: 'default' with: #(#'GitHub-Contents' #'GitHub-Git-Data' #'GitHub-Pull-Requests' );
 			group: 'tool' with: #('GitHub-Tool' ). ].
