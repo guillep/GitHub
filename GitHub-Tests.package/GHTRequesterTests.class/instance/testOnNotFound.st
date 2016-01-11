@@ -1,4 +1,4 @@
-tests
+tests - errors
 testOnNotFound
 
 	self

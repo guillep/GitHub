@@ -1,0 +1,4 @@
+accessing
+urlToETag
+
+	self explicitRequirement

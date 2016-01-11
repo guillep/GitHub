@@ -5,4 +5,5 @@ My responsibility is allowing the user to log in, either with an access token or
 My main collaborator is ZnClient, which I use to communicate with GitHub's API.
 
 - See GHTRequester for my behavior.
+- Caching is lazily initialized, so it is disabled by default.
 - Initialize me using self class>>initializeWithUsername:password: or self class>>initializeWithAccessToken:

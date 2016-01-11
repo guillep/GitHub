@@ -1,4 +1,4 @@
-tests
+tests - errors
 testErrorCode: anInteger withMessage: aString shouldRaise: anErrorClass
 
 	self

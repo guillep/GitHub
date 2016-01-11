@@ -1,4 +1,4 @@
-tests
+tests - errors
 testPropagateTo
 	" Assert that the GitHub instance is propagated to all requesters,
 	  both to requesters in Collections or just singular requesters. "

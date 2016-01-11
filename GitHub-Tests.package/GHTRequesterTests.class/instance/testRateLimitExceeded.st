@@ -1,4 +1,4 @@
-tests
+tests - errors
 testRateLimitExceeded
 	| now |
 	now := DateAndTime now rounded.

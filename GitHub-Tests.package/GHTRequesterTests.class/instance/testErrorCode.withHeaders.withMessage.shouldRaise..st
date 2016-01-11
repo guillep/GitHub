@@ -1,4 +1,4 @@
-tests
+tests - errors
 testErrorCode: anInteger withHeaders: aDictionaryOrSimilar withMessage: aString shouldRaise: anErrorClass
 
 	server onRequestRespond: [ :request | | response |
