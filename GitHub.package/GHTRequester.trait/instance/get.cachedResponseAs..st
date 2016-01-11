@@ -6,7 +6,12 @@ get: urlPathSegments cachedResponseAs: aClassOrSchema
 	  and return it.
 	  If not present, it will perform a non-conditional request. "
 	| isNotModified result |
-	isNotModified := self conditionalGet: urlPathSegments.
+	self client url: urlPathSegments.
+	self outdatedETag ifTrue: [
+		^ self
+			get: urlPathSegments;
+			cacheResponseAs: aClassOrSchema ].
+	isNotModified := self performConditionalGet.
 	" Check if the conditional request returned a match. "
 	isNotModified ifFalse: [
 		^ self
