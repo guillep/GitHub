@@ -5,7 +5,7 @@ get: urlPathSegments cachedResponseAs: aClassOrSchema
 	  If the resource was modified, it will cache the new result
 	  and return it.
 	  If not present, it will perform a non-conditional request. "
-	| isNotModified result | 
+	| isNotModified result |
 	isNotModified := self conditionalGet: urlPathSegments.
 	" Check if the conditional request returned a match. "
 	isNotModified ifFalse: [

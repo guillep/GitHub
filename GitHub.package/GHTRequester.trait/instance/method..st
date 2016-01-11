@@ -8,4 +8,8 @@ method: aMethodSymbol
 	eTag := self client response headers
 		at: 'ETag'
 		ifAbsent: [ ^ self ].
-	self urlToETag at: url put: eTag.
+	self urlToETag
+		at: url
+		ifPresent: [ :oldETag |
+			self ttlCache removeKey: oldETag ifAbsent: [ ]].
+	self urlToETag at: url put: eTag 

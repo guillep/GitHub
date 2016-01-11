@@ -17,4 +17,4 @@ testOldCacheRemoval
 		response ].
 	cachedUser := github get: 'user' cachedResponseAs: GHUser.
 	self assert: github ttlCache size equals: 1.
-	self assert: user == cachedUser.
+	self assert: user ~= cachedUser.
