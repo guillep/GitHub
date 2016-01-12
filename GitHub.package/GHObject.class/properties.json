@@ -10,7 +10,8 @@
 		"created_at",
 		"updated_at",
 		"id",
-		"url" ],
+		"url",
+		"eTag" ],
 	"name" : "GHObject",
 	"pools" : [
 		 ],
