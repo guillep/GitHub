@@ -2,14 +2,15 @@
 	"class" : {
 		 },
 	"instance" : {
-		"entryPointClass" : "SkipLentz 1/4/2016 17:12",
-		"setUp" : "SkipLentz 1/5/2016 10:50",
-		"tearDown" : "SkipLentz 1/5/2016 10:49",
 		"testBadCredentials" : "SkipLentz 1/5/2016 11:05",
+		"testConditionalGet" : "SkipLentz 1/12/2016 12:11",
 		"testErrorCode:withHeaders:withMessage:shouldRaise:" : "SkipLentz 1/5/2016 13:27",
 		"testErrorCode:withMessage:shouldRaise:" : "SkipLentz 1/5/2016 13:27",
+		"testGetCachedResponseAs" : "SkipLentz 1/12/2016 12:11",
 		"testInvalidFields" : "SkipLentz 1/5/2016 11:05",
+		"testOldCacheRemoval" : "SkipLentz 1/12/2016 12:12",
 		"testOnInvalidJSON" : "SkipLentz 1/5/2016 11:10",
 		"testOnNotFound" : "SkipLentz 1/5/2016 11:09",
-		"testPropagateTo" : "SkipLentz 1/6/2016 15:22",
+		"testOutdatedETag" : "SkipLentz 1/12/2016 14:03",
+		"testPropagateTo" : "SkipLentz 1/12/2016 14:46",
 		"testRateLimitExceeded" : "SkipLentz 1/5/2016 13:27" } }

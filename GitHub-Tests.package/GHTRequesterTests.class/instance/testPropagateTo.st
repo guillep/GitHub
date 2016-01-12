@@ -1,4 +1,4 @@
-tests
+tests - errors
 testPropagateTo
 	" Assert that the GitHub instance is propagated to all requesters,
 	  both to requesters in Collections or just singular requesters. "
@@ -9,6 +9,8 @@ testPropagateTo
 			yourself ].
 	result := github user.
 	self assert: result github isNotNil.
+
+	" Now test propagation to arrays of domain objects. "
 	server onRequestRespond: [ :request |
 		(ZnResponse ok: (ZnStringEntity json: '[ { "login": "JohnDoe" }, { "login": "JaneDoe" } ]'))
 			setLocation: request url asString; 

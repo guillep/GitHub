@@ -1,6 +1,4 @@
 operations
 delete: urlPathSegments
 
-	^ self rememberUrlDo: [
-		self client delete: urlPathSegments
-	]
+	^ self method: #DELETE on: urlPathSegments

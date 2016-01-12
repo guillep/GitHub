@@ -6,10 +6,9 @@
 		 ],
 	"commentStamp" : "",
 	"instvars" : [
-		"github",
-		"server" ],
+		 ],
 	"name" : "GHTRequesterTests",
 	"pools" : [
 		 ],
-	"super" : "TestCase",
+	"super" : "GHTestCase",
 	"type" : "normal" }

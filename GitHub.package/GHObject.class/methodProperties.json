@@ -4,6 +4,10 @@
 		"urlInstVars" : "Balletie 11/25/2015 13:53:52" },
 	"instance" : {
 		"createdAt" : "Balletie 11/25/2015 13:53:52",
+		"eTag:" : "SkipLentz 1/12/2016 14:40",
 		"id" : "Balletie 11/25/2015 13:53:52",
+		"isOutdated" : "SkipLentz 1/12/2016 15:19",
+		"mostUpToDateETag" : "SkipLentz 1/12/2016 15:11",
+		"update" : "SkipLentz 1/12/2016 16:09",
 		"updatedAt" : "Balletie 11/25/2015 13:53:52",
 		"url" : "Balletie 11/25/2015 13:53:52" } }
