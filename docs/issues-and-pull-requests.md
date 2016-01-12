@@ -1,0 +1,94 @@
+Issues and Pull Requests API
+============================
+
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
+**Table of Contents**
+
+- [Issues and Pull Requests API](#issues-and-pull-requests-api)
+    - [Fetching an Issue or Pull Request](#fetching-an-issue-or-pull-request)
+    - [Creating an Issue or Pull Request](#creating-an-issue-or-pull-request)
+    - [Editing/Manipulating Issues and Pull Requests](#editingmanipulating-issues-and-pull-requests)
+        - [Editing an Issue or Pull Request's properties](#editing-an-issue-or-pull-requests-properties)
+        - [Leaving a comment](#leaving-a-comment)
+        - [Merging a Pull Request](#merging-a-pull-request)
+    - [The difference between Issues and Pull Requests](#the-difference-between-issues-and-pull-requests)
+
+<!-- markdown-toc end -->
+
+With this API one can fetch, create and edit/manipulate Issues and Pull Requests.
+
+## Fetching an Issue or Pull Request
+
+Issues can be fetched in two ways: by its number and by requesting a list of issues with optional parameters. The first way can be requested using `GHRepository>>issueByNumber:`, by passing it the issue number.
+
+The second way, listing issues, allows one to specify multiple parameters. It is done by following the [Builder pattern](https://en.wikipedia.org/wiki/Builder_pattern), allowing us to specify optional parameters for a result (the issue listing).
+
+For example, one can request all issues assigned to user 'Foo', with the labels 'bug' and 'important', with this script:
+
+```smalltalk
+repo issueLister
+	assignedTo: 'foo';
+	withLabels: #('bug' 'important');
+	execute
+```
+
+For an exhaustive list of parameters, see [the developer documentation](https://developer.github.com/v3/issues/#list-issues-for-a-repository) on listing issues, and their corresponding methods in `GHIssueLister`.
+
+A Pull Request can be fetched by its number as well, by using `GHRepository>>pullRequestByNumber:`.
+
+The listing of Pull Requests like with issues is not yet implemented. However, one can use the listing of issues and then convert it into a list of `GHPullRequest`s like so:
+
+```smalltalk
+| listing |
+listing := repo issueLister
+	" Specify optional filter parameters "
+	execute.
+
+listing
+	select: #isPullRequest
+	thenCollect: #asPullRequest
+```
+
+## Creating an Issue or Pull Request
+
+To create an issue, send `GHRepository>>issueCreatorWithTitle:` to a `GHRepository` instance. Similar to the listing of issues, one creates an issue by using a Builder too. The builder follows a syntax similar to that of the `GHIssueLister`. Refer to [the developer documentation](https://developer.github.com/v3/issues/#create-an-issue) for all the parameters, and again their corresponding methods in `GHIssueCreator`.
+
+The same holds for the creation of a pull request, which can be done by sending `GHRepository>>pullRequestCreatorWithTitle:head:base:` with the title of the pull request, the `head` branch specification (the one that is to be merged) and the `base` branch specification (where `head` should be merged into). Cross-repository pull requests (i.e. pull requests from forks) can be done by prefixing the username to the branch name (`username:branch`).
+
+The API supports one other way of creating a pull request, and that is to turn an existing issue into a pull request. The bindings support this as well, and it can be done by sending `GHRepository>>createPullRequestFromIssueNumber:fromHead:toBase:`. Once this is done, the pull request can not in turn be converted back into an issue.
+
+## Editing/Manipulating Issues and Pull Requests
+
+Here I will explain how to manipulate an issue or pull request. By manipulate I mean any operation on an issue or pull request that one can normally do using the Web interface of GitHub.
+
+### Editing an Issue or Pull Request's properties
+
+By sending `GHIssue>>editor` to a `GHIssue` or `GHPullRequest` instance, one gets a builder as answer with the same parameters as the `GHIssueCreator` in the previous section, with several more parameters/actions in addition. The most notable ones are `close` and `open`, which do as their name suggests.
+
+### Leaving a comment
+
+To leave a comment on either an issue or pull request, send `addCommentWithBody`. This returns a `GHIssueComment` instance which has in turn the ability to edit and delete itself. An example:
+
+```smalltalk
+" Get the first issue "
+issue := repo issueLister execute first.
+comment := issue addCommentWithBody: 'Hello from Pharo.'.
+comment editBody: comment body , ' How are you?'.
+comment delete.
+```
+
+### Merging a Pull Request
+
+To merge a Pull Request, send `GHPullRequest>>merge`. There are some other methods for merging too, which allow to set a SHA hash which should match with the current head. This way, if there has been an update since fetching the `GHPullRequest` instance, the merge will not continue.
+
+Another method allows one to set the message of the merge commit, and yet another one allows to set both parameters.
+
+If the merge fails, a `GHPullRequestNotMergeableError` is signalled. If the head SHA (if specified) does not match, a `GHModifiedHeadBranchError` is signalled.
+
+## The difference between Issues and Pull Requests
+
+In short, every pull request is also an issue, and not vice-versa. This is reflected as well in the class diagram of the bindings.
+
+Because of this, one can request a pull request by its number using the issues API. But the API will return an instance of `GHIssue`. Thus, a way is needed to test whether an issue is actually a pull request, or if it's just an ordinary issue. This is provided by `GHIssue>>isPullRequest`.
+
+Furthermore, an existing `GHIssue` can be converted into a `GHPullRequest` by sending `GHIssue>>asPullRequest`. Do note that this will perform a request, since a pull request contains extra information not present in an issue. If the `GHIssue` is not a pull request (`#isPullRequest` returns false), this results in a `GHNotAPullRequestError`.
