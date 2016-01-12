@@ -9,8 +9,8 @@
 		"testGetCachedResponseAs" : "SkipLentz 1/12/2016 12:11",
 		"testInvalidFields" : "SkipLentz 1/5/2016 11:05",
 		"testOldCacheRemoval" : "SkipLentz 1/12/2016 12:12",
-		"testOldETagRemoval" : "SkipLentz 1/11/2016 17:39",
 		"testOnInvalidJSON" : "SkipLentz 1/5/2016 11:10",
 		"testOnNotFound" : "SkipLentz 1/5/2016 11:09",
+		"testOutdatedETag" : "SkipLentz 1/12/2016 13:55",
 		"testPropagateTo" : "SkipLentz 1/6/2016 15:22",
 		"testRateLimitExceeded" : "SkipLentz 1/5/2016 13:27" } }
