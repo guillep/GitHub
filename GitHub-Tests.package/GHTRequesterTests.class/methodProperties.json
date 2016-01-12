@@ -11,6 +11,6 @@
 		"testOldCacheRemoval" : "SkipLentz 1/12/2016 12:12",
 		"testOnInvalidJSON" : "SkipLentz 1/5/2016 11:10",
 		"testOnNotFound" : "SkipLentz 1/5/2016 11:09",
-		"testOutdatedETag" : "SkipLentz 1/12/2016 13:55",
-		"testPropagateTo" : "SkipLentz 1/6/2016 15:22",
+		"testOutdatedETag" : "SkipLentz 1/12/2016 14:03",
+		"testPropagateTo" : "SkipLentz 1/12/2016 14:46",
 		"testRateLimitExceeded" : "SkipLentz 1/5/2016 13:27" } }

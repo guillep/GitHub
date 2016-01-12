@@ -1,5 +1,5 @@
 tests
-testIsOutdated
+testIsOutdatedAndUpdate
 	| object |
 	self
 		respondJSON: '{ "id": 1 }'
@@ -14,7 +14,9 @@ testIsOutdated
 		withHeaders: { 'ETag' -> '"bar"' }.
 	self assert: object isOutdated.
 	server onRequestRespond: [ :request |
-		(request headers at: 'If-None-Match') = '"bar"'
-			ifTrue: [ZnResponse notModified]
-			ifFalse: [self json: '{ "id": 2 }'] ].
-	self assert: object isOutdated
+		(request headers at: 'If-None-Match' ifAbsent: '') = '"bar"'
+			ifTrue: [ ZnResponse notModified ]
+			ifFalse: [ self json: '{ "id": 4 }' ] ].
+	self assert: object isOutdated.
+	object update.
+	self assert: object isOutdated not
