@@ -7,7 +7,7 @@
 	"commentStamp" : "",
 	"instvars" : [
 		 ],
-	"name" : "GHTRequesterTests",
+	"name" : "GHObjectTests",
 	"pools" : [
 		 ],
 	"super" : "GHTestCase",

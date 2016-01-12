@@ -2,10 +2,9 @@ tests - caching
 testGetCachedResponseAs
 
 	| user cachedUser |
-	server onRequestRespond: [ :request | | response |
-		response := (self json: '{ "name": "Foo" }').
-		response headers at: 'ETag' put: 'bar'.
-		response ].
+	self
+		respondJSON: '{ "name": "Foo" }'
+		withHeaders: { 'ETag' -> 'bar' }.
 	user := github get: 'user' cachedResponseAs: GHUser.
 	self assert: user name equals: 'Foo'.
 	self assert: github ttlCache size equals: 1.

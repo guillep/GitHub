@@ -1,0 +1,4 @@
+convenience
+respondNotModified
+
+	self respondNotModifiedWithHeaders: { }
