@@ -1,3 +1,6 @@
 # Emacs and vim
 *~
 *.swp
+
+# Ignore backup files for doclinking
+*.bak
