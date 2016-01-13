@@ -18,7 +18,7 @@ The access token can also be made manually (called a _Personal access token_), v
 
 ## Initializing the main API entry point
 
-The class `GitHub` functions as the main entry point for the API. From there, one can query either the logged in user (i.e. _you_) or a user by specifying the name, by sending the messages `GitHub>>user` and `GitHub>>user:` respectively. These messages will return an instance of `GHUser`.
+The class [`GitHub`](../GitHub.package/GitHub.class/README.md) functions as the main entry point for the API. From there, one can query either the logged in user (i.e. _you_) or a user by specifying the name, by sending the messages [`GitHub`](../GitHub.package/GitHub.class/README.md)`>>`[`user`](../GitHub-Users.package/GitHub.extension/instance/user.st) and [`GitHub`](../GitHub.package/GitHub.class/README.md)`>>`[`user:`](../GitHub-Users.package/GitHub.extension/instance/user..st) respectively. These messages will return an instance of [`GHUser`](../GitHub-Users.package/GHUser.class/README.md).
 
 ```Smalltalk
 | github user |
@@ -38,7 +38,7 @@ user := github user: 'MaryJane'.
 
 ## Next steps
 
-The next step is to request a user's repository. One can do this by sending `repository:` with a repository's name as argument, or sending `repositories` to get all of the repositories of the user. These methods return instances of `GHRepository` (or an `Array` of them), and can be asked several questions such as `defaultBranch`.
+The next step is to request a user's repository. One can do this by sending `repository:` with a repository's name as argument, or sending `repositories` to get all of the repositories of the user. These methods return instances of [`GHRepository`](../GitHub-Repositories.package/GHRepository.class/README.md) (or an `Array` of them), and can be asked several questions such as `defaultBranch`.
 
 For more operations, such as committing, on repositories, see the following API documentation:
 
