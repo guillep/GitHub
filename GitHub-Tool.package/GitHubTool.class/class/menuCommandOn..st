@@ -4,7 +4,8 @@ menuCommandOn: aBuilder
 
 	<worldMenu>
 	(aBuilder item: #GitHub)
-		order: 0.1;
-		icon: Smalltalk tools monticelloBrowser taskbarIcon;
+		order: 0.28;
+		icon: Smalltalk ui icons versionControl;
+		parent: #Tools;
 		label: 'GitHub Tool';
 		action: [ self open ]
