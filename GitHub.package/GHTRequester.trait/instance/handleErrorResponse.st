@@ -6,6 +6,6 @@ handleErrorResponse
 	response isError ifFalse: [ ^ self ].
 	errorBlock := self errorHandlers
 		at: response code
-		ifAbsent: [ self defaultErrorHandlers
-			at: response code ].
+		ifAbsent: [
+			GHAbsentErrorHandlerError signalForResponse: response ].
 	errorBlock value: response

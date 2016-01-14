@@ -2,6 +2,7 @@
 	"class" : {
 		 },
 	"instance" : {
+		"testAbsentErrorHandlerError" : "SkipLentz 1/14/2016 10:59",
 		"testBadCredentials" : "SkipLentz 1/5/2016 11:05",
 		"testConditionalGet" : "SkipLentz 1/12/2016 12:11",
 		"testErrorCode:withHeaders:withMessage:shouldRaise:" : "SkipLentz 1/5/2016 13:27",

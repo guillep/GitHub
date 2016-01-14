@@ -1,0 +1,14 @@
+{
+	"category" : "GitHub",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "SkipLentz 1/14/2016 10:53",
+	"instvars" : [
+		"response" ],
+	"name" : "GHAbsentErrorHandlerError",
+	"pools" : [
+		 ],
+	"super" : "GHAPIError",
+	"type" : "normal" }
