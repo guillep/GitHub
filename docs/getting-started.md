@@ -44,3 +44,4 @@ For more operations, such as committing, on repositories, see the following API 
 
 - [Git Data API](./git-data.md): Low-level operations on git concepts (objects and references).
 - [Contents API](./contents-api.md): High-level operations on files.
+- [Issues and Pull Requests API](./issues-and-pull-requests.md): Operations on Issues and Pull Requests.
