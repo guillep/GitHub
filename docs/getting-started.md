@@ -46,13 +46,13 @@ Errors can be handled with the regular Smalltalk syntax:
    do: [ UIManager default inform: 'Incorrect username or password!' ]
 ```
 
-The ` GitHub` package contains several `Error` classes by default, containing a class comment explaining the conditions under which they are thrown.
+The `GitHub` package contains several `Error` classes by default, containing a class comment explaining the conditions under which they are thrown.
 
 Furthermore, other packages might contain `Error` classes as well, such as `GitHub-Pull-Requests` for merge failures. View the [documentation of that package](./issues-and-pull-request.md) and the class comments for more detail.
 
 ## Updating objects
 
-Send `GHObject>>update` to update a domain object, and send `GHObject>>isOutdated` to test if it is outdated. The `#update` method uses `#isOutdated` internally.
+Send [`GHObject`](../GitHub.package/GHObject.class/README.md)`>>`[`update`](../GitHub.package/GHObject.class/instance/update.st) to update a domain object, and send [`GHObject`](../GitHub.package/GHObject.class/README.md)`>>`[`isOutdated`](../GitHub.package/GHObject.class/instance/isOutdated.st) to test if it is outdated. The `#update` method uses `#isOutdated` internally.
 
 ## Next steps
 
