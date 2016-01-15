@@ -1,6 +1,8 @@
 operations
 method: aMethodSymbol
-	self client
+	| result |
+	result := self client
 		method: aMethodSymbol;
 		execute.
-	self storeETag
+	self storeETag.
+	^ result
