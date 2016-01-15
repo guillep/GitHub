@@ -6,6 +6,8 @@ Getting started
 
 - [Getting started](#getting-started)
     - [Initializing the main API entry point](#initializing-the-main-api-entry-point)
+    - [Error handling](#error-handling)
+    - [Updating objects](#updating-objects)
     - [Next steps](#next-steps)
 
 <!-- markdown-toc end -->
