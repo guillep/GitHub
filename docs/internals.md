@@ -21,7 +21,7 @@ A Requester is any API object which can make further requests. In the case of [`
 
 Not all API objects are Requesters. A good example are the subclasses of [`GHGitObject`](../GitHub-Git-Data.package/GHGitObject.class/README.md) and [`GHRef`](../GitHub-Git-Data.package/GHRef.class/README.md), which are mutable for the purpose of passing them as parameters (more on the Git Data API [here](git-data.md)).
 
-Requesters can be more easily seen around Zinc's `ZnClient` class. Like `ZnClient`, Requesters are stateful. Requesters expand Zinc with functionality for the API. In short, these functionalities are:
+Requesters can be more easily seen as an extension wrapper around Zinc's `ZnClient` class. Like `ZnClient`, Requesters are stateful. Requesters expand Zinc with functionality for the API. In short, these functionalities are:
 
 - Parsing the JSON representation to an API object
 - Error handling
