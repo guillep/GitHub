@@ -5,7 +5,8 @@ import fileinput
 import os
 from re import sub
 
-classregex = r'`(?P<class>\w+)(?: (?P<classside>class))?`'
+# Matches: `Blabla class` but not [`Blabla class`].
+classregex = r'(?<!\[)`(?P<class>\w+)(?: (?P<classside>class))?`(?!\])'
 methodregex = r'`(?P<class>\w+)(?: (?P<classside>class))?>>(?P<method>(?:\w+):?(?:(?:(?:\w+):)*))`'
 
 def class_paths(classname, types=('class','trait')):
@@ -31,7 +32,9 @@ def link_class(matchobj):
 def link_method(matchobj):
     """ Returns the link to a method in markdown format. """
     classname = matchobj.group('class')
-    classside = matchobj.group('classside') or 'instance'
+    classside = matchobj.group('classside')
+    class_instance_side = classside or 'instance'
+    classside = classside or ''
     methoddef = matchobj.group('method')
 
     methodwords = methoddef.split(':')
@@ -40,14 +43,14 @@ def link_method(matchobj):
     classlink = link_class(matchobj)
 
     classpaths = class_paths(classname, types=('class','trait','extension'))
-    methodpaths = [path + '/' + classside + '/' + filename for path in classpaths]
+    methodpaths = [path + '/' + class_instance_side + '/' + filename for path in classpaths]
     methodpath = next((path for path in methodpaths if os.path.isfile(path)), None)
     if not methodpath:
-        return classlink + '`>>' + methoddef + '`'
+        return classlink + '`' + classside + '>>' + methoddef + '`'
 
     methodlink = '[`' + methoddef + '`](' + methodpath + ')'
 
-    link = classlink + '`>>`' + methodlink
+    link = classlink + '`' + classside + '>>`' + methodlink
     return link
 
 def main():

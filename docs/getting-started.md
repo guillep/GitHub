@@ -36,6 +36,24 @@ user := github user.
 user := github user: 'MaryJane'.
 ```
 
+## Error handling
+
+Errors can be handled with the regular Smalltalk syntax:
+
+```smalltalk
+[ github user ]
+   on: GHBadCredentialsError
+   do: [ UIManager default inform: 'Incorrect username or password!' ]
+```
+
+The `GitHub` package contains several `Error` classes by default, containing a class comment explaining the conditions under which they are thrown.
+
+Furthermore, other packages might contain `Error` classes as well, such as `GitHub-Pull-Requests` for merge failures. View the [documentation of that package](./issues-and-pull-request.md) and the class comments for more detail.
+
+## Updating objects
+
+Send [`GHObject`](../GitHub.package/GHObject.class/README.md)`>>`[`update`](../GitHub.package/GHObject.class/instance/update.st) to update a domain object, and send [`GHObject`](../GitHub.package/GHObject.class/README.md)`>>`[`isOutdated`](../GitHub.package/GHObject.class/instance/isOutdated.st) to test if it is outdated. The `#update` method uses `#isOutdated` internally.
+
 ## Next steps
 
 The next step is to request a user's repository. One can do this by sending `repository:` with a repository's name as argument, or sending `repositories` to get all of the repositories of the user. These methods return instances of [`GHRepository`](../GitHub-Repositories.package/GHRepository.class/README.md) (or an `Array` of them), and can be asked several questions such as `defaultBranch`.
@@ -45,3 +63,5 @@ For more operations, such as committing, on repositories, see the following API 
 - [Git Data API](./git-data.md): Low-level operations on git concepts (objects and references).
 - [Contents API](./contents-api.md): High-level operations on files.
 - [Issues and Pull Requests API](./issues-and-pull-requests.md): Operations on Issues and Pull Requests.
+
+Furthermore, there is documentation explaining the internals of the bindings: [Internals](./internals.md).
