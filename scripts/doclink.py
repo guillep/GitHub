@@ -5,7 +5,8 @@ import fileinput
 import os
 from re import sub
 
-classregex = r'`(?P<class>\w+)(?: (?P<classside>class))?`'
+# Matches: `Blabla class` but not [`Blabla class`].
+classregex = r'(?<!\[)`(?P<class>\w+)(?: (?P<classside>class))?`(?!\])'
 methodregex = r'`(?P<class>\w+)(?: (?P<classside>class))?>>(?P<method>(?:\w+):?(?:(?:(?:\w+):)*))`'
 
 def class_paths(classname, types=('class','trait')):
