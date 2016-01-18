@@ -1,28 +1,16 @@
-Getting started
-===============
-
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
-**Table of Contents**
-
-- [Getting started](#getting-started)
-    - [Initializing the main API entry point](#initializing-the-main-api-entry-point)
-    - [Error handling](#error-handling)
-    - [Updating objects](#updating-objects)
-    - [Next steps](#next-steps)
-
-<!-- markdown-toc end -->
+!Getting started
 
 To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
 
-An access token can be retrieved using the OAuth2 protocol, using Zinc. To do this, you might want to take a look at the documentation of [Zinc SSO](https://github.com/svenvc/docs/blob/master/zinc/zinc-sso-paper.md).
+An access token can be retrieved using the OAuth2 protocol, using Zinc. To do this, you might want to take a look at the documentation of *Zinc SSO>https://github.com/svenvc/docs/blob/master/zinc/zinc-sso-paper.md*.
 
-The access token can also be made manually (called a _Personal access token_), via the following link (you need to be logged in for this link to work): [Personal access tokens](https://github.com/settings/tokens). This is the easiest and quickest way to get started with the API. Note that you should treat this token as a password.
+The access token can also be made manually (called a ''Personal access token''), via the following link (you need to be logged in for this link to work): *Personal access tokens>https://github.com/settings/tokens*. This is the easiest and quickest way to get started with the API. Note that you should treat this token as a password.
 
-## Initializing the main API entry point
+!! Initializing the main API entry point
 
-The class `GitHub` functions as the main entry point for the API. From there, one can query either the logged in user (i.e. _you_) or a user by specifying the name, by sending the messages `GitHub>>user` and `GitHub>>user:` respectively. These messages will return an instance of `GHUser`.
+The class ==GitHub== functions as the main entry point for the API. From there, one can query either the logged in user (i.e. ''you'') or a user by specifying the name, by sending the messages ==GitHub>>user== and ==GitHub>>user:== respectively. These messages will return an instance of ==GHUser==.
 
-```Smalltalk
+[[[language=smalltalk
 | github user |
 
 " Initialize using an access token... "
@@ -36,34 +24,34 @@ user := github user.
 
 " Get a user by their username. "
 user := github user: 'MaryJane'.
-```
+]]]
 
-## Error handling
+!! Error handling
 
 Errors can be handled with the regular Smalltalk syntax:
 
-```smalltalk
+[[[language=smalltalk
 [ github user ]
    on: GHBadCredentialsError
    do: [ UIManager default inform: 'Incorrect username or password!' ]
-```
+]]]
 
-The `GitHub` package contains several `Error` classes by default, containing a class comment explaining the conditions under which they are thrown.
+The ==GitHub== package contains several ==Error== classes by default, containing a class comment explaining the conditions under which they are thrown.
 
-Furthermore, other packages might contain `Error` classes as well, such as `GitHub-Pull-Requests` for merge failures. View the [documentation of that package](./issues-and-pull-request.md) and the class comments for more detail.
+Furthermore, other packages might contain ==Error== classes as well, such as ==GitHub-Pull-Requests== for merge failures. View the *documentation of that package>./issues-and-pull-request.md* and the class comments for more detail.
 
-## Updating objects
+!! Updating objects
 
-Send `GHObject>>update` to update a domain object, and send `GHObject>>isOutdated` to test if it is outdated. The `#update` method uses `#isOutdated` internally.
+Send ==GHObject>>update== to update a domain object, and send ==GHObject>>isOutdated== to test if it is outdated. The ==#update== method uses ==#isOutdated== internally.
 
-## Next steps
+!! Next steps
 
-The next step is to request a user's repository. One can do this by sending `repository:` with a repository's name as argument, or sending `repositories` to get all of the repositories of the user. These methods return instances of `GHRepository` (or an `Array` of them), and can be asked several questions such as `defaultBranch`.
+The next step is to request a user's repository. One can do this by sending ==repository:== with a repository's name as argument, or sending ==repositories== to get all of the repositories of the user. These methods return instances of ==GHRepository== (or an ==Array== of them), and can be asked several questions such as ==defaultBranch==.
 
 For more operations, such as committing, on repositories, see the following API documentation:
 
-- [Git Data API](./git-data.md): Low-level operations on git concepts (objects and references).
-- [Contents API](./contents-api.md): High-level operations on files.
-- [Issues and Pull Requests API](./issues-and-pull-requests.md): Operations on Issues and Pull Requests.
+- *Git Data API>./git-data.pillar*: Low-level operations on git concepts (objects and references).
+- *Contents API>./contents.pillar*: High-level operations on files.
+- *Issues and Pull Requests API>./issues-and-pull-requests.pillar*: Operations on Issues and Pull Requests.
 
-Furthermore, there is documentation explaining the internals of the bindings: [Internals](./internals.md).
+Furthermore, there is documentation explaining the internals of the bindings: *Internals>./internals.pillar*.
