@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
+<h1>I. Getting started</h1>
+
+<p>
+To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
+</p>
+<p>
+An access token can be retrieved using the OAuth2 protocol, using Zinc. To do this, you might want to take a look at the documentation of <a href="https://github.com/svenvc/docs/blob/master/zinc/zinc-sso-paper.md">Zinc SSO</a>.
+</p>
+<p>
+The access token can also be made manually (called a <em>Personal access token</em>), via the following link (you need to be logged in for this link to work): <a href="https://github.com/settings/tokens">Personal access tokens</a>. This is the easiest and quickest way to get started with the API. Note that you should treat this token as a password.
+</p>
+<section>
+<h2>I.1. Initializing the main API entry point</h2>
+
+<p>
+The class <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> functions as the main entry point for the API. From there, one can query either the logged in user (i.e. <em>you</em>) or a user by specifying the name, by sending the messages <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user.st">user</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user..st">user:</a></code> respectively. These messages will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GHUser.class/README.md">GHUser</a></code>.
+</p>
+<figure><pre><code class="smalltalk">| github user |
+
+&quot; Initialize using an access token... &quot;
+github := GitHub initializeWithAccessToken: 'f1ct10n4l4cc3sst0k3n'.
+
+&quot; ... or using a username and password combination. &quot;
+github := GitHub initializeWithUsername: 'JohnDoe' password: '123password'.
+
+&quot; Get the currently logged in user, which returns an instance of GHUser. &quot;
+user := github user.
+
+&quot; Get a user by their username. &quot;
+user := github user: 'MaryJane'.</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>I.2. Error handling</h2>
+
+<p>
+Errors can be handled with the regular Smalltalk syntax:
+</p>
+<figure><pre><code class="smalltalk">[ github user ]
+   on: GHBadCredentialsError
+   do: [ UIManager default inform: 'Incorrect username or password!' ]</code></pre><figcaption></figcaption></figure>
+
+<p>
+The <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> package contains several <code>Error</code> classes by default, containing a class comment explaining the conditions under which they are thrown.
+</p>
+<p>
+Furthermore, other packages might contain <code>Error</code> classes as well, such as <code>GitHub-Pull-Requests</code> for merge failures. View the <a href="./issues-and-pull-request.md">documentation of that package</a> and the class comments for more detail.
+</p>
+</section><section>
+<h2>I.3. Updating objects</h2>
+
+<p>
+Send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/update.st">update</a></code> to update a domain object, and send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/isOutdated.st">isOutdated</a></code> to test if it is outdated. The <code>#update</code> method uses <code>#isOutdated</code> internally.
+</p>
+</section><section>
+<h2>I.4. Next steps</h2>
+
+<p>
+The next step is to request a user's repository. One can do this by sending <code>repository:</code> with a repository's name as argument, or sending <code>repositories</code> to get all of the repositories of the user. These methods return instances of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> (or an <code>Array</code> of them), and can be asked several questions such as <code>defaultBranch</code>.
+</p>
+<p>
+For more operations, such as committing, on repositories, see the following API documentation:
+</p>
+<ul>
+<li><a href="./git-data.html">Git Data API</a>: Low-level operations on git concepts (objects and references).</li>
+<li><a href="./contents.html">Contents API</a>: High-level operations on files.</li>
+<li><a href="./issues-and-pull-requests.html">Issues and Pull Requests API</a>: Operations on Issues and Pull Requests.</li>
+</ul>
+
+<p>
+Furthermore, there is documentation explaining the internals of the bindings: <a href="./internals.html">Internals</a>.
+
+</p></section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
+<h1>IV. Issues and Pull Requests API</h1>
+
+<p>
+With this API one can fetch, create and edit/manipulate Issues and Pull Requests.
+</p>
+<section>
+<h2>IV.1. Fetching an Issue or Pull Request</h2>
+
+<p>
+Issues can be fetched in two ways: by its number and by requesting a list of issues with optional parameters. The first way can be requested using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHRepository.extension/instance/issueByNumber..st">issueByNumber:</a></code>, by passing it the issue number.
+</p>
+<p>
+The second way, listing issues, allows one to specify multiple parameters. It is done by following the <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder pattern</a>, allowing us to specify optional parameters for a result (the issue listing).
+</p>
+<p>
+For example, one can request all issues assigned to user 'Foo', with the labels 'bug' and 'important', with this script:
+</p>
+<figure><pre><code class="smalltalk">repo issueLister
+	assignedTo: 'foo';
+	withLabels: #('bug' 'important');
+	execute</code></pre><figcaption></figcaption></figure>
+
+<p>
+For an exhaustive list of parameters, see <a href="https://developer.github.com/v3/issues/#list-issues-for-a-repository">the developer documentation</a> on listing issues, and their corresponding methods in <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueLister.class/README.md">GHIssueLister</a></code>.
+</p>
+<p>
+A Pull Request can be fetched by its number as well, by using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/pullRequestByNumber..st">pullRequestByNumber:</a></code>.
+</p>
+<p>
+The listing of Pull Requests like with issues is not yet implemented. However, one can use the listing of issues and then convert it into a list of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code>s like so:
+</p>
+<figure><pre><code class="smalltalk">| listing |
+listing := repo issueLister
+	&quot; Specify optional filter parameters &quot;
+	execute.
+
+listing
+	select: #isPullRequest
+	thenCollect: #asPullRequest</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>IV.2. Creating an Issue or Pull Request</h2>
+
+<p>
+To create an issue, send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHRepository.extension/instance/issueCreatorWithTitle..st">issueCreatorWithTitle:</a></code> to a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> instance. Similar to the listing of issues, one creates an issue by using a Builder too. The builder follows a syntax similar to that of the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueLister.class/README.md">GHIssueLister</a></code>. Refer to <a href="https://developer.github.com/v3/issues/#create-an-issue">the developer documentation</a> for all the parameters, and again their corresponding methods in <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueCreator.class/README.md">GHIssueCreator</a></code>.
+</p>
+<p>
+The same holds for the creation of a pull request, which can be done by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/pullRequestCreatorWithTitle.head.base..st">pullRequestCreatorWithTitle:head:base:</a></code> with the title of the pull request, the <code>head</code> branch specification (the one that is to be merged) and the <code>base</code> branch specification (where <code>head</code> should be merged into). Cross-repository pull requests (i.e. pull requests from forks) can be done by prefixing the username to the branch name (<code>username:branch</code>).
+</p>
+<p>
+The API supports one other way of creating a pull request, and that is to turn an existing issue into a pull request. The bindings support this as well, and it can be done by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/createPullRequestFromIssueNumber.fromHead.toBase..st">createPullRequestFromIssueNumber:fromHead:toBase:</a></code>. Once this is done, the pull request can not in turn be converted back into an issue.
+</p>
+</section><section>
+<h2>IV.3. Editing/Manipulating Issues and Pull Requests</h2>
+
+<p>
+Here I will explain how to manipulate an issue or pull request. By manipulate I mean any operation on an issue or pull request that one can normally do using the Web interface of GitHub.
+</p>
+<section>
+<h3>IV.3.A. Editing an Issue or Pull Request's properties</h3>
+
+<p>
+By sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/instance/editor.st">editor</a></code> to a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> or <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> instance, one gets a builder as answer with the same parameters as the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueCreator.class/README.md">GHIssueCreator</a></code> in the previous section, with several more parameters/actions in addition. The most notable ones are <code>close</code> and <code>open</code>, which do as their name suggests.
+</p>
+</section><section>
+<h3>IV.3.B. Leaving a comment</h3>
+
+<p>
+To leave a comment on either an issue or pull request, send <code>addCommentWithBody</code>. This returns a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueComment.class/README.md">GHIssueComment</a></code> instance which has in turn the ability to edit and delete itself. An example:
+</p>
+<figure><pre><code class="smalltalk">&quot; Get the first issue &quot;
+issue := repo issueLister execute first.
+comment := issue addCommentWithBody: 'Hello from Pharo.'.
+comment editBody: comment body , ' How are you?'.
+comment delete.</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h3>IV.3.C. Merging a Pull Request</h3>
+
+<p>
+To merge a Pull Request, send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/instance/merge.st">merge</a></code>. There are some other methods for merging too, which allow to set a SHA hash which should match with the current head. This way, if there has been an update since fetching the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> instance, the merge will not continue.
+</p>
+<p>
+Another method allows one to set the message of the merge commit, and yet another one allows to set both parameters.
+</p>
+<p>
+If the merge fails, a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequestNotMergeableError.class/README.md">GHPullRequestNotMergeableError</a></code> is signalled. If the head SHA (if specified) does not match, a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHModifiedHeadBranchError.class/README.md">GHModifiedHeadBranchError</a></code> is signalled.
+</p>
+</section></section><section>
+<h2>IV.4. The difference between Issues and Pull Requests</h2>
+
+<p>
+In short, every pull request is also an issue, and not vice-versa. This is reflected as well in the class diagram of the bindings.
+</p>
+<p>
+Because of this, one can request a pull request by its number using the issues API. But the API will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code>. Thus, a way is needed to test whether an issue is actually a pull request, or if it's just an ordinary issue. This is provided by <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/instance/isPullRequest.st">isPullRequest</a></code>.
+</p>
+<p>
+Furthermore, an existing <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> can be converted into a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHIssue.extension/instance/asPullRequest.st">asPullRequest</a></code>. Do note that this will perform a request, since a pull request contains extra information not present in an issue. If the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> is not a pull request (<code>#isPullRequest</code> returns false), this results in a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHNotAPullRequestError.class/README.md">GHNotAPullRequestError</a></code>.
+
+</p></section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>
