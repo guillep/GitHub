@@ -1,1 +1,0 @@
-A trait for elements which are mapped to an API URL on GitHub

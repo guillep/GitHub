@@ -1,4 +1,0 @@
-testing
-isDetached
-
-	^ branch isNil

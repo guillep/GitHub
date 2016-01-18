@@ -1,3 +1,0 @@
-accessing-api
-isMerged
-	^ merged

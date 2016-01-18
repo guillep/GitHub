@@ -1,4 +1,0 @@
-testing
-isCommit
-
-	^ type = 'commit'

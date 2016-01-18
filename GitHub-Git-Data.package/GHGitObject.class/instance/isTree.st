@@ -1,4 +1,0 @@
-testing
-isTree
-
-	^ type = 'tree'

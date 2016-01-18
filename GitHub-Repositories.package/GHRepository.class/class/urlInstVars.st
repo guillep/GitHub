@@ -1,3 +1,0 @@
-accessing
-urlInstVars
-	^ super urlInstVars , #(#forks_url #contents_url #assignees_url #subscription_url #releases_url #contributors_url #events_url #issues_url #tags_url #archive_url #git_refs_url #commits_url #pulls_url #labels_url #keys_url #git_url #trees_url #teams_url #notifications_url #svn_url #git_tags_url #collaborators_url #subscribers_url #clone_url #branches_url #mirror_url #compare_url #issue_events_url #downloads_url #hooks_url #blobs_url #issue_comment_url #html_url #statuses_url #milestones_url #stargazers_url #languages_url #git_commits_url #merges_url #comments_url)

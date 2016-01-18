@@ -1,1 +1,0 @@
-I am thrown when a resource is not found. This happens for example when you're not authorized to view a private repository, or you simply ask for a repository that does not exist.

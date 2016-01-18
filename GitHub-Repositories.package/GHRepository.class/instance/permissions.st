@@ -1,3 +1,0 @@
-accessing-api
-permissions
-	^ permissions

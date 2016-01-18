@@ -1,3 +1,0 @@
-accessing-api
-deletions
-	^ deletions

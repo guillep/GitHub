@@ -1,4 +1,0 @@
-accessing
-url
-
-	^ operandRequester issuesBaseUrl

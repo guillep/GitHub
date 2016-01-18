@@ -1,4 +1,0 @@
-accessing
-sha
-
-	^ commit sha

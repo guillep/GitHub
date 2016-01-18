@@ -1,1 +1,0 @@
-I am a stamp on a GHGitCommit (either author or committer)

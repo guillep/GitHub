@@ -1,4 +1,0 @@
-accessing
-selectedItem
-
-	^ selectedItem value

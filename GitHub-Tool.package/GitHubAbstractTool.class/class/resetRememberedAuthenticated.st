@@ -1,4 +1,0 @@
-accessing
-resetRememberedAuthenticated
-
-	RememberedAuthenticated := nil

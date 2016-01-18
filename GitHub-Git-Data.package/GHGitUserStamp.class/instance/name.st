@@ -1,4 +1,0 @@
-accessing-api
-name
-
-	^ name

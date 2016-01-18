@@ -1,1 +1,0 @@
-I represent an entity which can own repositories.

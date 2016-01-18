@@ -1,4 +1,0 @@
-accessing-api
-type
-
-	^ type

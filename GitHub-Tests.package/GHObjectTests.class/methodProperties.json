@@ -1,9 +1,0 @@
-{
-	"class" : {
-		 },
-	"instance" : {
-		"testIsOutdated" : "SkipLentz 1/12/2016 15:08",
-		"testIsOutdatedAndUpdate" : "SkipLentz 1/12/2016 16:08",
-		"testIsOutdatedNoETag" : "SkipLentz 1/12/2016 15:08",
-		"testUpdate" : "SkipLentz 1/12/2016 16:38",
-		"testUpdateNoETag" : "SkipLentz 1/12/2016 15:36" } }

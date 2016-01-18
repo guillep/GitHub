@@ -1,1 +1,0 @@
-I am thrown when the API was initialized with invalid credentials, and thus not being able to authorize.

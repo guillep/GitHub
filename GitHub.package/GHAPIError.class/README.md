@@ -1,1 +1,0 @@
-Common superclass for Errors related to the API.

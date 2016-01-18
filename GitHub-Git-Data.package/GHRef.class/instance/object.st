@@ -1,4 +1,0 @@
-accessing-api
-object
-
-	^ object

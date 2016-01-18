@@ -1,1 +1,0 @@
-Superclass for setting up and tearing down the tests. Defines some convenience functions for "stubbing" responses.

@@ -1,4 +1,0 @@
-branching
-beDetachedHead
-
-	branch := nil

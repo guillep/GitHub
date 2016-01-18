@@ -1,1 +1,0 @@
-I am an entry point which changes the API endpoint so that it points to localhost:8080. This allows us to connect to the mock server.

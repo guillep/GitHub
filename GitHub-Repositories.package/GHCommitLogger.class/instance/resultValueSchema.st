@@ -1,4 +1,0 @@
-accessing
-resultValueSchema
-
-	^ operandRequester arrayOfCommits
