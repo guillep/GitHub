@@ -1,4 +1,5 @@
 !Getting started
+@getting-started
 
 To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
 
@@ -38,7 +39,7 @@ Errors can be handled with the regular Smalltalk syntax:
 
 The ==GitHub== package contains several ==Error== classes by default, containing a class comment explaining the conditions under which they are thrown.
 
-Furthermore, other packages might contain ==Error== classes as well, such as ==GitHub-Pull-Requests== for merge failures. View the *documentation of that package>./issues-and-pull-request.md* and the class comments for more detail.
+Furthermore, other packages might contain ==Error== classes as well, such as ==GitHub-Pull-Requests== for merge failures. View the *documentation of that package>./issues-and-pull-request.pillar@issues-and-prs* and the class comments for more detail.
 
 !! Updating objects
 
@@ -50,8 +51,8 @@ The next step is to request a user's repository. One can do this by sending ==re
 
 For more operations, such as committing, on repositories, see the following API documentation:
 
-- *Git Data API>./git-data.pillar*: Low-level operations on git concepts (objects and references).
-- *Contents API>./contents.pillar*: High-level operations on files.
-- *Issues and Pull Requests API>./issues-and-pull-requests.pillar*: Operations on Issues and Pull Requests.
+- *Git Data API>./git-data.pillar@git-data*: Low-level operations on git concepts (objects and references).
+- *Contents API>./contents.pillar@contents*: High-level operations on files.
+- *Issues and Pull Requests API>./issues-and-pull-requests.pillar@issues-and-prs*: Operations on Issues and Pull Requests.
 
-Furthermore, there is documentation explaining the internals of the bindings: *Internals>./internals.pillar*.
+Furthermore, there is documentation explaining the internals of the bindings: *Internals>./internals.pillar@internals*.

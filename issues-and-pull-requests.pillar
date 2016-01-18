@@ -1,4 +1,5 @@
 !Issues and Pull Requests API
+@issues-and-prs
 
 With this API one can fetch, create and edit/manipulate Issues and Pull Requests.
 

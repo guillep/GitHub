@@ -1,4 +1,5 @@
 !Git Data API
+@git-data
 
 The low-level *Git Data API>https://developer.github.com/v3/git/* allows you to create or read Git objects (blobs, trees, commits, tags) and create, delete, read and update references (refs).
 

@@ -1,6 +1,7 @@
 !Contents API
+@contents
 
-As opposed to the *Git Data API>./git-data.md*, this part of the binding provides a ''high-level'' way of reading, creating, updating and deleting files. The classes that are involved are ==GHRepository== and ==GHContent==. The four different use-cases are explained in the sections below.
+As opposed to the *Git Data API>./git-data.pillar@git-data*, this part of the binding provides a ''high-level'' way of reading, creating, updating and deleting files. The classes that are involved are ==GHRepository== and ==GHContent==. The four different use-cases are explained in the sections below.
 
 !! Get file contents
 
@@ -17,7 +18,7 @@ Use ==GHRepository>>createContent:onPath:withMessage:==, with the parameters bei
 
 Use ==GHContent>>updateContent:withMessage:==, with similar parameters as with the method to create files. This method updates the same instance with the new content information, thus it is possible to send ==updateContent:withMessage:== multiple times.
 
-Moreover, it returns the ==GHGitCommit== object representing the commit of the change. Thus from here it is possible to switch to using the *Git Data API>./git-data.md* and create commits with the returned ==GHGitCommit== object as parent.
+Moreover, it returns the ==GHGitCommit== object representing the commit of the change. Thus from here it is possible to switch to using the *Git Data API>./git-data.pillar@git-data* and create commits with the returned ==GHGitCommit== object as parent.
 
 !! Delete a file
 
