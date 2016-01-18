@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
 <h1>I. Getting started</h1>
-
+<a id="getting-started"></a>
 <p>
 To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
 </p>
@@ -44,7 +44,7 @@ Errors can be handled with the regular Smalltalk syntax:
 The <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> package contains several <code>Error</code> classes by default, containing a class comment explaining the conditions under which they are thrown.
 </p>
 <p>
-Furthermore, other packages might contain <code>Error</code> classes as well, such as <code>GitHub-Pull-Requests</code> for merge failures. View the <a href="./issues-and-pull-request.md">documentation of that package</a> and the class comments for more detail.
+Furthermore, other packages might contain <code>Error</code> classes as well, such as <code>GitHub-Pull-Requests</code> for merge failures. View the <a href="./issues-and-pull-request.html#issues-and-prs">4 documentation of that package</a> and the class comments for more detail.
 </p>
 </section><section>
 <h2>I.3. Updating objects</h2>
@@ -62,12 +62,12 @@ The next step is to request a user's repository. One can do this by sending <cod
 For more operations, such as committing, on repositories, see the following API documentation:
 </p>
 <ul>
-<li><a href="./git-data.html">Git Data API</a>: Low-level operations on git concepts (objects and references).</li>
-<li><a href="./contents.html">Contents API</a>: High-level operations on files.</li>
-<li><a href="./issues-and-pull-requests.html">Issues and Pull Requests API</a>: Operations on Issues and Pull Requests.</li>
+<li><a href="./git-data.html#git-data">2 Git Data API</a>: Low-level operations on git concepts (objects and references).</li>
+<li><a href="./contents.html#contents">3 Contents API</a>: High-level operations on files.</li>
+<li><a href="./issues-and-pull-requests.html#issues-and-prs">4 Issues and Pull Requests API</a>: Operations on Issues and Pull Requests.</li>
 </ul>
 
 <p>
-Furthermore, there is documentation explaining the internals of the bindings: <a href="./internals.html">Internals</a>.
+Furthermore, there is documentation explaining the internals of the bindings: <a href="./internals.html#internals">5 Internals</a>.
 
 </p></section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>
