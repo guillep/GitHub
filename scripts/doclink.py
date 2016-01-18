@@ -3,6 +3,7 @@
 from glob import glob
 import fileinput
 import os
+import sys
 from re import sub
 from urllib.parse import urljoin
 
@@ -61,6 +62,10 @@ def link_method(matchobj):
     methodpaths = [path + '/' + class_instance_side + '/' + filename for path in classpaths]
     methodpath = next((path for path in methodpaths if os.path.isfile(path)), None)
     if not methodpath:
+        if classpaths:
+            fileinput.close()
+            print('Classes found but method ' + methoddef + ' not found, linking failed!')
+            sys.exit(1)
         methodlink = methoddef
     else:
         methodlink = '*' + methoddef + '>' + add_prefix(methodpath) + '*'
@@ -75,7 +80,6 @@ parser.add_argument('--source-directory', metavar='<path>', help='The location o
 parser.add_argument('--prefix', '-p', metavar='<path or url>', help='What to prefix the links with, for example an URL.')
 
 def main():
-    import sys
     global source_dir, prefix
 
     args = parser.parse_args()

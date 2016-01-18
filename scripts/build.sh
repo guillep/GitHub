@@ -9,6 +9,15 @@ fi
 # First stage the changes, before overwriting them.
 git add .
 ./doclink.py --source-directory="../master/" --prefix="https://github.com/Balletie/GitHub/tree/master"
+if [ "$?" -ne "0" ]; then
+  echo "doclink.py exited with error, cleaning up.."
+  pushd ../ > /dev/null
+  rm -r master
+  git worktree prune -v
+  git checkout -- *.pillar
+  popd > /dev/null
+  exit 1
+fi
 
 pushd ../ > /dev/null
 rm -r master

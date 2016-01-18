@@ -6,6 +6,14 @@ git worktree add gh-pages gh-pages
 popd > /dev/null
 
 ./build.sh
+if [ "$?" -ne "0" ]; then
+  echo "build.sh exited with error, cleaning up.."
+  pushd .. > /dev/null
+  rm -r gh-pages
+  git worktree prune -v
+  popd > /dev/null
+  exit 1
+fi
 
 pushd ../ > /dev/null
 
