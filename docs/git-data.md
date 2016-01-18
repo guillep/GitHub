@@ -20,7 +20,7 @@ This API defines two operations on git objects (creating and reading), and four 
 
 The way the API works is that one reads an object or references, changes some of its contents, and then pass it to one of the create, update or delete operations.
 
-For example, to update a ref, one takes the ref object and change the object it is pointing to using the [`GHRef`](../GitHub-Git-Data.package/GHRef.class/README.md)`>>`[`object:`](../GitHub-Git-Data.package/GHRef.class/instance/object..st) accessor. Really, the only information that this new object should have is its SHA.
+For example, to update a ref, one takes the ref object and change the object it is pointing to using the `GHRef>>object:` accessor. Really, the only information that this new object should have is its SHA.
 
 So in theory, if one knows the name of the ref (for example `refs/heads/master`) and the SHA of the object it is pointing to, one can just create new instances of GHRef and GHObject without ever having to do a request for those objects.
 
@@ -49,7 +49,7 @@ repo createTree: tree.
 
 ## Creating a commit.
 
-The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the [`GHCommitBuilder`](../GitHub-Git-Data.package/GHCommitBuilder.class/README.md) class. The builder provides several methods which simplify the process of performing a commit:
+The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the `GHCommitBuilder` class. The builder provides several methods which simplify the process of performing a commit:
 
 - **`push`**: This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:
   1. Take the current `HEAD` commit of the given branch (or the default branch of the repository),
