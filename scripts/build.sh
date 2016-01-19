@@ -7,7 +7,9 @@ if [ ! -d ../master ]; then
 fi
 
 # First stage the changes, before overwriting them.
-git add .
+pushd ../ > /dev/null
+git add *.pillar
+popd
 ./doclink.py --source-directory="../master/" --prefix="https://github.com/Balletie/GitHub/tree/master"
 if [ "$?" -ne "0" ]; then
   echo "doclink.py exited with error, cleaning up.."
