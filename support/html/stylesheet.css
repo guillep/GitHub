@@ -9,9 +9,16 @@ body {
   width: 55%;
   padding: 10px;
 }
-.top {
-  margin-top: 0px;
-}
 h1, h2 {
   color: darkred;
+}
+h1 {
+  margin-top: 0px;
+  font-size: 2em;
+}
+code {
+  background-color: #F0F0F0;
+}
+figcaption {
+  text-align: center;
 }
