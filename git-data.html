@@ -1,79 +1,0 @@
-<!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
-<h1>II. Git Data API</h1>
-<a id="git-data"></a>
-<p>
-The low-level <a href="https://developer.github.com/v3/git/">Git Data API</a> allows you to create or read Git objects (blobs, trees, commits, tags) and create, delete, read and update references (refs).
-</p>
-<p>
-This document explains how to do this using the API bindings.
-</p>
-<section>
-<h2>II.1. Operations on low-level Git concepts</h2>
-
-<p>
-This API defines two operations on git objects (creating and reading), and four operations on git references (creating, updating, deleting and reading). The former git concepts are immutable and can therefore not be updated or deleted.
-</p>
-<p>
-The way the API works is that one reads an object or references, changes some of its contents, and then pass it to one of the create, update or delete operations.
-</p>
-<p>
-For example, to update a ref, one takes the ref object and change the object it is pointing to using the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/README.md">GHRef</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/instance/object..st">object:</a></code> accessor. Really, the only information that this new object should have is its SHA.
-</p>
-<p>
-So in theory, if one knows the name of the ref (for example <code>refs/heads/master</code>) and the SHA of the object it is pointing to, one can just create new instances of GHRef and GHObject without ever having to do a request for those objects.
-</p>
-<p>
-Here is an example of adding a blob to a tree based on the tree pointed to by the last commit on <code>master</code>:
-</p>
-<figure><pre><code class="smalltalk">repo := github user repository: 'FictionalRepository'.
-head := repo getRef: 'heads/master'.
-commit := repo getCommit: head object sha.
-tree := repo getTreeRecursively: commit tree sha.
-
-&quot; Create a new file in-memory &quot;
-root := FileSystem memory workingDirectory.
-newFile := root / 'README.md'.
-newFile writeStreamDo: [ :stream |
-	stream nextPutAll: 'Hello from Pharo!' ].
-newEntry := GHTreeEntryWithContent
-	fromFileReference: newFile
-	relativeTo: root.
-
-&quot; Add a new blob entry. The new entries will be added on
-  top of the previous entries. &quot;
-tree tree: { newEntry }.
-repo createTree: tree.</code></pre><figcaption></figcaption></figure>
-
-</section><section>
-<h2>II.2. Creating a commit.</h2>
-
-<p>
-The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHCommitBuilder.class/README.md">GHCommitBuilder</a></code> class. The builder provides several methods which simplify the process of performing a commit:
-</p>
-<ul>
-<li><strong><code>push</code></strong>: This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:</li>
-</ul>
-<p>
-  1. Take the current <code>HEAD</code> commit of the given branch (or the default branch of the repository),
-  2. Get the tree it points to,
-  3. Update the contents of this tree using the given files and create the new one,
-  4. Create a new commit object pointing to the new tree,
-  5. Update the `HEAD` reference to point to the new commit.
-</p><ul>
-<li><strong><code>directory:</code></strong>: This method takes a <code>FileReference</code> containing files, and stages them for the commit as if they were in the root directory of the repository.</li>
-</ul>
-
-<p>
-	The location of where they should be committed can be overridden by sending <code>baseDirectory:</code> afterwards with a <code>FileReference</code>. Note that this <code>FileReference</code>'s path should be contained within the reference passed to <code>directory:</code>.
-</p>
-<p>
-	An alternative to using <code>directory:</code> is to use both <code>files:</code> and <code>baseDirectory:</code>. The advantage to this is that one can omit files in the commit which are present in the reference passed to <code>baseDirectory:</code>.
-</p>
-<ul>
-<li><strong><code>onBranch:</code></strong>: Specify the branch to commit on. This needs to be an existing branch, which can be created by creating a ref, described in the previous section.</li>
-</ul>
-
-<ul>
-<li><strong><code>replaceTree</code></strong>: Let the commit replace the entire tree of the commit it is based on. Of course, this will create a new tree with just the files given. This is the only way to perform a delete operation in a commit.</li>
-</ul>
-</section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>

@@ -1,39 +1,0 @@
-<!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
-<h1>III. Contents API</h1>
-<a id="contents"></a>
-<p>
-As opposed to the <a href="./git-data.html#git-data">2 Git Data API</a>, this part of the binding provides a <em>high-level</em> way of reading, creating, updating and deleting files. The classes that are involved are <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code>. The four different use-cases are explained in the sections below.
-</p>
-<section>
-<h2>III.1. Get file contents</h2>
-
-<p>
-To get the contents of a file, one can send the following messages to an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code>:
-</p>
-<ul>
-<li><strong><code>getContentAtPath:</code></strong>: Returns an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> which contains the file contents of the file at the given path.</li>
-<li><strong><code>getContentAtPath:atRef:</code></strong>: Same as above, but returns the file at the given version (can be a commit name, branch name or tag name).</li>
-</ul>
-
-</section><section>
-<h2>III.2. Create a file</h2>
-
-<p>
-Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHRepository.extension/instance/createContent.onPath.withMessage..st">createContent:onPath:withMessage:</a></code>, with the parameters being the content of the file, the path of the file, and the commit message (all being instances of <code>String</code>).
-</p>
-</section><section>
-<h2>III.3. Update a file</h2>
-
-<p>
-Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/updateContent.withMessage..st">updateContent:withMessage:</a></code>, with similar parameters as with the method to create files. This method updates the same instance with the new content information, thus it is possible to send <code>updateContent:withMessage:</code> multiple times.
-</p>
-<p>
-Moreover, it returns the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> object representing the commit of the change. Thus from here it is possible to switch to using the <a href="./git-data.html#git-data">2 Git Data API</a> and create commits with the returned <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> object as parent.
-</p>
-</section><section>
-<h2>III.4. Delete a file</h2>
-
-<p>
-Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/deleteContentWithMessage..st">deleteContentWithMessage:</a></code>. Like <code>updateContent:withMessage:</code>, this method returns a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> instance.
-
-</p></section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>

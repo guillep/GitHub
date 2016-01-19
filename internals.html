@@ -1,77 +1,0 @@
-<!DOCTYPE html><html lang="en">  <head>    <title></title>    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>    <!--[if lt IE 9]>      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>    <![endif]-->  </head>  <body>    <div class="container">      <section>
-<h1>V. Internals</h1>
-<a id="internals"></a>
-<p>
-This doc explains more on the internals of the API.
-</p>
-<section>
-<h2>V.1. Requesters</h2>
-
-<p>
-A Requester is any API object which can make further requests. In the case of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> for example, one can send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/updateContent.withMessage..st">updateContent:withMessage:</a></code>. Requesters are users of the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code> trait.
-</p>
-<p>
-Not all API objects are Requesters. A good example are the subclasses of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitObject.class/README.md">GHGitObject</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/README.md">GHRef</a></code>, which are mutable for the purpose of passing them as parameters (more on the Git Data API <a href="git-data.html">here</a>).
-</p>
-<p>
-Requesters can be more easily seen as an extension wrapper around Zinc's <code>ZnClient</code> class. Like <code>ZnClient</code>, Requesters are stateful. Requesters expand Zinc with functionality for the API. In short, these functionalities are:
-</p>
-<ul>
-<li>Parsing the JSON representation to an API object</li>
-<li>Error handling</li>
-<li>Conditional requests</li>
-</ul>
-
-<p>
-The following sections will go more in-depth on them.
-</p>
-</section><section>
-<h2>V.2. Response Parsing</h2>
-
-<p>
-The parsing of the JSON is done with the excellent NeoJSON library (read <a href="https://github.com/svenvc/docs/blob/master/neo/neo-json-paper.md">this doc</a> for an introduction). In NeoJSON there is the concept of a mapping, which defines how to read from (and write to) a JSON representation into an instantiated object. The mapping of an object can be one of <code>ObjectMapping</code> or <code>CustomMapping</code>. The first is one that maps to a class' properties (in our case just instance variables), the latter is one that allows for a custom definition of a mapping (how the value should be interpreted).
-</p>
-<p>
-The API bindings provide a trait, <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTMappedToJSON.trait/README.md">GHTMappedToJSON</a></code>, which contains only class-side methods related to NeoJSON mappings. The trait includes the mapping of URLs (instances of <code>ZnUrl</code>) and <code>DateAndTime</code> instance variables. Users of this trait can then extend the mappings with custom ones for other types.
-</p>
-<section>
-<h3>V.2.A. Generating instance variables, accessors and mapping definitions</h3>
-
-<p>
-When creating a new API object, one might want to generate some of the instance variables, accessors and mapping definitions automatically.
-</p>
-<p>
-This can be done using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHRelObject.class/README.md">GHRelObject</a> class</code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHRelObject.class/class/generateInstanceVariablesAndMethodsWithAPIKeys..st">generateInstanceVariablesAndMethodsWithAPIKeys:</a></code>, which when provided an array of API keys (e.g. <code>created_at</code>, <code>username</code>), generates instance variables and accessors for them.
-</p>
-<p>
-Furthermore, API keys with the suffix <code>_url</code> are automatically set to be mapped as <code>ZnUrl</code>, and those ending with <code>_at</code> will be mapped to <code>DateAndTime</code> instances.
-</p>
-</section></section><section>
-<h2>V.3. Error Handling</h2>
-
-<p>
-The handling of errors is done before parsing the response. The error handlers are defined as <code>BlockClosure</code>s which take a response as argument. They are stored in a <code>Dictionary</code> with as their key the HTTP integer error code (e.g. <code>404</code>). By default they trigger an <code>Error</code>, which allows one to use the regular Smalltalk syntax for handling them:
-</p>
-<figure><pre><code class="smalltalk">[ github user ]
-   on: GHBadCredentialsError
-   do: [ UIManager default inform: 'Incorrect username or password!' ]</code></pre><figcaption></figcaption></figure>
-
-</section><section>
-<h2>V.4. Conditional Requests</h2>
-
-<p>
-Conditional requests allow one to test if a resource was modified. If it was modified, one gets back the new resource as JSON. If not, the response will be <code>304 Not Modified</code> without any content (for reducing bandwidth).
-</p>
-<p>
-The check of whether or not a resource has changed is done with a hash value called an <em>ETag</em>. Any Requester has access to these ETags using the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/instance/urlToETag.st">urlToETag</a></code> accessor.
-</p>
-<p>
-A conditional request is made by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/instance/conditionalGet..st">conditionalGet:</a></code> with an URL. It uses the <code>#urlToETag</code> <code>Dictionary</code> to get the ETag when a new request is made. However it is probably not necessary to use this method directly.
-</p>
-<p>
-Often one wants to ask to a domain object whether its remote resource has changed. This is provided by <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/isOutdated.st">isOutdated</a></code>, which performs a conditional request (if necessary) with its own url as argument.
-</p>
-<p>
-Even more often one wants to ask a domain object to update itself if it changed, which can be done using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/update.st">update</a></code>. This method uses <code>#isOutdated</code> internally, and if it returns true it copies all the instance variables of the response to itself.
-
-</p></section></section>    </div>    <script src="https://code.jquery.com/jquery.js"></script>    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>    <script>hljs.initHighlightingOnLoad();</script>  </body></html>
