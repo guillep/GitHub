@@ -1,0 +1,17 @@
+body {
+  background-color: lightgray;
+  margin-top: 0px;
+  font-family: Arial;
+}
+#content {
+  background-color: white;
+  margin: auto;
+  width: 55%;
+  padding: 10px;
+}
+.top {
+  margin-top: 0px;
+}
+h1, h2 {
+  color: darkred;
+}
