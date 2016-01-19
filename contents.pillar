@@ -10,9 +10,9 @@ As opposed to the *Git Data API>./git-data.pillar@git-data*, this part of the bi
 
 To get the contents of a file, one can send the following messages to an instance of ==GHRepository==:
 
-;""==getContentAtPath:==""
+;==getContentAtPath:==
 :Returns an instance of ==GHContent== which contains the file contents of the file at the given path.
-;""==getContentAtPath:atRef:==""
+;==getContentAtPath:atRef:==
 :Same as above, but returns the file at the given version (can be a commit name, branch name or tag name).
 
 !! Create a file
