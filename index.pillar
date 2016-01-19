@@ -27,6 +27,8 @@ Documentation can be found on this website, in two formats:
 - *Single page>https://balletie.github.io/GitHub/html-mono/index.html*
 - *Multiple pages per chapter>https://balletie.github.io/GitHub/html-chap/index.html*
 
+The documentation was generated with the *Pillar markup language>https://github.com/pillar-markup/pillar-documentation*. The source of this documentation can be found under the ==*docs>https://github.com/Balletie/GitHub/tree/docs*== branch in the source code repository.
+
 !!Source code repository
 The code is hosted on GitHub, at *Balletie/GitHub>https://github.com/Balletie/GitHub*.
 
