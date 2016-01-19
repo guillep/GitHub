@@ -27,7 +27,12 @@ git worktree prune -v
 
 ./pillar export
 
-[ -f gh-pages/html-chap/getting-started.html ] && ln -s gh-pages/html-chap/getting-started.html gh-pages/html-chap/index.html && echo 'Created link for index.html'
+if [ -f gh-pages/html-chap/getting-started.html ]; then
+  pushd gh-pages/html-chap
+  ln -s getting-started.html index.html
+  echo 'Created link for index.html'
+  popd
+fi
 # Discard changes done by doclink.py
 git checkout -- *.pillar
 popd > /dev/null
