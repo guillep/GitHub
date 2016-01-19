@@ -30,7 +30,7 @@ Replace the `master` part with any version tag to load that specific version.
 
 ## Documentation
 
-Documentation can be found in the [`docs` directory](./docs/). To get started with the API, read ["Getting started"](./docs/getting-started.md).
+Documentation can be found on the [project website](https://balletie.github.io/GitHub). To get started with the API, read ["Getting started"](http://balletie.github.io/GitHub/getting-started.html).
 
 ## License
 
