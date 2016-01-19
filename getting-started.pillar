@@ -39,7 +39,7 @@ Errors can be handled with the regular Smalltalk syntax:
 
 The ==GitHub== package contains several ==Error== classes by default, containing a class comment explaining the conditions under which they are thrown.
 
-Furthermore, other packages might contain ==Error== classes as well, such as ==GitHub-Pull-Requests== for merge failures. View the *documentation of that package>./issues-and-pull-request.pillar@issues-and-prs* and the class comments for more detail.
+Furthermore, other packages might contain ==Error== classes as well, such as ==GitHub-Pull-Requests== for merge failures. View the *documentation of that package>./issues-and-pull-requests.pillar@issues-and-prs* and the class comments for more detail.
 
 !! Updating objects
 
