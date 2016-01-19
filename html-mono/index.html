@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>GitHub API for Pharo Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="./support/html/highlightjs/styles/googlecode.css">
+    <script src="./support/html/highlightjs/highlight.pack.js"></script>
+    <style type="text/css">
+      @import url('http://www.gnu.org/style.css');
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="content" class="inner">
+      <h1 class="top">GitHub API Bindings for Pharo</h1>
+      <h3>Developer Documentation</h3>
+      <section>
+<h1>1. Getting started</h1>
+<a id="getting-started"></a>
+<p>
+To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
+</p>
+<p>
+An access token can be retrieved using the OAuth2 protocol, using Zinc. To do this, you might want to take a look at the documentation of <a href="https://github.com/svenvc/docs/blob/master/zinc/zinc-sso-paper.md">Zinc SSO</a>.
+</p>
+<p>
+The access token can also be made manually (called a <em>Personal access token</em>), via the following link (you need to be logged in for this link to work): <a href="https://github.com/settings/tokens">Personal access tokens</a>. This is the easiest and quickest way to get started with the API. Note that you should treat this token as a password.
+</p>
+<section>
+<h2>1.1. Initializing the main API entry point</h2>
+
+<p>
+The class <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> functions as the main entry point for the API. From there, one can query either the logged in user (i.e. <em>you</em>) or a user by specifying the name, by sending the messages <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user.st">user</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user..st">user:</a></code> respectively. These messages will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GHUser.class/README.md">GHUser</a></code>.
+</p>
+<figure><pre><code class="smalltalk">| github user |
+
+&quot; Initialize using an access token... &quot;
+github := GitHub initializeWithAccessToken: 'f1ct10n4l4cc3sst0k3n'.
+
+&quot; ... or using a username and password combination. &quot;
+github := GitHub initializeWithUsername: 'JohnDoe' password: '123password'.
+
+&quot; Get the currently logged in user, which returns an instance of GHUser. &quot;
+user := github user.
+
+&quot; Get a user by their username. &quot;
+user := github user: 'MaryJane'.</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>1.2. Error handling</h2>
+
+<p>
+Errors can be handled with the regular Smalltalk syntax:
+</p>
+<figure><pre><code class="smalltalk">[ github user ]
+   on: GHBadCredentialsError
+   do: [ UIManager default inform: 'Incorrect username or password!' ]</code></pre><figcaption></figcaption></figure>
+
+<p>
+The <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> package contains several <code>Error</code> classes by default, containing a class comment explaining the conditions under which they are thrown.
+</p>
+<p>
+Furthermore, other packages might contain <code>Error</code> classes as well, such as <code>GitHub-Pull-Requests</code> for merge failures. View the <a href="#issues-and-prs">4 documentation of that package</a> and the class comments for more detail.
+</p>
+</section><section>
+<h2>1.3. Updating objects</h2>
+
+<p>
+Send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/update.st">update</a></code> to update a domain object, and send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/isOutdated.st">isOutdated</a></code> to test if it is outdated. The <code>#update</code> method uses <code>#isOutdated</code> internally.
+</p>
+</section><section>
+<h2>1.4. Next steps</h2>
+
+<p>
+The next step is to request a user's repository. One can do this by sending <code>repository:</code> with a repository's name as argument, or sending <code>repositories</code> to get all of the repositories of the user. These methods return instances of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> (or an <code>Array</code> of them), and can be asked several questions such as <code>defaultBranch</code>.
+</p>
+<p>
+For more operations, such as committing, on repositories, see the following API documentation:
+</p>
+<ul>
+<li><a href="#git-data">2 Git Data API</a>: Low-level operations on git concepts (objects and references).</li>
+<li><a href="#contents">3 Contents API</a>: High-level operations on files.</li>
+<li><a href="#issues-and-prs">4 Issues and Pull Requests API</a>: Operations on Issues and Pull Requests.</li>
+</ul>
+
+<p>
+Furthermore, there is documentation explaining the internals of the bindings: <a href="#internals">5 Internals</a>.
+
+</p></section></section><section>
+<h1>2. Git Data API</h1>
+<a id="git-data"></a>
+<p>
+The low-level <a href="https://developer.github.com/v3/git/">Git Data API</a> allows you to create or read Git objects (blobs, trees, commits, tags) and create, delete, read and update references (refs).
+</p>
+<p>
+This document explains how to do this using the API bindings.
+</p>
+<section>
+<h2>2.1. Operations on low-level Git concepts</h2>
+
+<p>
+This API defines two operations on git objects (creating and reading), and four operations on git references (creating, updating, deleting and reading). The former git concepts are immutable and can therefore not be updated or deleted.
+</p>
+<p>
+The way the API works is that one reads an object or references, changes some of its contents, and then pass it to one of the create, update or delete operations.
+</p>
+<p>
+For example, to update a ref, one takes the ref object and change the object it is pointing to using the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/README.md">GHRef</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/instance/object..st">object:</a></code> accessor. Really, the only information that this new object should have is its SHA.
+</p>
+<p>
+So in theory, if one knows the name of the ref (for example <code>refs/heads/master</code>) and the SHA of the object it is pointing to, one can just create new instances of GHRef and GHObject without ever having to do a request for those objects.
+</p>
+<p>
+Here is an example of adding a blob to a tree based on the tree pointed to by the last commit on <code>master</code>:
+</p>
+<figure><pre><code class="smalltalk">repo := github user repository: 'FictionalRepository'.
+head := repo getRef: 'heads/master'.
+commit := repo getCommit: head object sha.
+tree := repo getTreeRecursively: commit tree sha.
+
+&quot; Create a new file in-memory &quot;
+root := FileSystem memory workingDirectory.
+newFile := root / 'README.md'.
+newFile writeStreamDo: [ :stream |
+	stream nextPutAll: 'Hello from Pharo!' ].
+newEntry := GHTreeEntryWithContent
+	fromFileReference: newFile
+	relativeTo: root.
+
+&quot; Add a new blob entry. The new entries will be added on
+  top of the previous entries. &quot;
+tree tree: { newEntry }.
+repo createTree: tree.</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>2.2. Creating a commit.</h2>
+
+<p>
+The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHCommitBuilder.class/README.md">GHCommitBuilder</a></code> class. The builder provides several methods which simplify the process of performing a commit:
+</p>
+<ul>
+<li><strong><code>push</code></strong>: This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:</li>
+</ul>
+<p>
+  1. Take the current <code>HEAD</code> commit of the given branch (or the default branch of the repository),
+  2. Get the tree it points to,
+  3. Update the contents of this tree using the given files and create the new one,
+  4. Create a new commit object pointing to the new tree,
+  5. Update the `HEAD` reference to point to the new commit.
+</p><ul>
+<li><strong><code>directory:</code></strong>: This method takes a <code>FileReference</code> containing files, and stages them for the commit as if they were in the root directory of the repository.</li>
+</ul>
+
+<p>
+	The location of where they should be committed can be overridden by sending <code>baseDirectory:</code> afterwards with a <code>FileReference</code>. Note that this <code>FileReference</code>'s path should be contained within the reference passed to <code>directory:</code>.
+</p>
+<p>
+	An alternative to using <code>directory:</code> is to use both <code>files:</code> and <code>baseDirectory:</code>. The advantage to this is that one can omit files in the commit which are present in the reference passed to <code>baseDirectory:</code>.
+</p>
+<ul>
+<li><strong><code>onBranch:</code></strong>: Specify the branch to commit on. This needs to be an existing branch, which can be created by creating a ref, described in the previous section.</li>
+</ul>
+
+<ul>
+<li><strong><code>replaceTree</code></strong>: Let the commit replace the entire tree of the commit it is based on. Of course, this will create a new tree with just the files given. This is the only way to perform a delete operation in a commit.</li>
+</ul>
+</section></section><section>
+<h1>3. Contents API</h1>
+<a id="contents"></a>
+<p>
+As opposed to the <a href="#git-data">2 Git Data API</a>, this part of the binding provides a <em>high-level</em> way of reading, creating, updating and deleting files. The classes that are involved are <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code>. The four different use-cases are explained in the sections below.
+</p>
+<section>
+<h2>3.1. Get file contents</h2>
+
+<p>
+To get the contents of a file, one can send the following messages to an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code>:
+</p>
+<ul>
+<li><strong><code>getContentAtPath:</code></strong>: Returns an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> which contains the file contents of the file at the given path.</li>
+<li><strong><code>getContentAtPath:atRef:</code></strong>: Same as above, but returns the file at the given version (can be a commit name, branch name or tag name).</li>
+</ul>
+
+</section><section>
+<h2>3.2. Create a file</h2>
+
+<p>
+Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHRepository.extension/instance/createContent.onPath.withMessage..st">createContent:onPath:withMessage:</a></code>, with the parameters being the content of the file, the path of the file, and the commit message (all being instances of <code>String</code>).
+</p>
+</section><section>
+<h2>3.3. Update a file</h2>
+
+<p>
+Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/updateContent.withMessage..st">updateContent:withMessage:</a></code>, with similar parameters as with the method to create files. This method updates the same instance with the new content information, thus it is possible to send <code>updateContent:withMessage:</code> multiple times.
+</p>
+<p>
+Moreover, it returns the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> object representing the commit of the change. Thus from here it is possible to switch to using the <a href="#git-data">2 Git Data API</a> and create commits with the returned <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> object as parent.
+</p>
+</section><section>
+<h2>3.4. Delete a file</h2>
+
+<p>
+Use <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/deleteContentWithMessage..st">deleteContentWithMessage:</a></code>. Like <code>updateContent:withMessage:</code>, this method returns a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitCommit.class/README.md">GHGitCommit</a></code> instance.
+
+</p></section></section><section>
+<h1>4. Issues and Pull Requests API</h1>
+<a id="issues-and-prs"></a>
+<p>
+With this API one can fetch, create and edit/manipulate Issues and Pull Requests.
+</p>
+<section>
+<h2>4.1. Fetching an Issue or Pull Request</h2>
+
+<p>
+Issues can be fetched in two ways: by its number and by requesting a list of issues with optional parameters. The first way can be requested using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHRepository.extension/instance/issueByNumber..st">issueByNumber:</a></code>, by passing it the issue number.
+</p>
+<p>
+The second way, listing issues, allows one to specify multiple parameters. It is done by following the <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder pattern</a>, allowing us to specify optional parameters for a result (the issue listing).
+</p>
+<p>
+For example, one can request all issues assigned to user 'Foo', with the labels 'bug' and 'important', with this script:
+</p>
+<figure><pre><code class="smalltalk">repo issueLister
+	assignedTo: 'foo';
+	withLabels: #('bug' 'important');
+	execute</code></pre><figcaption></figcaption></figure>
+
+<p>
+For an exhaustive list of parameters, see <a href="https://developer.github.com/v3/issues/#list-issues-for-a-repository">the developer documentation</a> on listing issues, and their corresponding methods in <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueLister.class/README.md">GHIssueLister</a></code>.
+</p>
+<p>
+A Pull Request can be fetched by its number as well, by using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/pullRequestByNumber..st">pullRequestByNumber:</a></code>.
+</p>
+<p>
+The listing of Pull Requests like with issues is not yet implemented. However, one can use the listing of issues and then convert it into a list of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code>s like so:
+</p>
+<figure><pre><code class="smalltalk">| listing |
+listing := repo issueLister
+	&quot; Specify optional filter parameters &quot;
+	execute.
+
+listing
+	select: #isPullRequest
+	thenCollect: #asPullRequest</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>4.2. Creating an Issue or Pull Request</h2>
+
+<p>
+To create an issue, send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHRepository.extension/instance/issueCreatorWithTitle..st">issueCreatorWithTitle:</a></code> to a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code> instance. Similar to the listing of issues, one creates an issue by using a Builder too. The builder follows a syntax similar to that of the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueLister.class/README.md">GHIssueLister</a></code>. Refer to <a href="https://developer.github.com/v3/issues/#create-an-issue">the developer documentation</a> for all the parameters, and again their corresponding methods in <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueCreator.class/README.md">GHIssueCreator</a></code>.
+</p>
+<p>
+The same holds for the creation of a pull request, which can be done by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/pullRequestCreatorWithTitle.head.base..st">pullRequestCreatorWithTitle:head:base:</a></code> with the title of the pull request, the <code>head</code> branch specification (the one that is to be merged) and the <code>base</code> branch specification (where <code>head</code> should be merged into). Cross-repository pull requests (i.e. pull requests from forks) can be done by prefixing the username to the branch name (<code>username:branch</code>).
+</p>
+<p>
+The API supports one other way of creating a pull request, and that is to turn an existing issue into a pull request. The bindings support this as well, and it can be done by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHRepository.extension/instance/createPullRequestFromIssueNumber.fromHead.toBase..st">createPullRequestFromIssueNumber:fromHead:toBase:</a></code>. Once this is done, the pull request can not in turn be converted back into an issue.
+</p>
+</section><section>
+<h2>4.3. Editing/Manipulating Issues and Pull Requests</h2>
+
+<p>
+Here I will explain how to manipulate an issue or pull request. By manipulate I mean any operation on an issue or pull request that one can normally do using the Web interface of GitHub.
+</p>
+<section>
+<h3>Editing an Issue or Pull Request's properties</h3>
+
+<p>
+By sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/instance/editor.st">editor</a></code> to a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> or <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> instance, one gets a builder as answer with the same parameters as the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueCreator.class/README.md">GHIssueCreator</a></code> in the previous section, with several more parameters/actions in addition. The most notable ones are <code>close</code> and <code>open</code>, which do as their name suggests.
+</p>
+</section><section>
+<h3>Leaving a comment</h3>
+
+<p>
+To leave a comment on either an issue or pull request, send <code>addCommentWithBody</code>. This returns a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssueComment.class/README.md">GHIssueComment</a></code> instance which has in turn the ability to edit and delete itself. An example:
+</p>
+<figure><pre><code class="smalltalk">&quot; Get the first issue &quot;
+issue := repo issueLister execute first.
+comment := issue addCommentWithBody: 'Hello from Pharo.'.
+comment editBody: comment body , ' How are you?'.
+comment delete.</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h3>Merging a Pull Request</h3>
+
+<p>
+To merge a Pull Request, send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/instance/merge.st">merge</a></code>. There are some other methods for merging too, which allow to set a SHA hash which should match with the current head. This way, if there has been an update since fetching the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> instance, the merge will not continue.
+</p>
+<p>
+Another method allows one to set the message of the merge commit, and yet another one allows to set both parameters.
+</p>
+<p>
+If the merge fails, a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequestNotMergeableError.class/README.md">GHPullRequestNotMergeableError</a></code> is signalled. If the head SHA (if specified) does not match, a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHModifiedHeadBranchError.class/README.md">GHModifiedHeadBranchError</a></code> is signalled.
+</p>
+</section></section><section>
+<h2>4.4. The difference between Issues and Pull Requests</h2>
+
+<p>
+In short, every pull request is also an issue, and not vice-versa. This is reflected as well in the class diagram of the bindings.
+</p>
+<p>
+Because of this, one can request a pull request by its number using the issues API. But the API will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code>. Thus, a way is needed to test whether an issue is actually a pull request, or if it's just an ordinary issue. This is provided by <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/instance/isPullRequest.st">isPullRequest</a></code>.
+</p>
+<p>
+Furthermore, an existing <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> can be converted into a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHPullRequest.class/README.md">GHPullRequest</a></code> by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHIssue.extension/instance/asPullRequest.st">asPullRequest</a></code>. Do note that this will perform a request, since a pull request contains extra information not present in an issue. If the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Issues.package/GHIssue.class/README.md">GHIssue</a></code> is not a pull request (<code>#isPullRequest</code> returns false), this results in a <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Pull-Requests.package/GHNotAPullRequestError.class/README.md">GHNotAPullRequestError</a></code>.
+
+</p></section></section><section>
+<h1>5. Internals</h1>
+<a id="internals"></a>
+<p>
+This doc explains more on the internals of the API.
+</p>
+<section>
+<h2>5.1. Requesters</h2>
+
+<p>
+A Requester is any API object which can make further requests. In the case of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> for example, one can send <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/instance/updateContent.withMessage..st">updateContent:withMessage:</a></code>. Requesters are users of the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code> trait.
+</p>
+<p>
+Not all API objects are Requesters. A good example are the subclasses of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHGitObject.class/README.md">GHGitObject</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHRef.class/README.md">GHRef</a></code>, which are mutable for the purpose of passing them as parameters (more on the Git Data API <a href="">here</a>).
+</p>
+<p>
+Requesters can be more easily seen as an extension wrapper around Zinc's <code>ZnClient</code> class. Like <code>ZnClient</code>, Requesters are stateful. Requesters expand Zinc with functionality for the API. In short, these functionalities are:
+</p>
+<ul>
+<li>Parsing the JSON representation to an API object</li>
+<li>Error handling</li>
+<li>Conditional requests</li>
+</ul>
+
+<p>
+The following sections will go more in-depth on them.
+</p>
+</section><section>
+<h2>5.2. Response Parsing</h2>
+
+<p>
+The parsing of the JSON is done with the excellent NeoJSON library (read <a href="https://github.com/svenvc/docs/blob/master/neo/neo-json-paper.md">this doc</a> for an introduction). In NeoJSON there is the concept of a mapping, which defines how to read from (and write to) a JSON representation into an instantiated object. The mapping of an object can be one of <code>ObjectMapping</code> or <code>CustomMapping</code>. The first is one that maps to a class' properties (in our case just instance variables), the latter is one that allows for a custom definition of a mapping (how the value should be interpreted).
+</p>
+<p>
+The API bindings provide a trait, <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTMappedToJSON.trait/README.md">GHTMappedToJSON</a></code>, which contains only class-side methods related to NeoJSON mappings. The trait includes the mapping of URLs (instances of <code>ZnUrl</code>) and <code>DateAndTime</code> instance variables. Users of this trait can then extend the mappings with custom ones for other types.
+</p>
+<section>
+<h3>Generating instance variables, accessors and mapping definitions</h3>
+
+<p>
+When creating a new API object, one might want to generate some of the instance variables, accessors and mapping definitions automatically.
+</p>
+<p>
+This can be done using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHRelObject.class/README.md">GHRelObject</a> class</code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHRelObject.class/class/generateInstanceVariablesAndMethodsWithAPIKeys..st">generateInstanceVariablesAndMethodsWithAPIKeys:</a></code>, which when provided an array of API keys (e.g. <code>created_at</code>, <code>username</code>), generates instance variables and accessors for them.
+</p>
+<p>
+Furthermore, API keys with the suffix <code>_url</code> are automatically set to be mapped as <code>ZnUrl</code>, and those ending with <code>_at</code> will be mapped to <code>DateAndTime</code> instances.
+</p>
+</section></section><section>
+<h2>5.3. Error Handling</h2>
+
+<p>
+The handling of errors is done before parsing the response. The error handlers are defined as <code>BlockClosure</code>s which take a response as argument. They are stored in a <code>Dictionary</code> with as their key the HTTP integer error code (e.g. <code>404</code>). By default they trigger an <code>Error</code>, which allows one to use the regular Smalltalk syntax for handling them:
+</p>
+<figure><pre><code class="smalltalk">[ github user ]
+   on: GHBadCredentialsError
+   do: [ UIManager default inform: 'Incorrect username or password!' ]</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h2>5.4. Conditional Requests</h2>
+
+<p>
+Conditional requests allow one to test if a resource was modified. If it was modified, one gets back the new resource as JSON. If not, the response will be <code>304 Not Modified</code> without any content (for reducing bandwidth).
+</p>
+<p>
+The check of whether or not a resource has changed is done with a hash value called an <em>ETag</em>. Any Requester has access to these ETags using the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/instance/urlToETag.st">urlToETag</a></code> accessor.
+</p>
+<p>
+A conditional request is made by sending <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/README.md">GHTRequester</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHTRequester.trait/instance/conditionalGet..st">conditionalGet:</a></code> with an URL. It uses the <code>#urlToETag</code> <code>Dictionary</code> to get the ETag when a new request is made. However it is probably not necessary to use this method directly.
+</p>
+<p>
+Often one wants to ask to a domain object whether its remote resource has changed. This is provided by <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/isOutdated.st">isOutdated</a></code>, which performs a conditional request (if necessary) with its own url as argument.
+</p>
+<p>
+Even more often one wants to ask a domain object to update itself if it changed, which can be done using <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/README.md">GHObject</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GHObject.class/instance/update.st">update</a></code>. This method uses <code>#isOutdated</code> internally, and if it returns true it copies all the instance variables of the response to itself.
+
+</p></section></section>
+    </div>
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
