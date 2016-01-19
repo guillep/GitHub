@@ -22,3 +22,14 @@ code {
 figcaption {
   text-align: center;
 }
+dt {
+  border-left: 2px solid #000;
+  padding: 0px 5px 0px 5px;
+  background-color: #F0F0F0;
+  display: inline-block;
+}
+dd {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
