@@ -1,0 +1,35 @@
+{
+  "title" : "GitHub API bindings for Pharo"
+}
+@index
+
++Code status>https://travis-ci.org/Balletie/GitHub.svg?branch=master+
++Docs status>https://travis-ci.org/Balletie/GitHub.svg?branch=docs+
+
+This project provides bindings to the GitHub API for Pharo. In particular, the aim is to provide bindings using Object-Oriented design principles.
+
+!!Installation
+
+To install into Pharo, evaluate the following Metacello script in your Pharo 5 image:
+
+[[[language=smalltalk
+Metacello new
+	baseline: 'GitHub';
+	repository: 'github://Balletie/GitHub:master';
+	load.
+]]]
+
+Replace the ==master== part with any version tag to load that specific version.
+
+!!Documentation
+
+Documentation can be found on this website, in two formats:
+- *Single page>https://balletie.github.io/GitHub/html-mono/index.html*
+- *Multiple pages per chapter>https://balletie.github.io/GitHub/html-chap/index.html*
+
+!!Source code repository
+The code is hosted on GitHub, at *Balletie/GitHub>https://github.com/Balletie/GitHub*.
+
+!!License
+
+This project is released under the MIT License. See the ==*LICENSE>https://raw.githubusercontent.com/Balletie/GitHub/master/LICENSE*== file in the source repository for details.
