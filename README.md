@@ -1,7 +1,7 @@
 GitHub
 ======
-
-[![Build Status](https://travis-ci.org/Balletie/GitHub.svg)](https://travis-ci.org/Balletie/GitHub)
+[Code: ![Build Status](https://travis-ci.org/Balletie/GitHub.svg?branch=master)](https://travis-ci.org/Balletie/GitHub)
+[Docs: ![Build Status](https://travis-ci.org/Balletie/GitHub.svg?branch=docs)](https://travis-ci.org/Balletie/GitHub)
 
 This project provides bindings to the GitHub API for Pharo. In particular, the aim is to provide bindings using Object-Oriented design principles.
 
