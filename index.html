@@ -56,6 +56,25 @@ To install into Pharo, evaluate the following Metacello script in your Pharo 5 i
 <p>
 Replace the <code>master</code> part with any version tag to load that specific version.
 </p>
+<p>
+To load everything (including the tool and tests), evaluate this script:
+</p>
+<figure><pre><code class="smalltalk">Metacello new
+	baseline: 'GitHub';
+	repository: 'github://Balletie/GitHub:master';
+	load: #(tool tests).</code></pre><figcaption></figcaption></figure>
+
+<p>
+Replace <code>#(tool tests)</code> with one of the other options:
+</p>
+<dl><dt><code>#tool</code></dt>
+<dd>Loads just the tool (this does not load the Issues and Pull Requests API, for example).</dd>
+<dt><code>#tests</code></dt>
+<dd>Loads all of the bindings and the tests, but not the tool.</dd>
+<dt><code>#(tool default)</code></dt>
+<dd>Loads the tool and all of the bindings, but not the tests.</dd>
+</dl>
+
 </section><section>
 <h2>Documentation</h2>
 
