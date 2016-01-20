@@ -21,6 +21,24 @@ Metacello new
 
 Replace the ==master== part with any version tag to load that specific version.
 
+To load everything (including the tool and tests), evaluate this script:
+
+[[[language=smalltalk
+Metacello new
+	baseline: 'GitHub';
+	repository: 'github://Balletie/GitHub:master';
+	load: #(tool tests).
+]]]
+
+Replace ==#(tool tests)== with one of the other options:
+
+;==#tool==
+:Loads just the tool (this does not load the Issues and Pull Requests API, for example).
+;==#tests==
+:Loads all of the bindings and the tests, but not the tool.
+;==#(tool default)==
+:Loads the tool and all of the bindings, but not the tests.
+
 !!Documentation
 
 Documentation can be found on this website, in two formats:
