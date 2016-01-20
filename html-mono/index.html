@@ -145,32 +145,25 @@ repo createTree: tree.</code></pre><figcaption></figcaption></figure>
 <p>
 The operations described in the previous section are tedious to use if all you want to do is create a commit. Therefore, this process is implemented in the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Git-Data.package/GHCommitBuilder.class/README.md">GHCommitBuilder</a></code> class. The builder provides several methods which simplify the process of performing a commit:
 </p>
-<ul>
-<li><strong><code>push</code></strong>: This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:</li>
-</ul>
-<p>
-  1. Take the current <code>HEAD</code> commit of the given branch (or the default branch of the repository),
-  2. Get the tree it points to,
-  3. Update the contents of this tree using the given files and create the new one,
-  4. Create a new commit object pointing to the new tree,
-  5. Update the `HEAD` reference to point to the new commit.
-</p><ul>
-<li><strong><code>directory:</code></strong>: This method takes a <code>FileReference</code> containing files, and stages them for the commit as if they were in the root directory of the repository.</li>
-</ul>
-
-<p>
-	The location of where they should be committed can be overridden by sending <code>baseDirectory:</code> afterwards with a <code>FileReference</code>. Note that this <code>FileReference</code>'s path should be contained within the reference passed to <code>directory:</code>.
-</p>
-<p>
-	An alternative to using <code>directory:</code> is to use both <code>files:</code> and <code>baseDirectory:</code>. The advantage to this is that one can omit files in the commit which are present in the reference passed to <code>baseDirectory:</code>.
-</p>
-<ul>
-<li><strong><code>onBranch:</code></strong>: Specify the branch to commit on. This needs to be an existing branch, which can be created by creating a ref, described in the previous section.</li>
-</ul>
-
-<ul>
-<li><strong><code>replaceTree</code></strong>: Let the commit replace the entire tree of the commit it is based on. Of course, this will create a new tree with just the files given. This is the only way to perform a delete operation in a commit.</li>
-</ul>
+<dl><dt><code>push</code></dt>
+<dd>This method does all the operations to create a commit, with the parameters given to the builder. Specifically, it does the following operations:<ol><li>Take the current <code>HEAD</code> commit of the given branch (or the default branch of the repository),</li>
+<li>Get the tree it points to,</li>
+<li>Update the contents of this tree using the given files and create the new one,</li>
+<li>Create a new commit object pointing to the new tree,</li>
+<li>Update the `HEAD` reference to point to the new commit.</li>
+</ol>
+</dd>
+<dt><code>directory:</code></dt>
+<dd>This method takes a <code>FileReference</code> containing files, and stages them for the commit as if they were in the root directory of the repository.</dd>
+<dd></dd>
+<dd>The location of where they should be committed can be overridden by sending <code>baseDirectory:</code> afterwards with a <code>FileReference</code>. Note that this <code>FileReference</code>'s path should be contained within the reference passed to <code>directory:</code>.</dd>
+<dd></dd>
+<dd>An alternative to using <code>directory:</code> is to use both <code>files:</code> and <code>baseDirectory:</code>. The advantage to this is that one can omit files in the commit which are present in the reference passed to <code>baseDirectory:</code>.</dd>
+<dt><code>onBranch:</code></dt>
+<dd>Specify the branch to commit on. This needs to be an existing branch, which can be created by creating a ref, described in the previous section.</dd>
+<dt><code>replaceTree</code></dt>
+<dd>Let the commit replace the entire tree of the commit it is based on. Of course, this will create a new tree with just the files given. This is the only way to perform a delete operation in a commit.</dd>
+</dl>
 </section></section><section>
 <h1>3. Contents API</h1>
 <a id="contents"></a>
@@ -183,10 +176,11 @@ As opposed to the <a href="#git-data">2 Git Data API</a>, this part of the bindi
 <p>
 To get the contents of a file, one can send the following messages to an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Repositories.package/GHRepository.class/README.md">GHRepository</a></code>:
 </p>
-<ul>
-<li><strong><code>getContentAtPath:</code></strong>: Returns an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> which contains the file contents of the file at the given path.</li>
-<li><strong><code>getContentAtPath:atRef:</code></strong>: Same as above, but returns the file at the given version (can be a commit name, branch name or tag name).</li>
-</ul>
+<dl><dt><code>getContentAtPath:</code></dt>
+<dd>Returns an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Contents.package/GHContent.class/README.md">GHContent</a></code> which contains the file contents of the file at the given path.</dd>
+<dt><code>getContentAtPath:atRef:</code></dt>
+<dd>Same as above, but returns the file at the given version (can be a commit name, branch name or tag name).</dd>
+</dl>
 
 </section><section>
 <h2>3.2. Create a file</h2>

@@ -9,9 +9,29 @@ body {
   width: 55%;
   padding: 10px;
 }
-.top {
-  margin-top: 0px;
-}
 h1, h2 {
   color: darkred;
+}
+h1 {
+  margin-top: 0px;
+  font-size: 2em;
+}
+code {
+  background-color: #F0F0F0;
+}
+figcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+}
+dt {
+  border-left: 2px solid #000;
+  padding: 0px 5px 0px 5px;
+  background-color: #F0F0F0;
+  display: inline-block;
+}
+dd {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
 }
