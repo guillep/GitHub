@@ -78,13 +78,32 @@ parser = argparse.ArgumentParser(description='Link to classes and methods inside
 parser.add_argument('docfiles', metavar='<path>', nargs='*', help='The documentation files to be converted. Default is all Pillar files in parent directory.')
 parser.add_argument('--source-directory', metavar='<path>', help='The location of the source files to search for classes and methods.')
 parser.add_argument('--prefix', '-p', metavar='<path or url>', help='What to prefix the links with, for example an URL.')
+parser.add_argument('--config', '-c', metavar='<path>', help='Config file which specifies the options. Options on commandline take precedence.')
+
+def read_config(config_path):
+    import configparser
+    import json
+    global source_dir, prefix
+    config = configparser.ConfigParser()
+    config.read(config_path)
+    if 'options' in config:
+        prefix = config.get('options','prefix',fallback=None)
+        source_dir = config.get('options','source-directory',fallback=None)
+        docfiles = config.get('options','docfiles',fallback='null')
+        docfiles = json.loads(docfiles)
+    return docfiles
 
 def main():
     global source_dir, prefix
 
     args = parser.parse_args()
-    source_dir = args.source_directory or '../'
-    docfiles = args.docfiles
+    config_path = args.config
+    docfiles = None
+    if config_path:
+        docfiles = read_config(config_path)
+
+    source_dir = args.source_directory or source_dir
+    docfiles = args.docfiles or docfiles
     prefix = args.prefix or prefix
     if not docfiles:
         docfiles = glob('../*.pillar')
@@ -93,8 +112,9 @@ def main():
     if not prefix.endswith('/'):
         prefix = prefix + '/'
 
-    print('Linking within these files: ' + str(docfiles))
+    print('Linking within these files:         ' + str(docfiles))
     print('Searching in this source directory: ' + source_dir)
+    print('Prefixing link targets with:        ' + prefix)
 
     f = fileinput.input(files=docfiles, inplace=True, backup='.bak')
     for line in f:

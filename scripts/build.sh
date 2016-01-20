@@ -10,7 +10,7 @@ fi
 pushd ../ > /dev/null
 git add *.pillar
 popd
-./doclink.py --source-directory="../master/" --prefix="https://github.com/Balletie/GitHub/tree/master"
+./doclink.py --config=../doclink_config.ini
 if [ "$?" -ne "0" ]; then
   echo "doclink.py exited with error, cleaning up.."
   pushd ../ > /dev/null
