@@ -2,6 +2,8 @@ language: python
 python:
   - "3.5"
 sudo: false
+git:
+  submodules: false
 addons:
   apt:
     packages:
@@ -19,6 +21,7 @@ before_install:
   - git config user.email "foo@example.com"
   - git fetch origin $TRAVIS_BRANCH
   - git checkout $TRAVIS_BRANCH
+  - git submodule update --init --recursive
   - pushd scripts
   - ./install_git.sh
   - cd git-2.6.5
