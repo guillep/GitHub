@@ -21,6 +21,8 @@ code {
 }
 figcaption {
   text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
 }
 dt {
   border-left: 2px solid #000;
