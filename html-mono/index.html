@@ -25,7 +25,10 @@
 <h1>1. Getting started</h1>
 <a id="getting-started"></a>
 <p>
-To start using the API, you need to authenticate yourself. This can be done using either your username and password, or an access token.
+To start using the API, one needs to initialize the main API entrypoint, namely the <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> class. One does not necessarily have to authenticate for this, but it is better to authenticate as it allows one to perform 5000 requests per hour instead of just 60 for unauthenticated users. However, if all you want is to give the bindings a quick try this can be a good option.
+</p>
+<p>
+Authenticating can be done using either your username and password, or an access token.
 </p>
 <p>
 An access token can be retrieved using the OAuth2 protocol, using Zinc. To do this, you might want to take a look at the documentation of <a href="https://github.com/svenvc/docs/blob/master/zinc/zinc-sso-paper.md">Zinc SSO</a>.
@@ -37,7 +40,7 @@ The access token can also be made manually (called a <em>Personal access token</
 <h2>1.1. Initializing the main API entry point</h2>
 
 <p>
-The class <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> functions as the main entry point for the API. From there, one can query either the logged in user (i.e. <em>you</em>) or a user by specifying the name, by sending the messages <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user.st">user</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user..st">user:</a></code> respectively. These messages will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GHUser.class/README.md">GHUser</a></code>.
+The class <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code> functions as the main entry point for the API. From there, one can query either the logged in user (i.e. <em>you</em>) or a user by specifying the name, by sending the messages <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user.st">user</a></code> and <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub.package/GitHub.class/README.md">GitHub</a></code><code>&gt;&gt;</code><code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GitHub.extension/instance/user..st">user:</a></code> respectively. These messages will return an instance of <code><a href="https://github.com/Balletie/GitHub/tree/master/GitHub-Users.package/GHUser.class/README.md">GHUser</a></code>. The following script shows how to initialize the API and request for a user:
 </p>
 <figure><pre><code class="smalltalk">| github user |
 
@@ -47,7 +50,12 @@ github := GitHub initializeWithAccessToken: 'f1ct10n4l4cc3sst0k3n'.
 &quot; ... or using a username and password combination. &quot;
 github := GitHub initializeWithUsername: 'JohnDoe' password: '123password'.
 
-&quot; Get the currently logged in user, which returns an instance of GHUser. &quot;
+&quot; ... or without authenticating yourself.
+  Note that this limits the amount of requests and resources you can access. &quot;
+github := GitHub initializeAnonymously.
+
+&quot; Get the currently logged in user, which returns an instance of GHUser.
+  This fails signalling a GHBadCredentialsError if you did not authenticate. &quot;
 user := github user.
 
 &quot; Get a user by their username. &quot;
