@@ -10,7 +10,7 @@ This doc explains more on the internals of the API.
 
 A Requester is any API object which can make further requests. In the case of ==GHContent== for example, one can send ==GHContent>>updateContent:withMessage:==. Requesters are users of the ==GHTRequester== trait.
 
-Not all API objects are Requesters. A good example are the subclasses of ==GHGitObject== and ==GHRef==, which are mutable for the purpose of passing them as parameters (more on the Git Data API *here>git-data.pillar*).
+Not all API objects are Requesters. A good example are the subclasses of ==GHGitObject== and ==GHRef==, which are mutable for the purpose of passing them as parameters (more on the Git Data API *here>git-data.pillar@git-data*).
 
 Requesters can be more easily seen as an extension wrapper around Zinc's ==ZnClient== class. Like ==ZnClient==, Requesters are stateful. Requesters expand Zinc with functionality for the API. In short, these functionalities are:
 
