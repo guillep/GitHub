@@ -2,8 +2,18 @@
 \usepackage{import}
 \subimport{root/support/latex/}{common.tex}
 
-\begin{document}
+\usepackage{relsize}
 
+\title{%
+GitHub API Bindings for Pharo\newline {\smaller{}Developer Documentation}
+}
+\author{%
+Skip Lentz
+}
+
+\begin{document}
+\maketitle{}
+\tableofcontents{}
 {{{content}}}
 
 \end{document}
