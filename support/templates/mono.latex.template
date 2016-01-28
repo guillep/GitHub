@@ -1,0 +1,9 @@
+\documentclass[10pt,twoside,english]{root/support/latex/sbabook/sbabook}
+\usepackage{import}
+\subimport{root/support/latex/}{common.tex}
+
+\begin{document}
+
+{{{content}}}
+
+\end{document}

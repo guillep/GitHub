@@ -1,3 +1,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/Balletie/doc_scripts
+[submodule "support/latex/sbabook"]
+	path = support/latex/sbabook
+	url = https://github.com/cdlm/sbabook
