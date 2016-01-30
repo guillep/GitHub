@@ -12,3 +12,4 @@ pharo-vm/
 pharo
 pharo-ui
 pillar
+pillarPostExport.sh
