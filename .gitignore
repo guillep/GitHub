@@ -1,0 +1,5 @@
+# Ignore latex support directory and .tex output
+pdf/support
+pdf/*.tex
+# Ignore pygmentize auxiliary files
+pdf/*.pyg.*
