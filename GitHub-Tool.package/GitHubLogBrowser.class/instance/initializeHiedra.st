@@ -15,5 +15,5 @@ initializeHiedra
 		linkBuilder
 			width: 1.5;
 			color: Color black;
-			destinationsBlock: [ :logItem | logItem parents ]
+			targetsBlock: [ :logItem | logItem parents ]
 	]
