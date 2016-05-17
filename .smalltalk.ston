@@ -1,0 +1,10 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'GitHub',
+      #directory : './',
+      #load : [ 'tests' ],
+      #platforms : [ #pharo ]
+    }
+  ]
+}
