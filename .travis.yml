@@ -1,9 +1,5 @@
 language: smalltalk
 sudo: false
 smalltalk:
+  - Pharo-alpha
   - Pharo-5.0
-env:
-  global:
-    - BASELINE="GitHub"
-    - BASELINE_GROUP="tests"
-    - PACKAGES="."
