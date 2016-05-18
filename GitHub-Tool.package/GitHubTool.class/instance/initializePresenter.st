@@ -2,16 +2,16 @@ initialization
 initializePresenter
 
 	repositoryDropDown whenSelectedItemChanged: [ :newRepo |
-		newRepo ifNotNil: [ | newBranches initialSelection |
+		newRepo ifNotNil: [ | newBranches |
 			logBrowser repository: newRepo.
 			commitButton enabled: (GHLocalRepository
 				isRepositoryLoadedAndNotDetached: newRepo name).
 			newBranches := newRepo branches.
-			initialSelection := newBranches detect: [ :each |
-				each name = newRepo defaultBranch ].
-			branchesDropDown
-				items: newBranches;
-				setSelectedItem: initialSelection
+			branchesDropDown items: newBranches.
+			newBranches 
+				detect: [ :each | each name = newRepo defaultBranch ]
+				ifFound: [ :initialSelection | 
+					branchesDropDown setSelectedItem: initialSelection]
 		]
 	].
 	branchesDropDown whenSelectedItemChanged: [ :newBranch |
