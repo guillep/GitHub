@@ -9,11 +9,9 @@ initializeHiedra
 		rowSize: 20;
 		columnSize: 8.
 	rulerController rulerBuilder nodeBuilder
-		width: 4;
-		color: Color blue muchDarker.
+		width: 4.
 	rulerController rulerBuilder addLinkBuilder: [ :linkBuilder |
 		linkBuilder
 			width: 1.5;
-			color: Color black;
 			targetsBlock: [ :logItem | logItem parents ]
 	]
