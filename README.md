@@ -5,6 +5,8 @@ GitHub
 
 This project provides bindings to the GitHub API for Pharo. In particular, the aim is to provide bindings using Object-Oriented design principles.
 
+This project was initially developped by [@balletie](https://github.com/balletie).
+
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 
