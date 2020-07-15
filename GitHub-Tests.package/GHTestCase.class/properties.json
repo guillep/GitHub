@@ -1,15 +1,14 @@
 {
-	"category" : "GitHub-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 1/12/2016 12:13",
+	"super" : "TestCase",
+	"category" : "GitHub-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"github",
-		"server" ],
+		"server"
+	],
 	"name" : "GHTestCase",
-	"pools" : [
-		 ],
-	"super" : "TestCase",
-	"type" : "normal" }
+	"type" : "normal"
+}

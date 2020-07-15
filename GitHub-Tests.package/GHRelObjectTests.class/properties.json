@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "GHTRequesterTests",
+	"instvars" : [
+		"classFactory"
+	],
+	"name" : "GHRelObjectTests",
 	"type" : "normal"
 }

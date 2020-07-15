@@ -1,20 +1,19 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
 	"classtraitcomposition" : "GHTMappedToURL classTrait + GHTTimeStamped classTrait + GHTMappedToJSON classTrait",
-	"classvars" : [
-		 ],
-	"commentStamp" : "SkipLentz 1/12/2016 13:34",
+	"classvars" : [ ],
 	"instvars" : [
 		"created_at",
 		"updated_at",
 		"id",
 		"url",
-		"eTag" ],
+		"eTag"
+	],
 	"name" : "GHObject",
-	"pools" : [
-		 ],
+	"commentStamp" : "SkipLentz 1/12/2016 13:34",
 	"super" : "GHRelObject",
 	"traitcomposition" : "GHTMappedToURL + GHTTimeStamped + GHTMappedToJSON",
-	"type" : "normal" }
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "GitHub"
+}

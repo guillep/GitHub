@@ -1,14 +1,11 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 12/17/2015 11:07",
-	"instvars" : [
-		 ],
-	"name" : "GHBadCredentialsError",
-	"pools" : [
-		 ],
 	"super" : "GHAPIError",
-	"type" : "normal" }
+	"category" : "GitHub",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "GHBadCredentialsError",
+	"type" : "normal"
+}

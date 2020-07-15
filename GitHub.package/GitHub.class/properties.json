@@ -1,20 +1,19 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
 	"classtraitcomposition" : "GHTRequester classTrait",
-	"classvars" : [
-		 ],
-	"commentStamp" : "SkipLentz 1/11/2016 15:27",
+	"classvars" : [ ],
 	"instvars" : [
 		"client",
 		"jsonReader",
 		"errorHandlers",
 		"urlToETag",
-		"ttlCache" ],
+		"ttlCache"
+	],
 	"name" : "GitHub",
-	"pools" : [
-		 ],
+	"commentStamp" : "SkipLentz 1/11/2016 15:27",
 	"super" : "Object",
 	"traitcomposition" : "GHTRequester",
-	"type" : "normal" }
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "GitHub"
+}

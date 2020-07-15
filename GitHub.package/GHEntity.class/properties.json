@@ -1,10 +1,10 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 10/6/2015 12:13",
+	"super" : "GHObject",
+	"category" : "GitHub",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"login",
 		"company",
@@ -19,9 +19,8 @@
 		"repos_url",
 		"name",
 		"public_repos",
-		"public_gists" ],
+		"public_gists"
+	],
 	"name" : "GHEntity",
-	"pools" : [
-		 ],
-	"super" : "GHObject",
-	"type" : "normal" }
+	"type" : "normal"
+}

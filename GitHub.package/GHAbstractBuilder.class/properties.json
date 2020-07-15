@@ -1,15 +1,14 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 12/22/2015 13:21",
+	"super" : "Object",
+	"category" : "GitHub",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"parameters",
-		"operandRequester" ],
+		"operandRequester"
+	],
 	"name" : "GHAbstractBuilder",
-	"pools" : [
-		 ],
-	"super" : "Object",
-	"type" : "normal" }
+	"type" : "normal"
+}

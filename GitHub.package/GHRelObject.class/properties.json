@@ -1,16 +1,15 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
 	"classtraitcomposition" : "GHTRequester classTrait",
-	"classvars" : [
-		 ],
-	"commentStamp" : "SkipLentz 12/21/2015 13:20",
+	"classvars" : [ ],
 	"instvars" : [
-		"github" ],
+		"github"
+	],
 	"name" : "GHRelObject",
-	"pools" : [
-		 ],
+	"commentStamp" : "SkipLentz 12/21/2015 13:20",
 	"super" : "Object",
 	"traitcomposition" : "GHTRequester",
-	"type" : "normal" }
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "GitHub"
+}

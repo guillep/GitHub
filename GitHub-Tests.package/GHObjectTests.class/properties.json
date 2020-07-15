@@ -1,14 +1,11 @@
 {
-	"category" : "GitHub-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "GHObjectTests",
-	"pools" : [
-		 ],
 	"super" : "GHTestCase",
-	"type" : "normal" }
+	"category" : "GitHub-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "GHObjectTests",
+	"type" : "normal"
+}

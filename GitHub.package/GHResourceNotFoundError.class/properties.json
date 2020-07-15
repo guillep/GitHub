@@ -1,14 +1,11 @@
 {
-	"category" : "GitHub",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 12/17/2015 11:32",
-	"instvars" : [
-		 ],
-	"name" : "GHResourceNotFoundError",
-	"pools" : [
-		 ],
 	"super" : "GHAPIError",
-	"type" : "normal" }
+	"category" : "GitHub",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "GHResourceNotFoundError",
+	"type" : "normal"
+}
