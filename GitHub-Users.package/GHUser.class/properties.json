@@ -1,10 +1,10 @@
 {
-	"category" : "GitHub-Users",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 10/9/2015 17:37",
+	"super" : "GHEntity",
+	"category" : "GitHub-Users",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"site_admin",
 		"received_events_url",
@@ -17,9 +17,8 @@
 		"followers_url",
 		"gravatar_id",
 		"following_url",
-		"type" ],
+		"type"
+	],
 	"name" : "GHUser",
-	"pools" : [
-		 ],
-	"super" : "GHEntity",
-	"type" : "normal" }
+	"type" : "normal"
+}

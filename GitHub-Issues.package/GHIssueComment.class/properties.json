@@ -1,17 +1,16 @@
 {
-	"category" : "GitHub-Issues",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 12/22/2015 16:14",
+	"super" : "GHObject",
+	"category" : "GitHub-Issues",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"body",
 		"issue_url",
 		"html_url",
-		"user" ],
+		"user"
+	],
 	"name" : "GHIssueComment",
-	"pools" : [
-		 ],
-	"super" : "GHObject",
-	"type" : "normal" }
+	"type" : "normal"
+}

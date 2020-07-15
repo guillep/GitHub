@@ -1,19 +1,18 @@
 {
-	"category" : "GitHub-Users",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "SkipLentz 10/9/2015 17:36",
+	"super" : "GHUser",
+	"category" : "GitHub-Users",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"private_gists",
 		"owned_private_repos",
 		"plan",
 		"collaborators",
 		"total_private_repos",
-		"disk_usage" ],
+		"disk_usage"
+	],
 	"name" : "GHLoggedInUser",
-	"pools" : [
-		 ],
-	"super" : "GHUser",
-	"type" : "normal" }
+	"type" : "normal"
+}
